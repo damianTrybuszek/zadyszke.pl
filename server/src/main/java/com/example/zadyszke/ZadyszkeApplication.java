@@ -1,0 +1,13 @@
+package com.example.zadyszke;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ZadyszkeApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ZadyszkeApplication.class, args);
+	}
+
+}
