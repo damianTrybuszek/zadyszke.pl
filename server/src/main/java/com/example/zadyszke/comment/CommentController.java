@@ -30,9 +30,9 @@ class CommentController {
         return CommentDTO.of(service.get(offerId, commentId));
     }
 
-    @PostMapping("/offers/{offerd}/comments")
-    public CommentDTO create(@PathVariable long offerd, @RequestBody CommentDTO dto){
-        return CommentDTO.of(service.create(offerd, dto.toComment()));
+    @PostMapping("/offers/{offerId}/comments")
+    public CommentDTO create(@PathVariable long offerId, @RequestBody CommentDTO dto){
+        return CommentDTO.of(service.create(offerId, dto.toComment()));
     }
 
     @PutMapping("/offers/{offerId}/comments/{commentId}")
