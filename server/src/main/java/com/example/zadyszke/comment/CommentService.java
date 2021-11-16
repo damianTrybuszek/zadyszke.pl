@@ -29,7 +29,7 @@ public class CommentService {
     public Comment get(long articleId, long commentId){
         Comment comment = commentRepository.getById(commentId);
         if(comment.getOffer().getId() != articleId){
-            throw new IllegalArgumentException("Wrong article ID!");
+            throw new IllegalArgumentException("Wrong offer ID!");
         }
 
         return comment;
@@ -45,7 +45,7 @@ public class CommentService {
     public Comment modify(long articleId, long commentId, Comment newData){
         Comment commentFromDb = commentRepository.getById(commentId);
         if(commentFromDb.getOffer().getId() != articleId){
-            throw new IllegalArgumentException("Wrong article ID!");
+            throw new IllegalArgumentException("Wrong offer ID!");
         }
         commentFromDb.modify(newData);
         commentRepository.save(commentFromDb);
@@ -55,7 +55,7 @@ public class CommentService {
     public void delete(long articleId, long commentId){
         Comment commentFromDb = commentRepository.getById(commentId);
         if(commentFromDb.getOffer().getId() != articleId){
-            throw new IllegalArgumentException("Wrong article ID!");
+            throw new IllegalArgumentException("Wrong offer ID!");
         }
         commentRepository.delete(commentFromDb);
     }
