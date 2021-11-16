@@ -4,6 +4,7 @@ import com.example.zadyszke.comment.Comment;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -25,12 +26,14 @@ public class Offer {
     private String title;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JoinColumn(name="article_id")
+    @JoinColumn(name="offer_id")
     private List<Comment> comments;
 
     private String content;
 
     private String author;
+
+    private BigDecimal price;
 
     public void addComment(Comment comment){
         comment.setCreationDateTime(LocalDateTime.now());
