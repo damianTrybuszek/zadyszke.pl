@@ -26,25 +26,25 @@ public class CommentService {
         return offerRepository.findById(offerId).orElseThrow().getComments();
     }
 
-    public Comment get(long articleId, long commentId){
+    public Comment get(long offerId, long commentId){
         Comment comment = commentRepository.getById(commentId);
-        if(comment.getOffer().getId() != articleId){
+        if(comment.getOffer().getId() != offerId){
             throw new IllegalArgumentException("Wrong offer ID!");
         }
 
         return comment;
     }
 
-    public Comment create(long articleId, Comment comment){
-        Offer offer = offerRepository.getById(articleId);
+    public Comment create(long offerId, Comment comment){
+        Offer offer = offerRepository.getById(offerId);
         offer.addComment(comment);
         commentRepository.save(comment);
         return comment;
     }
 
-    public Comment modify(long articleId, long commentId, Comment newData){
+    public Comment modify(long offerId, long commentId, Comment newData){
         Comment commentFromDb = commentRepository.getById(commentId);
-        if(commentFromDb.getOffer().getId() != articleId){
+        if(commentFromDb.getOffer().getId() != offerId){
             throw new IllegalArgumentException("Wrong offer ID!");
         }
         commentFromDb.modify(newData);
@@ -52,9 +52,9 @@ public class CommentService {
         return commentFromDb;
     }
 
-    public void delete(long articleId, long commentId){
+    public void delete(long offerId, long commentId){
         Comment commentFromDb = commentRepository.getById(commentId);
-        if(commentFromDb.getOffer().getId() != articleId){
+        if(commentFromDb.getOffer().getId() != offerId){
             throw new IllegalArgumentException("Wrong offer ID!");
         }
         commentRepository.delete(commentFromDb);
