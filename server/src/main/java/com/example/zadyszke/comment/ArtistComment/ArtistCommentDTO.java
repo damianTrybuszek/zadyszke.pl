@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment;
+package com.example.zadyszke.comment.ArtistComment;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-class CommentDTO {
+class ArtistCommentDTO {
 
     private Long id;
     private String content;
@@ -19,8 +19,8 @@ class CommentDTO {
     private LocalDateTime creationDateTime;
     private LocalDateTime modifyDateTime;
 
-    public Comment toComment(){
-        return Comment.builder()
+    public ArtistComment toComment(){
+        return ArtistComment.builder()
                 .id(id)
                 .content(content)
                 .author(author)
@@ -29,13 +29,13 @@ class CommentDTO {
                 .build();
     }
 
-    public static CommentDTO of(Comment comment){
-        return CommentDTO.builder()
-                .id(comment.getId())
-                .content(comment.getContent())
-                .author(comment.getAuthor())
-                .creationDateTime(comment.getCreationDateTime())
-                .modifyDateTime(comment.getModifyDateTime())
+    public static ArtistCommentDTO of(ArtistComment artistComment){
+        return ArtistCommentDTO.builder()
+                .id(artistComment.getId())
+                .content(artistComment.getContent())
+                .author(artistComment.getAuthor())
+                .creationDateTime(artistComment.getCreationDateTime())
+                .modifyDateTime(artistComment.getModifyDateTime())
                 .build();
     }
 }

@@ -1,6 +1,6 @@
 package com.example.zadyszke.offer;
 
-import com.example.zadyszke.comment.Comment;
+import com.example.zadyszke.comment.OfferComment.OfferComment;
 import lombok.*;
 
 import javax.persistence.*;
@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import static javax.persistence.GenerationType.IDENTITY;
-import static javax.persistence.GenerationType.SEQUENCE;
 
 @Data
 @Entity
@@ -27,7 +26,7 @@ public class Offer {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JoinColumn(name="offer_id")
-    private List<Comment> comments;
+    private List<OfferComment> offerComments;
 
     private String content;
 
@@ -35,11 +34,11 @@ public class Offer {
 
     private BigDecimal price;
 
-    public void addComment(Comment comment){
-        comment.setCreationDateTime(LocalDateTime.now());
-        comment.setModifyDateTime(null);
-        this.comments.add(comment);
-        comment.setOffer(this);
+    public void addComment(OfferComment offerComment){
+        offerComment.setCreationDateTime(LocalDateTime.now());
+        offerComment.setModifyDateTime(null);
+        this.offerComments.add(offerComment);
+        offerComment.setOffer(this);
     }
 
 }

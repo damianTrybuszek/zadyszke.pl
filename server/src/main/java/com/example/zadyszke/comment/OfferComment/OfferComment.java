@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment;
+package com.example.zadyszke.comment.OfferComment;
 
 
 import com.example.zadyszke.offer.Offer;
@@ -15,7 +15,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Comment {
+public class OfferComment {
 
     @Id
     @GeneratedValue(strategy=IDENTITY)
@@ -29,7 +29,7 @@ public class Comment {
     private LocalDateTime creationDateTime;
     private LocalDateTime modifyDateTime;
 
-    public void modify(Comment newData) {
+    public void modify(OfferComment newData) {
         if (StringUtils.isNotBlank(newData.getContent())) {
             this.setContent(newData.getContent());
             this.setModifyDateTime(LocalDateTime.now());
