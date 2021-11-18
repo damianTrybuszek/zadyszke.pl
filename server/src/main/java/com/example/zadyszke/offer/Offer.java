@@ -4,6 +4,7 @@ import com.example.zadyszke.comment.Comment;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -30,6 +31,8 @@ public class Offer {
     private String content;
 
     private String author;
+
+    private BigDecimal price;
 
     public void addComment(Comment comment){
         comment.setCreationDateTime(LocalDateTime.now());
