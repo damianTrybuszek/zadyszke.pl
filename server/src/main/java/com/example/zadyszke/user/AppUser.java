@@ -10,15 +10,15 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
-@Entity(name = "users")
+@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class User {
+public class AppUser {
 
     @Id
     @GeneratedValue
-    private long Id;
+    private long id;
 
     private String name;
     private String surname;
@@ -35,7 +35,7 @@ public class User {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Offer> userPurchasedOffers;
 
-    public void modify(User modifiedUser){
+    public void modify(AppUser modifiedUser){
         modifyName(modifiedUser);
         modifySurname(modifiedUser);
         modifyUsername(modifiedUser);
@@ -43,28 +43,28 @@ public class User {
         modifyPassword(modifiedUser);
     }
 
-    private void modifyName(User modifiedUser) {
+    private void modifyName(AppUser modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getName())){
             this.setName(modifiedUser.getName());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifySurname(User modifiedUser) {
+    private void modifySurname(AppUser modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getSurname())){
             this.setSurname(modifiedUser.getSurname());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifyUsername(User modifiedUser) {
+    private void modifyUsername(AppUser modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getUsername())){
             this.setUsername(modifiedUser.getUsername());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifyEmail(User modifiedUser) {
+    private void modifyEmail(AppUser modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getEmail())){
             this.setEmail(modifiedUser.getEmail());
             this.setLastModifiedDate(LocalDateTime.now());
@@ -72,7 +72,7 @@ public class User {
     }
 
     //TODO upgrade password protection
-    private void modifyPassword(User modifiedUser) {
+    private void modifyPassword(AppUser modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getPassword())){
             this.setPassword(modifiedUser.getPassword());
             this.setLastModifiedDate(LocalDateTime.now());
