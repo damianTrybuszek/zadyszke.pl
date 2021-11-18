@@ -1,8 +1,8 @@
-package com.example.zadyszke.user;
+package com.example.zadyszke.payment;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
 }

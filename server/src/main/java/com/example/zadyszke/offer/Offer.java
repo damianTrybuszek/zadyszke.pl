@@ -19,13 +19,12 @@ import static javax.persistence.GenerationType.SEQUENCE;
 public class Offer {
 
     @Id
-    @GeneratedValue(strategy=IDENTITY)
+    @GeneratedValue
     private long id;
 
-    @Column(name = "some_title")
     private String title;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="offer_id")
     private List<Comment> comments;
 
@@ -41,5 +40,4 @@ public class Offer {
         this.comments.add(comment);
         comment.setOffer(this);
     }
-
 }
