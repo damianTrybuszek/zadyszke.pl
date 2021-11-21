@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -18,13 +19,15 @@ public class CartController {
     }
 
     @GetMapping("/carts")
-    public List<Cart> get(){
-        return service.getAll();
+    public List<CartDTO> get(){
+        return service.getAll().stream()
+                .map(CartDTO::of)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/carts/{id}")
-    public Cart get(@PathVariable long id){
-        return service.get(id);
+    public CartDTO get(@PathVariable long id){
+        return CartDTO.of(service.get(id));
     }
 
     @PostMapping("/carts")
@@ -45,7 +48,7 @@ public class CartController {
     }
 
     @GetMapping("/carts/user/{user_id}")
-    public Cart getCartForUser(@PathVariable long user_id){
-        return service.getCartForUser(user_id);
+    public CartDTO getCartForUser(@PathVariable long user_id){
+        return CartDTO.of(service.getCartForUser(user_id));
     }
 }

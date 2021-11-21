@@ -5,11 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/api")
 public class OfferController {
 
     private final OfferService service;
@@ -32,14 +34,14 @@ public class OfferController {
     }
 
     @PostMapping("/offers")
-    public OfferDTO create(@RequestBody OfferDTO dto){
-        return OfferDTO.of(service.create(dto.toOffer()));
+    public void create(@RequestBody Offer offer){
+        offer.setCreationDate(LocalDateTime.now());
+        service.create(offer);
     }
 
     @PutMapping("/offers/{id}")
-    public OfferDTO modify(@PathVariable long id, @RequestBody OfferDTO dto){
-        Offer article = service.update(id, dto.toOffer());
-        return OfferDTO.of(article);
+    public void modify(@PathVariable long id, @RequestBody Offer offer){
+        service.update(id, offer);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
