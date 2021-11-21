@@ -28,11 +28,11 @@ public class AppUser {
     private LocalDateTime registeredTime;
     private LocalDateTime lastModifiedDate;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Offer> userPostedOffers;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Offer> userPurchasedOffers;
 
     public void modify(AppUser modifiedUser){

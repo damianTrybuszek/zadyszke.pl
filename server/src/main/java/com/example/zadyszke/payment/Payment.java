@@ -1,6 +1,6 @@
 package com.example.zadyszke.payment;
 
-import com.example.zadyszke.order.Order;
+import com.example.zadyszke.order.AppOrder;
 import com.example.zadyszke.user.AppUser;
 import lombok.*;
 
@@ -24,13 +24,13 @@ public class Payment {
     private BigDecimal amount;
     private boolean isSuccessful;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
     private AppUser paymentUser;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "order_id")
-    private Order paymentOrder;
+    private AppOrder paymentOrder;
 
     public void modify(Payment payment) {
         this.setSuccessful(true);

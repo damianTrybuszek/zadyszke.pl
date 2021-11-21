@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -18,13 +19,15 @@ public class PaymentController {
     }
 
     @GetMapping("/payments")
-    public List<Payment> get(){
-        return service.getAll();
+    public List<PaymentDTO> get(){
+        return service.getAll().stream()
+                .map(PaymentDTO::of)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/payments/{id}")
-    public Payment get(@PathVariable long id){
-        return service.get(id);
+    public PaymentDTO get(@PathVariable long id){
+        return PaymentDTO.of(service.get(id));
     }
 
     @PostMapping("/payments")

@@ -1,8 +1,8 @@
-package com.example.zadyszke.offer;
+package com.example.zadyszke.order;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OfferRepository extends JpaRepository<Offer, Long> {
+public interface AppOrderRepository extends JpaRepository<AppOrder, Long> {
 }
