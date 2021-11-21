@@ -1,4 +1,4 @@
-package com.example.zadyszke.cart;
+package com.example.zadyszke.wishlist;
 
 import com.example.zadyszke.offer.Offer;
 import com.example.zadyszke.user.AppUser;
@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Cart {
+public class Wishlist {
 
     @Id
     @GeneratedValue
@@ -22,14 +22,14 @@ public class Cart {
 
     @OneToOne(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
-    private AppUser cartOwner;
+    private AppUser wishlistOwner;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_id")
-    private List<Offer> offersInCart;
+    private List<Offer> offersInWishlist;
 
-    public void modify(Cart cart) {
-        this.offersInCart = cart.getOffersInCart();
+    public void modify(Wishlist wishlist) {
+        this.offersInWishlist = wishlist.getOffersInWishlist();
         this.setLastModifiedDate(LocalDateTime.now());
     }
 }
