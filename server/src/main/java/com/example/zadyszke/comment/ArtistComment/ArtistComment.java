@@ -20,6 +20,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ArtistComment {
 
+    private long artistId;
+
     @Id
     @GeneratedValue(strategy=IDENTITY)
     private Long id;

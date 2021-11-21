@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.PurchaserComment;
+package com.example.zadyszke.comment.BuyerComment;
 
 
 import com.example.zadyszke.offer.Offer;
@@ -13,12 +13,15 @@ import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class OfferComment {
+public class BuyerComment {
+
+    private long buyerId;
 
     @Id
     @GeneratedValue(strategy=IDENTITY)
@@ -32,7 +35,7 @@ public class OfferComment {
     private LocalDateTime creationDateTime;
     private LocalDateTime modifyDateTime;
 
-    public void modify(OfferComment newData) {
+    public void modify(BuyerComment newData) {
         if (StringUtils.isNotBlank(newData.getContent())) {
             this.setContent(newData.getContent());
             this.setModifyDateTime(LocalDateTime.now());

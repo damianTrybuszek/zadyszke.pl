@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 class OfferCommentDTO {
 
     private Long id;
+    private long offerId;
     private String content;
     private String author;
     private LocalDateTime creationDateTime;
@@ -22,6 +23,7 @@ class OfferCommentDTO {
     public OfferComment toComment(){
         return OfferComment.builder()
                 .id(id)
+                .offerId(offerId)
                 .content(content)
                 .author(author)
                 .creationDateTime(creationDateTime)
@@ -32,6 +34,7 @@ class OfferCommentDTO {
     public static OfferCommentDTO of(OfferComment offerComment){
         return OfferCommentDTO.builder()
                 .id(offerComment.getId())
+                .offerId(offerComment.getOfferId())
                 .content(offerComment.getContent())
                 .author(offerComment.getAuthor())
                 .creationDateTime(offerComment.getCreationDateTime())

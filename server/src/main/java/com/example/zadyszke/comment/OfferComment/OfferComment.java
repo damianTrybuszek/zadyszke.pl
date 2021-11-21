@@ -21,9 +21,7 @@ public class OfferComment {
     @GeneratedValue(strategy=IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Offer offer;
-
+    private long offerId;
     private String content;
     private String author;
     private LocalDateTime creationDateTime;

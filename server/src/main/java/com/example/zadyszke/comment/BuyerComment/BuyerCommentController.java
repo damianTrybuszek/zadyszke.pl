@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.PurchaserComment;
+package com.example.zadyszke.comment.BuyerComment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,43 +8,43 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-class OfferCommentController {
+class BuyerCommentController {
 
-    private final OfferCommentService service;
+    private final BuyerCommentService service;
 
     @Autowired
-    public OfferCommentController(OfferCommentService service) {
+    public BuyerCommentController(BuyerCommentService service) {
         this.service = service;
     }
 
-    @GetMapping("/offers/{offerId}/comments")
-    public List<OfferCommentDTO> get(@PathVariable long offerId){
-        return service.get(offerId)
+    @GetMapping("/appuser/{appUserId}/comments")
+    public List<BuyerCommentDTO> get(@PathVariable long appUserId){
+        return service.get(appUserId)
                 .stream()
-                .map(OfferCommentDTO::of)
+                .map(BuyerCommentDTO::of)
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/offers/{offerId}/comments/{commentId}")
-    public OfferCommentDTO get(@PathVariable long offerId, @PathVariable long commentId){
-        return OfferCommentDTO.of(service.get(offerId, commentId));
+    @GetMapping("/appuser/{appUserId}/comments/{commentId}")
+    public BuyerCommentDTO get(@PathVariable long appUserId, @PathVariable long commentId){
+        return BuyerCommentDTO.of(service.get(appUserId, commentId));
     }
 
-    @PostMapping("/offers/{offerId}/comments")
-    public OfferCommentDTO create(@PathVariable long offerId, @RequestBody OfferCommentDTO dto){
-        return OfferCommentDTO.of(service.create(offerId, dto.toComment()));
+    @PostMapping("/appuser/{appUserId}/comments")
+    public BuyerCommentDTO create(@PathVariable long appUserId, @RequestBody BuyerCommentDTO dto){
+        return BuyerCommentDTO.of(service.create(appUserId, dto.toComment()));
     }
 
-    @PutMapping("/offers/{offerId}/comments/{commentId}")
-    public OfferCommentDTO modify(@PathVariable long offerId,
+    @PutMapping("/appuser/{appUserId}/comments/{commentId}")
+    public BuyerCommentDTO modify(@PathVariable long appUserId,
                                   @PathVariable long commentId,
-                                  @RequestBody OfferCommentDTO dto){
-        return OfferCommentDTO.of(service.modify(offerId, commentId, dto.toComment()));
+                                  @RequestBody BuyerCommentDTO dto){
+        return BuyerCommentDTO.of(service.modify(appUserId, commentId, dto.toComment()));
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/offers/{offerId}/comments/{commentId}")
-    public void cancel(@PathVariable long offerId, @PathVariable long commentId){
-        service.delete(offerId, commentId);
+    @DeleteMapping("/appuser/{appUserId}/comments/{commentId}")
+    public void cancel(@PathVariable long appUserId, @PathVariable long commentId){
+        service.delete(appUserId, commentId);
     }
 }

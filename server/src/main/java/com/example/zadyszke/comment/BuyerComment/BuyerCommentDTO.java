@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.PurchaserComment;
+package com.example.zadyszke.comment.BuyerComment;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,17 +11,19 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-class OfferCommentDTO {
+class BuyerCommentDTO {
 
+    private long buyerId;
     private Long id;
     private String content;
     private String author;
     private LocalDateTime creationDateTime;
     private LocalDateTime modifyDateTime;
 
-    public OfferComment toComment(){
-        return OfferComment.builder()
+    public BuyerComment toComment(){
+        return BuyerComment.builder()
                 .id(id)
+                .buyerId(buyerId)
                 .content(content)
                 .author(author)
                 .creationDateTime(creationDateTime)
@@ -29,13 +31,14 @@ class OfferCommentDTO {
                 .build();
     }
 
-    public static OfferCommentDTO of(OfferComment offerComment){
-        return OfferCommentDTO.builder()
-                .id(offerComment.getId())
-                .content(offerComment.getContent())
-                .author(offerComment.getAuthor())
-                .creationDateTime(offerComment.getCreationDateTime())
-                .modifyDateTime(offerComment.getModifyDateTime())
+    public static BuyerCommentDTO of(BuyerComment buyerComment){
+        return BuyerCommentDTO.builder()
+                .id(buyerComment.getId())
+                .buyerId(buyerComment.getBuyerId())
+                .content(buyerComment.getContent())
+                .author(buyerComment.getAuthor())
+                .creationDateTime(buyerComment.getCreationDateTime())
+                .modifyDateTime(buyerComment.getModifyDateTime())
                 .build();
     }
 }

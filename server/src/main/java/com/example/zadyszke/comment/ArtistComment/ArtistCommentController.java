@@ -17,34 +17,34 @@ class ArtistCommentController {
         this.service = service;
     }
 
-    @GetMapping("/offers/{offerId}/comments")
-    public List<ArtistCommentDTO> get(@PathVariable long offerId){
-        return service.get(offerId)
+    @GetMapping("/artist/{artistId}/comments")
+    public List<ArtistCommentDTO> get(@PathVariable long artistId){
+        return service.get(artistId)
                 .stream()
                 .map(ArtistCommentDTO::of)
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/offers/{offerId}/comments/{commentId}")
-    public ArtistCommentDTO get(@PathVariable long offerId, @PathVariable long commentId){
-        return ArtistCommentDTO.of(service.get(offerId, commentId));
+    @GetMapping("/artist/{artistId}/comments/{commentId}")
+    public ArtistCommentDTO get(@PathVariable long artistId, @PathVariable long commentId){
+        return ArtistCommentDTO.of(service.get(artistId, commentId));
     }
 
-    @PostMapping("/offers/{offerId}/comments")
-    public ArtistCommentDTO create(@PathVariable long offerId, @RequestBody ArtistCommentDTO dto){
-        return ArtistCommentDTO.of(service.create(offerId, dto.toComment()));
+    @PostMapping("/artist/{artistId}/comments")
+    public ArtistCommentDTO create(@PathVariable long artistId, @RequestBody ArtistCommentDTO dto){
+        return ArtistCommentDTO.of(service.create(artistId, dto.toComment()));
     }
 
-    @PutMapping("/offers/{offerId}/comments/{commentId}")
-    public ArtistCommentDTO modify(@PathVariable long offerId,
+    @PutMapping("/artist/{artistId}/comments/{commentId}")
+    public ArtistCommentDTO modify(@PathVariable long artistId,
                                    @PathVariable long commentId,
                                    @RequestBody ArtistCommentDTO dto){
-        return ArtistCommentDTO.of(service.modify(offerId, commentId, dto.toComment()));
+        return ArtistCommentDTO.of(service.modify(artistId, commentId, dto.toComment()));
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/offers/{offerId}/comments/{commentId}")
-    public void cancel(@PathVariable long offerId, @PathVariable long commentId){
-        service.delete(offerId, commentId);
+    @DeleteMapping("/artist/{artistId}/comments/{commentId}")
+    public void cancel(@PathVariable long artistId, @PathVariable long commentId){
+        service.delete(artistId, commentId);
     }
 }

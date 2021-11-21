@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 class ArtistCommentDTO {
 
+    private long artistId;
     private Long id;
     private String content;
     private String author;
@@ -22,6 +23,7 @@ class ArtistCommentDTO {
     public ArtistComment toComment(){
         return ArtistComment.builder()
                 .id(id)
+                .artistId(artistId)
                 .content(content)
                 .author(author)
                 .creationDateTime(creationDateTime)
@@ -32,6 +34,7 @@ class ArtistCommentDTO {
     public static ArtistCommentDTO of(ArtistComment artistComment){
         return ArtistCommentDTO.builder()
                 .id(artistComment.getId())
+                .artistId(artistComment.getArtistId())
                 .content(artistComment.getContent())
                 .author(artistComment.getAuthor())
                 .creationDateTime(artistComment.getCreationDateTime())

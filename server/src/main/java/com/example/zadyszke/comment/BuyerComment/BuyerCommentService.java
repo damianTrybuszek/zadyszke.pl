@@ -1,62 +1,62 @@
-package com.example.zadyszke.comment.PurchaserComment;
+package com.example.zadyszke.comment.BuyerComment;
 
 
-import com.example.zadyszke.offer.Offer;
-import com.example.zadyszke.offer.OfferRepository;
+import com.example.zadyszke.user.AppUser;
+import com.example.zadyszke.user.AppUserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class OfferCommentService {
+public class BuyerCommentService {
 
-    private final OfferRepository offerRepository;
-    private final OfferCommentRepository offerCommentRepository;
+    private final AppUserRepository appUserRepository;
+    private final BuyerCommentRepository buyerCommentRepository;
 
 
     @Autowired
-    public OfferCommentService(OfferRepository offerRepository, OfferCommentRepository offerCommentRepository) {
-        this.offerRepository = offerRepository;
-        this.offerCommentRepository = offerCommentRepository;
+    public BuyerCommentService(AppUserRepository appUserRepository, BuyerCommentRepository buyerCommentRepository) {
+        this.appUserRepository = appUserRepository;
+        this.buyerCommentRepository = buyerCommentRepository;
     }
 
 
-    public List<OfferComment> get(long offerId){
-        return offerRepository.findById(offerId).orElseThrow().getOfferComments();
+    public List<BuyerComment> get(long userId){
+        return appUserRepository.findById(userId).orElseThrow().getBuyerComments();
     }
 
-    public OfferComment get(long offerId, long commentId){
-        OfferComment offerComment = offerCommentRepository.getById(commentId);
-        if(offerComment.getOffer().getId() != offerId){
-            throw new IllegalArgumentException("Wrong offer ID!");
+    public BuyerComment get(long buyerId, long commentId){
+        BuyerComment buyerComment = buyerCommentRepository.getById(commentId);
+        if(buyerComment.getBuyerId() != buyerId){
+            throw new IllegalArgumentException("Wrong buyer ID!");
         }
-
-        return offerComment;
+        return buyerComment;
     }
 
-    public OfferComment create(long offerId, OfferComment offerComment){
-        Offer offer = offerRepository.getById(offerId);
-        offer.addComment(offerComment);
-        offerCommentRepository.save(offerComment);
-        return offerComment;
+    public BuyerComment create(long buyerId, BuyerComment buyerComment){
+        AppUser buyer = appUserRepository.getById(buyerId);
+        buyer.addBuyerComment(buyerComment);
+        buyerCommentRepository.save(buyerComment);
+        return buyerComment;
     }
 
-    public OfferComment modify(long offerId, long commentId, OfferComment newData){
-        OfferComment offerCommentFromDb = offerCommentRepository.getById(commentId);
-        if(offerCommentFromDb.getOffer().getId() != offerId){
-            throw new IllegalArgumentException("Wrong offer ID!");
+    public BuyerComment modify(long buyerId, long commentId, BuyerComment newData){
+        BuyerComment buyerCommentFromDb = buyerCommentRepository.getById(commentId);
+        if(buyerCommentFromDb.getBuyerId() != buyerId){
+            throw new IllegalArgumentException("Wrong buyer ID!");
         }
-        offerCommentFromDb.modify(newData);
-        offerCommentRepository.save(offerCommentFromDb);
-        return offerCommentFromDb;
+        buyerCommentFromDb.modify(newData);
+        buyerCommentRepository.save(buyerCommentFromDb);
+        return buyerCommentFromDb;
     }
 
-    public void delete(long offerId, long commentId){
-        OfferComment offerCommentFromDb = offerCommentRepository.getById(commentId);
-        if(offerCommentFromDb.getOffer().getId() != offerId){
-            throw new IllegalArgumentException("Wrong offer ID!");
+    public void delete(long buyerId, long commentId){
+        BuyerComment buyerCommentFromDb = buyerCommentRepository.getById(commentId);
+        if(buyerCommentFromDb.getBuyerId() != buyerId){
+            throw new IllegalArgumentException("Wrong buyer ID!");
         }
-        offerCommentRepository.delete(offerCommentFromDb);
+        buyerCommentRepository.delete(buyerCommentFromDb);
     }
 }

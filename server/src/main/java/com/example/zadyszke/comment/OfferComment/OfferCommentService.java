@@ -23,12 +23,12 @@ public class OfferCommentService {
 
 
     public List<OfferComment> get(long offerId){
-        return offerRepository.findById(offerId).orElseThrow().getOfferComments();
+        return offerRepository.findById(offerId).orElseThrow().getComments();
     }
 
     public OfferComment get(long offerId, long commentId){
         OfferComment offerComment = offerCommentRepository.getById(commentId);
-        if(offerComment.getOffer().getId() != offerId){
+        if(offerComment.getOfferId() != offerId){
             throw new IllegalArgumentException("Wrong offer ID!");
         }
 
@@ -44,7 +44,7 @@ public class OfferCommentService {
 
     public OfferComment modify(long offerId, long commentId, OfferComment newData){
         OfferComment offerCommentFromDb = offerCommentRepository.getById(commentId);
-        if(offerCommentFromDb.getOffer().getId() != offerId){
+        if(offerCommentFromDb.getOfferId() != offerId){
             throw new IllegalArgumentException("Wrong offer ID!");
         }
         offerCommentFromDb.modify(newData);
@@ -54,7 +54,7 @@ public class OfferCommentService {
 
     public void delete(long offerId, long commentId){
         OfferComment offerCommentFromDb = offerCommentRepository.getById(commentId);
-        if(offerCommentFromDb.getOffer().getId() != offerId){
+        if(offerCommentFromDb.getOfferId() != offerId){
             throw new IllegalArgumentException("Wrong offer ID!");
         }
         offerCommentRepository.delete(offerCommentFromDb);
