@@ -1,8 +1,7 @@
 package com.example.zadyszke.payment;
 
-import com.example.zadyszke.order.Order;
+import com.example.zadyszke.order.AppOrder;
 import com.example.zadyszke.user.AppUser;
-import com.example.zadyszke.user.AppUserDTO;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -20,7 +19,7 @@ public class PaymentDTO {
     private boolean isSuccessful;
 
     private AppUser paymentUser;
-    private Order paymentOrder;
+    private AppOrder paymentOrder;
 
     public Payment toPayment(){
         return Payment.builder()

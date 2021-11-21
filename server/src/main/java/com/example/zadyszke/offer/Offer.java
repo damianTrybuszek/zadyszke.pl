@@ -36,7 +36,7 @@ public class Offer {
     private AppUser author;
 
     @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name="offer_id")
+    @JoinColumn(name="offerId")
     private List<OfferComment> comments;
 
     public void addComment(OfferComment offerComment){
