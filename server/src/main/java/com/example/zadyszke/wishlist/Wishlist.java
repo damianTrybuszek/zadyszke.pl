@@ -25,7 +25,7 @@ public class Wishlist {
     private AppUser wishlistOwner;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cart_id")
+    @JoinColumn(name = "wishlist_id")
     private List<Offer> offersInWishlist;
 
     public void modify(Wishlist wishlist) {
