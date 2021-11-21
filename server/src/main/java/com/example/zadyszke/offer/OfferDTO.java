@@ -1,6 +1,6 @@
 package com.example.zadyszke.offer;
 
-import com.example.zadyszke.comment.Comment;
+import com.example.zadyszke.comment.OfferComment.OfferComment;
 import com.example.zadyszke.user.AppUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,7 +26,7 @@ public class OfferDTO {
     private LocalDateTime lastModifiedDate;
 
     private AppUser author;
-    private List<Comment> comments;
+    private List<OfferComment> comments;
 
     public Offer toOffer(){
         return Offer.builder()
