@@ -20,11 +20,11 @@ public class Cart {
     private long id;
     private LocalDateTime lastModifiedDate;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
     private AppUser cartOwner;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_id")
     private List<Offer> offersInCart;
 

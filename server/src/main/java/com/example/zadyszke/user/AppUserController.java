@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -18,13 +19,15 @@ public class AppUserController {
     }
 
     @GetMapping("/users")
-    public List<AppUser> get(){
-        return service.getAll();
+    public List<AppUserDTO> get(){
+        return service.getAll().stream()
+                .map(AppUserDTO::of)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/users/{id}")
-    public AppUser get(@PathVariable long id){
-        return service.get(id);
+    public AppUserDTO get(@PathVariable long id){
+        return AppUserDTO.of(service.get(id));
     }
 
     @PostMapping("/users")
