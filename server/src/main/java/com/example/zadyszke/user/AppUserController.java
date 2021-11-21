@@ -8,32 +8,33 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-public class UserController {
-    private final UserService service;
+@RequestMapping("/api")
+public class AppUserController {
+    private final AppUserService service;
 
     @Autowired
-    public UserController(UserService service) {
+    public AppUserController(AppUserService service) {
         this.service = service;
     }
 
     @GetMapping("/users")
-    public List<User> get(){
+    public List<AppUser> get(){
         return service.getAll();
     }
 
     @GetMapping("/users/{id}")
-    public User get(@PathVariable long id){
+    public AppUser get(@PathVariable long id){
         return service.get(id);
     }
 
     @PostMapping("/users")
-    public void create(@RequestBody User user){
+    public void create(@RequestBody AppUser user){
         user.setRegisteredTime(LocalDateTime.now());
         service.create(user);
     }
 
     @PutMapping("/users/{id}")
-    public void modify(@PathVariable long id, @RequestBody User user){
+    public void modify(@PathVariable long id, @RequestBody AppUser user){
         service.update(id, user);
     }
 
