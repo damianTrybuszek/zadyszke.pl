@@ -1,5 +1,7 @@
 package com.example.zadyszke.user;
 
+import com.example.zadyszke.comment.ArtistComment.ArtistComment;
+import com.example.zadyszke.comment.BuyerComment.BuyerComment;
 import com.example.zadyszke.offer.Offer;
 import lombok.*;
 
@@ -21,6 +23,9 @@ public class AppUserDTO {
     private List<Offer> userPostedOffers;
     private List<Offer> userPurchasedOffers;
 
+    private List<BuyerComment> buyerComments;
+    private List<ArtistComment> artistComments;
+
     public AppUser toAppUser(){
         return AppUser.builder()
                 .id(this.id)
@@ -30,6 +35,8 @@ public class AppUserDTO {
                 .lastModifiedDate(this.lastModifiedDate)
                 .userPostedOffers(this.userPostedOffers)
                 .userPurchasedOffers(this.userPurchasedOffers)
+                .buyerComments(this.buyerComments)
+                .artistComments(this.artistComments)
                 .build();
     }
 
@@ -42,6 +49,8 @@ public class AppUserDTO {
                 .lastModifiedDate(user.getLastModifiedDate())
                 .userPostedOffers(user.getUserPostedOffers())
                 .userPurchasedOffers(user.getUserPurchasedOffers())
+                .buyerComments(user.getBuyerComments())
+                .artistComments(user.getArtistComments())
                 .build();
     }
 }

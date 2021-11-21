@@ -39,11 +39,11 @@ public class AppUser {
     private List<Offer> userPurchasedOffers;
 
     @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name="app_user_id")
+    @JoinColumn(name="buyerId")
     private List<BuyerComment> buyerComments;
 
     @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name="app_user_id")
+    @JoinColumn(name="artistId")
     private List<ArtistComment> artistComments;
 
     public void modify(AppUser modifiedUser){
