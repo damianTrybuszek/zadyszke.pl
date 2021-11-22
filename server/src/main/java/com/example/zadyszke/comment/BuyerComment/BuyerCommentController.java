@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/api")
 class BuyerCommentController {
 
     private final BuyerCommentService service;
