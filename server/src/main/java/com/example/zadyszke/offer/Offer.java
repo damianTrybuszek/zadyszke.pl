@@ -1,6 +1,6 @@
 package com.example.zadyszke.offer;
 
-import com.example.zadyszke.comment.Comment;
+import com.example.zadyszke.comment.OfferComment.OfferComment;
 import com.example.zadyszke.user.AppUser;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
@@ -31,19 +31,19 @@ public class Offer {
     private LocalDateTime creationDate;
     private LocalDateTime lastModifiedDate;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "author_id")
     private AppUser author;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="offer_id")
-    private List<Comment> comments;
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name="offerId")
+    private List<OfferComment> comments;
 
-    public void addComment(Comment comment){
-        comment.setCreationDateTime(LocalDateTime.now());
-        comment.setModifyDateTime(null);
-        this.comments.add(comment);
-        comment.setOffer(this);
+    public void addComment(OfferComment offerComment){
+        offerComment.setCreationDateTime(LocalDateTime.now());
+        offerComment.setModifyDateTime(null);
+        this.comments.add(offerComment);
+        offerComment.setOfferId(this.id);
     }
 
     public void modify(Offer newOfferData){
