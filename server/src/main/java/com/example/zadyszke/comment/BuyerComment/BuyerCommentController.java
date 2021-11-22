@@ -18,6 +18,15 @@ class BuyerCommentController {
         this.service = service;
     }
 
+
+    @GetMapping("/appuser/comments")
+    public List<BuyerCommentDTO> getAll() {
+        return service.getAll()
+                .stream()
+                .map(BuyerCommentDTO::of)
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/appuser/{appUserId}/comments")
     public List<BuyerCommentDTO> get(@PathVariable long appUserId){
         return service.get(appUserId)
