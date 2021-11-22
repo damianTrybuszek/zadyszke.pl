@@ -18,6 +18,14 @@ class ArtistCommentController {
         this.service = service;
     }
 
+    @GetMapping("/artist/comments")
+    public List<ArtistCommentDTO> get(){
+        return service.getAll()
+                .stream()
+                .map(ArtistCommentDTO::of)
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/artist/{artistId}/comments")
     public List<ArtistCommentDTO> get(@PathVariable long artistId){
         return service.get(artistId)
