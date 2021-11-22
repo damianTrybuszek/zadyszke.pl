@@ -17,6 +17,16 @@ class OfferCommentController {
         this.service = service;
     }
 
+
+
+    @GetMapping("/offers/comments")
+    public List<OfferCommentDTO> getAll(){
+        return service.getAll()
+                .stream()
+                .map(OfferCommentDTO::of)
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/offers/{offerId}/comments")
     public List<OfferCommentDTO> get(@PathVariable long offerId){
         return service.get(offerId)
