@@ -21,6 +21,10 @@ public class OfferCommentService {
         this.offerCommentRepository = offerCommentRepository;
     }
 
+    public List<OfferComment> getAll(){
+        return offerCommentRepository.findAll();
+    }
+
 
     public List<OfferComment> get(long offerId){
         return offerRepository.findById(offerId).orElseThrow().getComments();
