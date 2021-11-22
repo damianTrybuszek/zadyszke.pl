@@ -10,12 +10,10 @@ class OfferService {
 
     private final OfferRepository repository;
 
-
     @Autowired
     public OfferService(OfferRepository repository) {
         this.repository = repository;
     }
-
 
     public List<Offer> getAll(){
         return repository.findAll();
@@ -25,14 +23,14 @@ class OfferService {
         return repository.findById(id).orElseThrow();
     }
 
-    public Offer create(Offer offer){
-        return repository.save(offer);
+    public void create(Offer offer){
+        repository.save(offer);
     }
 
-    public Offer update(long id, Offer offer){
-        Offer offerFromDb = get(id);
-        offerFromDb.setTitle(offer.getTitle());
-        return repository.save(offerFromDb);
+    public void update(long id, Offer newOfferData){
+        Offer modifiedOffer = get(id);
+        modifiedOffer.modify(newOfferData);
+        repository.save(modifiedOffer);
     }
 
     public void delete(long id){

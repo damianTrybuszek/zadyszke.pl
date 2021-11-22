@@ -1,11 +1,14 @@
-package com.example.zadyszke.comment;
+package com.example.zadyszke.comment.ArtistComment;
 
 
 import com.example.zadyszke.offer.Offer;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -15,7 +18,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Comment {
+public class ArtistComment {
+
+    private long artistId;
 
     @Id
     @GeneratedValue(strategy=IDENTITY)
@@ -29,7 +34,7 @@ public class Comment {
     private LocalDateTime creationDateTime;
     private LocalDateTime modifyDateTime;
 
-    public void modify(Comment newData) {
+    public void modify(ArtistComment newData) {
         if (StringUtils.isNotBlank(newData.getContent())) {
             this.setContent(newData.getContent());
             this.setModifyDateTime(LocalDateTime.now());

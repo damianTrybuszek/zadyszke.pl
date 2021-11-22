@@ -1,6 +1,9 @@
 package com.example.zadyszke.user;
 
 
+import com.example.zadyszke.comment.ArtistComment.ArtistComment;
+import com.example.zadyszke.comment.BuyerComment.BuyerComment;
+import com.example.zadyszke.comment.OfferComment.OfferComment;
 import com.example.zadyszke.offer.Offer;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
@@ -28,12 +31,20 @@ public class AppUser {
     private LocalDateTime registeredTime;
     private LocalDateTime lastModifiedDate;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Offer> userPostedOffers;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Offer> userPurchasedOffers;
+
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name="buyerId")
+    private List<BuyerComment> buyerComments;
+
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name="artistId")
+    private List<ArtistComment> artistComments;
 
     public void modify(AppUser modifiedUser){
         modifyName(modifiedUser);
@@ -41,6 +52,20 @@ public class AppUser {
         modifyUsername(modifiedUser);
         modifyEmail(modifiedUser);
         modifyPassword(modifiedUser);
+    }
+
+    public void addBuyerComment(BuyerComment buyerComment){
+        buyerComment.setCreationDateTime(LocalDateTime.now());
+        buyerComment.setModifyDateTime(null);
+        this.buyerComments.add(buyerComment);
+        buyerComment.setBuyerId(id);
+    }
+
+    public void addArtistComment(ArtistComment artistComment){
+        artistComment.setCreationDateTime(LocalDateTime.now());
+        artistComment.setModifyDateTime(null);
+        this.artistComments.add(artistComment);
+        artistComment.setArtistId(id);
     }
 
     private void modifyName(AppUser modifiedUser) {
@@ -78,4 +103,6 @@ public class AppUser {
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
+
+
 }
