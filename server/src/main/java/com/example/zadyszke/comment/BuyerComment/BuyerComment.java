@@ -27,9 +27,6 @@ public class BuyerComment {
     @GeneratedValue(strategy=IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Offer offer;
-
     private String content;
     private String author;
     private LocalDateTime creationDateTime;
