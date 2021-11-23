@@ -21,7 +21,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 public class Offer {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String title;

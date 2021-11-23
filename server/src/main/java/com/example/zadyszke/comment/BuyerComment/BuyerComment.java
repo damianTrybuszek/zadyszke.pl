@@ -5,10 +5,7 @@ import com.example.zadyszke.offer.Offer;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -24,7 +21,7 @@ public class BuyerComment {
     private long buyerId;
 
     @Id
-    @GeneratedValue(strategy=IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

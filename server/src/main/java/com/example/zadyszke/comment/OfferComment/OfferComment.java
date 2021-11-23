@@ -18,7 +18,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class OfferComment {
 
     @Id
-    @GeneratedValue(strategy=IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private long offerId;

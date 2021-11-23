@@ -30,7 +30,7 @@ public class AppUserController {
         return AppUserDTO.of(service.getById(id));
     }
 
-    @GetMapping("/users/validate-login")
+    @PostMapping("/users/validate-login")
     public boolean validateLogin(@RequestBody AppUser userLoginDetails){
         return service.validatePassword(userLoginDetails.getEmail(), userLoginDetails.getPassword());
     }
