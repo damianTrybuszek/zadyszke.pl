@@ -27,7 +27,12 @@ public class AppUserController {
 
     @GetMapping("/users/{id}")
     public AppUserDTO get(@PathVariable long id){
-        return AppUserDTO.of(service.get(id));
+        return AppUserDTO.of(service.getById(id));
+    }
+
+    @PostMapping("/users/validate-login")
+    public boolean validateLogin(@RequestBody AppUser userLoginDetails){
+        return service.validatePassword(userLoginDetails.getEmail(), userLoginDetails.getPassword());
     }
 
     @PostMapping("/users")

@@ -16,7 +16,7 @@ import java.util.List;
 public class Wishlist {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private LocalDateTime lastModifiedDate;
 
@@ -25,7 +25,7 @@ public class Wishlist {
     private AppUser wishlistOwner;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cart_id")
+    @JoinColumn(name = "wishlist_id")
     private List<Offer> offersInWishlist;
 
     public void modify(Wishlist wishlist) {

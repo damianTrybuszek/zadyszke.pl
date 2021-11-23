@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class AppOrder {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private BigDecimal price;
