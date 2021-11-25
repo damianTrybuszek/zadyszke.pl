@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api")
 public class WishlistController {
     private final WishlistService service;
 

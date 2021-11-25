@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.BuyerComment;
+package com.example.zadyszke.comment.buyer;
 
 
 import com.example.zadyszke.offer.Offer;
@@ -7,8 +7,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-
-import static javax.persistence.GenerationType.IDENTITY;
 
 
 @Data

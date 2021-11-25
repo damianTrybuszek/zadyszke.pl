@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.ArtistComment;
+package com.example.zadyszke.comment.artist;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

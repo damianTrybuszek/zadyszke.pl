@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.OfferComment;
+package com.example.zadyszke.comment.offer;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

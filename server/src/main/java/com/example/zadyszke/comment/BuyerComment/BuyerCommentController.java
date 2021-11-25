@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.BuyerComment;
+package com.example.zadyszke.comment.buyer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
