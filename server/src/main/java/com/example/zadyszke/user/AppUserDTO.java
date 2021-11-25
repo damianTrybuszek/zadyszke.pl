@@ -1,7 +1,7 @@
 package com.example.zadyszke.user;
 
-import com.example.zadyszke.comment.ArtistComment.ArtistComment;
-import com.example.zadyszke.comment.BuyerComment.BuyerComment;
+import com.example.zadyszke.comment.artist.ArtistComment;
+import com.example.zadyszke.comment.buyer.BuyerComment;
 import com.example.zadyszke.offer.Offer;
 import lombok.*;
 

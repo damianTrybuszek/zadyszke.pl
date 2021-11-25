@@ -1,6 +1,6 @@
 package com.example.zadyszke.offer;
 
-import com.example.zadyszke.comment.OfferComment.OfferComment;
+import com.example.zadyszke.comment.offer.OfferComment;
 import com.example.zadyszke.user.AppUser;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
@@ -9,9 +9,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
-
-import static javax.persistence.GenerationType.IDENTITY;
-import static javax.persistence.GenerationType.SEQUENCE;
 
 @Data
 @Entity
