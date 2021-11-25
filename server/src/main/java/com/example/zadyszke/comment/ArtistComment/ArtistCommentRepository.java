@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.ArtistComment;
+package com.example.zadyszke.comment.artist;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.ArtistComment;
+package com.example.zadyszke.comment.artist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

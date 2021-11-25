@@ -1,14 +1,11 @@
-package com.example.zadyszke.comment.OfferComment;
+package com.example.zadyszke.comment.offer;
 
 
-import com.example.zadyszke.offer.Offer;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-
-import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
 @Entity

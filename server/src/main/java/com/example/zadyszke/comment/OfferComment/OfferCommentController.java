@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.OfferComment;
+package com.example.zadyszke.comment.offer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

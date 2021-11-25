@@ -1,4 +1,4 @@
-package com.example.zadyszke.comment.OfferComment;
+package com.example.zadyszke.comment.offer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -12,12 +12,12 @@ import java.util.Optional;
 @Service
 public class AppUserService {
     private final AppUserRepository repository;
-    PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public AppUserService(AppUserRepository repository) {
+    public AppUserService(AppUserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
-        this.passwordEncoder = new BCryptPasswordEncoder();
+        this.passwordEncoder = passwordEncoder;
     }
 
     public List<AppUser> getAll(){
@@ -52,11 +52,7 @@ public class AppUserService {
     public boolean validatePassword(String email, String password){
         Optional<AppUser> user = Optional.ofNullable(getByEmail(email.toLowerCase()));
         if(user.isPresent()){
-            if(passwordEncoder.matches(password, user.get().getPassword())){
-                return true;
-            } else {
-                return false;
-            }
+            return passwordEncoder.matches(password, user.get().getPassword());
         } else {
             throw new IllegalArgumentException("No user found with given email");
         }
