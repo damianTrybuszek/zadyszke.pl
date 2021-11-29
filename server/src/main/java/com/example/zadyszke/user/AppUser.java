@@ -4,6 +4,8 @@ package com.example.zadyszke.user;
 import com.example.zadyszke.comment.artist.ArtistComment;
 import com.example.zadyszke.comment.buyer.BuyerComment;
 import com.example.zadyszke.offer.Offer;
+import com.example.zadyszke.rating.artist.ArtistRating;
+import com.example.zadyszke.rating.buyer.BuyerRating;
 import com.example.zadyszke.user.dto.AppUserModifyDTO;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
@@ -47,6 +49,14 @@ public class AppUser {
     @JoinColumn(name="artistId")
     private List<ArtistComment> artistComments;
 
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name="buyerId")
+    private List<BuyerRating> buyerRatings;
+
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name="buyerId")
+    private List<ArtistRating> artistRatings;
+
     public void modify(AppUserModifyDTO modifiedUser){
         modifyName(modifiedUser);
         modifySurname(modifiedUser);
@@ -62,11 +72,26 @@ public class AppUser {
         buyerComment.setBuyerId(id);
     }
 
+    public void addBuyerRating(BuyerRating buyerRating){
+        buyerRating.setCreationDateTime(LocalDateTime.now());
+        buyerRating.setModifyDateTime(null);
+        this.buyerRatings.add(buyerRating);
+        buyerRating.setBuyerId(id);
+    }
+
+
     public void addArtistComment(ArtistComment artistComment){
         artistComment.setCreationDateTime(LocalDateTime.now());
         artistComment.setModifyDateTime(null);
         this.artistComments.add(artistComment);
         artistComment.setArtistId(id);
+    }
+
+    public void addArtistRating(ArtistRating artistRating){
+        artistRating.setCreationDateTime(LocalDateTime.now());
+        artistRating.setModifyDateTime(null);
+        this.artistRatings.add(artistRating);
+        artistRating.setArtistId(id);
     }
 
     private void modifyName(AppUserModifyDTO modifiedUser) {
