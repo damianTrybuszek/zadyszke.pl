@@ -1,8 +1,9 @@
-package com.example.zadyszke.user;
+package com.example.zadyszke.user.dto;
 
-import com.example.zadyszke.comment.ArtistComment.ArtistComment;
-import com.example.zadyszke.comment.BuyerComment.BuyerComment;
+import com.example.zadyszke.comment.artist.ArtistComment;
+import com.example.zadyszke.comment.buyer.BuyerComment;
 import com.example.zadyszke.offer.Offer;
+import com.example.zadyszke.user.AppUser;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -12,8 +13,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class AppUserDTO {
-
+public class AppUserGetDTO {
     private long id;
     private String username;
     private String email;
@@ -40,8 +40,8 @@ public class AppUserDTO {
                 .build();
     }
 
-    public static AppUserDTO of(AppUser user){
-        return AppUserDTO.builder()
+    public static AppUserGetDTO of(AppUser user){
+        return AppUserGetDTO.builder()
                 .id(user.getId())
                 .username(user.getUsername())
                 .email(user.getEmail())

@@ -1,5 +1,9 @@
 package com.example.zadyszke.user;
 
+import com.example.zadyszke.user.dto.AppUserGetDTO;
+import com.example.zadyszke.user.dto.AppUserLoginDTO;
+import com.example.zadyszke.user.dto.AppUserModifyDTO;
+import com.example.zadyszke.user.dto.AppUserRegisterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -19,25 +23,25 @@ public class AppUserController {
     }
 
     @GetMapping("/users")
-    public List<AppUserDTO> get() {
+    public List<AppUserGetDTO> get() {
         return service.getAll().stream()
-                .map(AppUserDTO::of)
+                .map(AppUserGetDTO::of)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/users/{id}")
-    public AppUserDTO get(@PathVariable long id) {
-        return AppUserDTO.of(service.getById(id));
+    public AppUserGetDTO get(@PathVariable long id) {
+        return AppUserGetDTO.of(service.getById(id));
     }
 
     @PostMapping("/users/validate-login")
-    public boolean validateLogin(@RequestBody AppUser userLoginDetails) {
+    public boolean validateLogin(@RequestBody AppUserLoginDTO userLoginDetails) {
         return service.validatePassword(userLoginDetails.getEmail(), userLoginDetails.getPassword());
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/users")
-    public void create(@RequestBody AppUser user) {
+    public void create(@RequestBody AppUserRegisterDTO user) {
         if (service.getByEmail(user.getEmail()) != null) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "This email account is already registered on our site");
         } else {
@@ -46,7 +50,7 @@ public class AppUserController {
     }
 
     @PutMapping("/users/{id}")
-    public void modify(@PathVariable long id, @RequestBody AppUser user) {
+    public void modify(@PathVariable long id, @RequestBody AppUserModifyDTO user) {
         service.update(id, user);
     }
 
@@ -56,7 +60,7 @@ public class AppUserController {
         service.delete(id);
     }
 
-    private void addUserToDatabase(AppUser user) {
+    private void addUserToDatabase(AppUserRegisterDTO user) {
         user.setRegisteredTime(LocalDateTime.now());
         service.create(user);
     }
