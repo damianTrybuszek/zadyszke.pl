@@ -1,5 +1,7 @@
 package com.example.zadyszke.user;
 
+import com.example.zadyszke.user.dto.AppUserModifyDTO;
+import com.example.zadyszke.user.dto.AppUserRegisterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -32,14 +34,15 @@ public class AppUserService {
         return this.repository.findByEmail(email);
     }
 
-    public void create(AppUser user){
+    public void create(AppUserRegisterDTO user){
         user.setEmail(user.getEmail().toLowerCase());
         String encodedPassword = this.passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-        this.repository.save(user);
+        AppUser dbUser = user.toAppUser();
+        this.repository.save(dbUser);
     }
 
-    public void update(long id, AppUser user){
+    public void update(long id, AppUserModifyDTO user){
         AppUser updatedUser = getById(id);
         updatedUser.modify(user);
         this.repository.save(updatedUser);

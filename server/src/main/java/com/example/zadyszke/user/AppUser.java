@@ -4,6 +4,7 @@ package com.example.zadyszke.user;
 import com.example.zadyszke.comment.artist.ArtistComment;
 import com.example.zadyszke.comment.buyer.BuyerComment;
 import com.example.zadyszke.offer.Offer;
+import com.example.zadyszke.user.dto.AppUserModifyDTO;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
 
@@ -46,7 +47,7 @@ public class AppUser {
     @JoinColumn(name="artistId")
     private List<ArtistComment> artistComments;
 
-    public void modify(AppUser modifiedUser){
+    public void modify(AppUserModifyDTO modifiedUser){
         modifyName(modifiedUser);
         modifySurname(modifiedUser);
         modifyUsername(modifiedUser);
@@ -68,28 +69,28 @@ public class AppUser {
         artistComment.setArtistId(id);
     }
 
-    private void modifyName(AppUser modifiedUser) {
+    private void modifyName(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getName())){
             this.setName(modifiedUser.getName());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifySurname(AppUser modifiedUser) {
+    private void modifySurname(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getSurname())){
             this.setSurname(modifiedUser.getSurname());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifyUsername(AppUser modifiedUser) {
+    private void modifyUsername(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getUsername())){
             this.setUsername(modifiedUser.getUsername());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifyEmail(AppUser modifiedUser) {
+    private void modifyEmail(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getEmail())){
             this.setEmail(modifiedUser.getEmail());
             this.setLastModifiedDate(LocalDateTime.now());
@@ -97,7 +98,7 @@ public class AppUser {
     }
 
     //TODO upgrade password protection
-    private void modifyPassword(AppUser modifiedUser) {
+    private void modifyPassword(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getPassword())){
             this.setPassword(modifiedUser.getPassword());
             this.setLastModifiedDate(LocalDateTime.now());
