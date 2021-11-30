@@ -23,6 +23,10 @@ public class BuyerCommentService {
     }
 
 
+    public List<BuyerComment> getAll(){
+        return buyerCommentRepository.findAll();
+    }
+
     public List<BuyerComment> get(long userId){
         return appUserRepository.findById(userId).orElseThrow().getBuyerComments();
     }
