@@ -2,6 +2,7 @@ package com.example.zadyszke.wishlist;
 
 import com.example.zadyszke.offer.Offer;
 import com.example.zadyszke.user.AppUser;
+import com.example.zadyszke.wishlist.dto.WishlistModifyDTO;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ import java.util.List;
 public class Wishlist {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private LocalDateTime lastModifiedDate;
 
@@ -25,10 +26,10 @@ public class Wishlist {
     private AppUser wishlistOwner;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cart_id")
+    @JoinColumn(name = "wishlist_id")
     private List<Offer> offersInWishlist;
 
-    public void modify(Wishlist wishlist) {
+    public void modify(WishlistModifyDTO wishlist) {
         this.offersInWishlist = wishlist.getOffersInWishlist();
         this.setLastModifiedDate(LocalDateTime.now());
     }

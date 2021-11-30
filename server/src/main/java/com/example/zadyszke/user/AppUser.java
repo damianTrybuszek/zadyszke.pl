@@ -1,10 +1,12 @@
 package com.example.zadyszke.user;
 
 
-import com.example.zadyszke.comment.ArtistComment.ArtistComment;
-import com.example.zadyszke.comment.BuyerComment.BuyerComment;
-import com.example.zadyszke.comment.OfferComment.OfferComment;
+import com.example.zadyszke.comment.artist.ArtistComment;
+import com.example.zadyszke.comment.buyer.BuyerComment;
 import com.example.zadyszke.offer.Offer;
+import com.example.zadyszke.rating.artist.ArtistRating;
+import com.example.zadyszke.rating.buyer.BuyerRating;
+import com.example.zadyszke.user.dto.AppUserModifyDTO;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
 
@@ -20,12 +22,13 @@ import java.util.List;
 public class AppUser {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String name;
     private String surname;
     private String username;
+    @Column(unique = true)
     private String email;
     private String password;
     private String phoneNumber;
@@ -50,7 +53,15 @@ public class AppUser {
     @JoinColumn(name="artistId")
     private List<ArtistComment> artistComments;
 
-    public void modify(AppUser modifiedUser){
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name="buyerId")
+    private List<BuyerRating> buyerRatings;
+
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name="buyerId")
+    private List<ArtistRating> artistRatings;
+
+    public void modify(AppUserModifyDTO modifiedUser){
         modifyName(modifiedUser);
         modifySurname(modifiedUser);
         modifyUsername(modifiedUser);
@@ -67,6 +78,14 @@ public class AppUser {
         buyerComment.setBuyerId(id);
     }
 
+    public void addBuyerRating(BuyerRating buyerRating){
+        buyerRating.setCreationDateTime(LocalDateTime.now());
+        buyerRating.setModifyDateTime(null);
+        this.buyerRatings.add(buyerRating);
+        buyerRating.setBuyerId(id);
+    }
+
+
     public void addArtistComment(ArtistComment artistComment){
         artistComment.setCreationDateTime(LocalDateTime.now());
         artistComment.setModifyDateTime(null);
@@ -74,28 +93,35 @@ public class AppUser {
         artistComment.setArtistId(id);
     }
 
-    private void modifyName(AppUser modifiedUser) {
+    public void addArtistRating(ArtistRating artistRating){
+        artistRating.setCreationDateTime(LocalDateTime.now());
+        artistRating.setModifyDateTime(null);
+        this.artistRatings.add(artistRating);
+        artistRating.setArtistId(id);
+    }
+
+    private void modifyName(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getName())){
             this.setName(modifiedUser.getName());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifySurname(AppUser modifiedUser) {
+    private void modifySurname(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getSurname())){
             this.setSurname(modifiedUser.getSurname());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifyUsername(AppUser modifiedUser) {
+    private void modifyUsername(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getUsername())){
             this.setUsername(modifiedUser.getUsername());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifyEmail(AppUser modifiedUser) {
+    private void modifyEmail(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getEmail())){
             this.setEmail(modifiedUser.getEmail());
             this.setLastModifiedDate(LocalDateTime.now());
@@ -103,7 +129,7 @@ public class AppUser {
     }
 
     //TODO upgrade password protection
-    private void modifyPassword(AppUser modifiedUser) {
+    private void modifyPassword(AppUserModifyDTO modifiedUser) {
         if (StringUtils.isNotBlank(modifiedUser.getPassword())){
             this.setPassword(modifiedUser.getPassword());
             this.setLastModifiedDate(LocalDateTime.now());

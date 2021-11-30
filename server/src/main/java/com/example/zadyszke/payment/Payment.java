@@ -1,6 +1,7 @@
 package com.example.zadyszke.payment;
 
 import com.example.zadyszke.order.AppOrder;
+import com.example.zadyszke.payment.dto.PaymentModifyDTO;
 import com.example.zadyszke.user.AppUser;
 import lombok.*;
 
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 public class Payment {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private LocalDateTime registeredTime;
@@ -32,7 +33,7 @@ public class Payment {
     @JoinColumn(name = "order_id")
     private AppOrder paymentOrder;
 
-    public void modify(Payment payment) {
-        this.setSuccessful(true);
+    public void modify(PaymentModifyDTO payment) {
+        this.setSuccessful(payment.isSuccessful());
     }
 }

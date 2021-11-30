@@ -1,5 +1,8 @@
 package com.example.zadyszke.payment;
 
+import com.example.zadyszke.payment.dto.PaymentCreateDTO;
+import com.example.zadyszke.payment.dto.PaymentGetDTO;
+import com.example.zadyszke.payment.dto.PaymentModifyDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +12,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api")
 public class PaymentController {
     private final PaymentService service;
 
@@ -19,25 +21,24 @@ public class PaymentController {
     }
 
     @GetMapping("/payments")
-    public List<PaymentDTO> get(){
+    public List<PaymentGetDTO> get(){
         return service.getAll().stream()
-                .map(PaymentDTO::of)
+                .map(PaymentGetDTO::of)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/payments/{id}")
-    public PaymentDTO get(@PathVariable long id){
-        return PaymentDTO.of(service.get(id));
+    public PaymentGetDTO get(@PathVariable long id){
+        return PaymentGetDTO.of(service.get(id));
     }
 
     @PostMapping("/payments")
-    public void create(@RequestBody Payment payment){
-        payment.setRegisteredTime(LocalDateTime.now());
+    public void create(@RequestBody PaymentCreateDTO payment){
         service.create(payment);
     }
 
     @PutMapping("/payments/{id}")
-    public void modify(@PathVariable long id, @RequestBody Payment payment){
+    public void modify(@PathVariable long id, @RequestBody PaymentModifyDTO payment){
         service.markComplete(id, payment);
     }
 

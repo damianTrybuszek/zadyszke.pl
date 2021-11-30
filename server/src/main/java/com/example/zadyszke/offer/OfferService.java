@@ -1,8 +1,11 @@
 package com.example.zadyszke.offer;
 
+import com.example.zadyszke.offer.dto.OfferCreateDTO;
+import com.example.zadyszke.offer.dto.OfferModifyDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -23,13 +26,15 @@ class OfferService {
         return repository.findById(id).orElseThrow();
     }
 
-    public void create(Offer offer){
-        repository.save(offer);
+    public void create(OfferCreateDTO offer){
+        Offer createdOffer = offer.toOffer();
+        createdOffer.setCreationDate(LocalDateTime.now());
+        repository.save(createdOffer);
     }
 
-    public void update(long id, Offer newOfferData){
+    public void update(long id, OfferModifyDTO offer){
         Offer modifiedOffer = get(id);
-        modifiedOffer.modify(newOfferData);
+        modifiedOffer.modify(offer);
         repository.save(modifiedOffer);
     }
 
