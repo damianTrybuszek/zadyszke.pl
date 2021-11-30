@@ -2,6 +2,7 @@ package com.example.zadyszke.wishlist;
 
 import com.example.zadyszke.offer.Offer;
 import com.example.zadyszke.user.AppUser;
+import com.example.zadyszke.wishlist.dto.WishlistModifyDTO;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,7 +29,7 @@ public class Wishlist {
     @JoinColumn(name = "wishlist_id")
     private List<Offer> offersInWishlist;
 
-    public void modify(Wishlist wishlist) {
+    public void modify(WishlistModifyDTO wishlist) {
         this.offersInWishlist = wishlist.getOffersInWishlist();
         this.setLastModifiedDate(LocalDateTime.now());
     }

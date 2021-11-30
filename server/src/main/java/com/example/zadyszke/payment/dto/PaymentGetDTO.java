@@ -1,6 +1,7 @@
-package com.example.zadyszke.payment;
+package com.example.zadyszke.payment.dto;
 
 import com.example.zadyszke.order.AppOrder;
+import com.example.zadyszke.payment.Payment;
 import com.example.zadyszke.user.AppUser;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class PaymentDTO {
+public class PaymentGetDTO {
     private long id;
     private LocalDateTime registeredTime;
     private String currency;
@@ -33,8 +34,8 @@ public class PaymentDTO {
                 .build();
     }
 
-    public static PaymentDTO of(Payment payment){
-        return PaymentDTO.builder()
+    public static PaymentGetDTO of(Payment payment){
+        return PaymentGetDTO.builder()
                 .id(payment.getId())
                 .registeredTime(payment.getRegisteredTime())
                 .currency(payment.getCurrency())
