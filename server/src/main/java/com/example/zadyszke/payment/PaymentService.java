@@ -1,8 +1,11 @@
 package com.example.zadyszke.payment;
 
+import com.example.zadyszke.payment.dto.PaymentCreateDTO;
+import com.example.zadyszke.payment.dto.PaymentModifyDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -22,11 +25,14 @@ public class PaymentService {
         return this.repository.findById(id).orElseThrow();
     }
 
-    public void create(Payment payment){
-        this.repository.save(payment);
+    public void create(PaymentCreateDTO payment){
+        Payment createdPayment = payment.toPayment();
+        createdPayment.setRegisteredTime(LocalDateTime.now());
+        createdPayment.setSuccessful(false);
+        this.repository.save(createdPayment);
     }
 
-    public void markComplete(long id, Payment payment){
+    public void markComplete(long id, PaymentModifyDTO payment){
         Payment updatedPayment = get(id);
         updatedPayment.modify(payment);
         this.repository.save(updatedPayment);
