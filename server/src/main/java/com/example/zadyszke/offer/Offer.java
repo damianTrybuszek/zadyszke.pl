@@ -1,6 +1,7 @@
 package com.example.zadyszke.offer;
 
 import com.example.zadyszke.comment.offer.OfferComment;
+import com.example.zadyszke.offer.dto.OfferModifyDTO;
 import com.example.zadyszke.user.AppUser;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
@@ -24,9 +25,9 @@ public class Offer {
     private String title;
     private String content;
     private BigDecimal price;
-    private String category;
     private LocalDateTime creationDate;
     private LocalDateTime lastModifiedDate;
+    private Category category;
 
     @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "author_id")
@@ -43,27 +44,27 @@ public class Offer {
         offerComment.setOfferId(this.id);
     }
 
-    public void modify(Offer newOfferData){
+    public void modify(OfferModifyDTO newOfferData){
         modifyTitle(newOfferData);
         modifyContent(newOfferData);
         modifyPrice(newOfferData);
     }
 
-    private void modifyTitle(Offer newOfferData) {
+    private void modifyTitle(OfferModifyDTO newOfferData) {
         if (StringUtils.isNotBlank(newOfferData.getTitle())){
             this.setTitle(newOfferData.getTitle());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifyContent(Offer newOfferData) {
+    private void modifyContent(OfferModifyDTO newOfferData) {
         if (StringUtils.isNotBlank(newOfferData.getContent())){
             this.setContent(newOfferData.getContent());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifyPrice(Offer newOfferData) {
+    private void modifyPrice(OfferModifyDTO newOfferData) {
         if (newOfferData.getPrice() != null){
             this.setPrice(newOfferData.getPrice());
             this.setLastModifiedDate(LocalDateTime.now());

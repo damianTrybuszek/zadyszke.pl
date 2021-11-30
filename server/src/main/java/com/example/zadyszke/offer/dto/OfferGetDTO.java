@@ -1,6 +1,8 @@
-package com.example.zadyszke.offer;
+package com.example.zadyszke.offer.dto;
 
 import com.example.zadyszke.comment.offer.OfferComment;
+import com.example.zadyszke.offer.Category;
+import com.example.zadyszke.offer.Offer;
 import com.example.zadyszke.user.AppUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,17 +17,17 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OfferDTO {
+public class OfferGetDTO {
 
     private long id;
     private String title;
     private String content;
-    private String category;
     private BigDecimal price;
     private LocalDateTime creationDate;
     private LocalDateTime lastModifiedDate;
 
     private AppUser author;
+    private Category category;
     private List<OfferComment> comments;
 
     public Offer toOffer(){
@@ -42,8 +44,8 @@ public class OfferDTO {
                 .build();
     }
 
-    public static OfferDTO of(Offer offer){
-        return OfferDTO.builder()
+    public static OfferGetDTO of(Offer offer){
+        return OfferGetDTO.builder()
                 .id(offer.getId())
                 .title(offer.getTitle())
                 .content(offer.getContent())
