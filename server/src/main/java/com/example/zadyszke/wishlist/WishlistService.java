@@ -1,8 +1,11 @@
 package com.example.zadyszke.wishlist;
 
+import com.example.zadyszke.wishlist.dto.WishlistCreateDTO;
+import com.example.zadyszke.wishlist.dto.WishlistModifyDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -26,11 +29,13 @@ public class WishlistService {
         return this.repository.findByWishlistOwner_Id(userId);
     }
 
-    public void create(Wishlist wishlist){
-        this.repository.save(wishlist);
+    public void create(WishlistCreateDTO wishlist){
+        Wishlist savedWishlist = wishlist.toWishlist();
+        savedWishlist.setLastModifiedDate(LocalDateTime.now());
+        this.repository.save(savedWishlist);
     }
 
-    public void update(long id, Wishlist wishlist){
+    public void update(long id, WishlistModifyDTO wishlist){
         Wishlist updatedWishlist = get(id);
         updatedWishlist.modify(wishlist);
         this.repository.save(updatedWishlist);
