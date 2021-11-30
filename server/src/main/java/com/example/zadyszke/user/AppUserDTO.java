@@ -19,6 +19,8 @@ public class AppUserDTO {
     private String email;
     private LocalDateTime registeredTime;
     private LocalDateTime lastModifiedDate;
+    private boolean isArtist;
+    private boolean isEmailVerified;
 
     private List<Offer> userPostedOffers;
     private List<Offer> userPurchasedOffers;
@@ -37,6 +39,8 @@ public class AppUserDTO {
                 .userPurchasedOffers(this.userPurchasedOffers)
                 .buyerComments(this.buyerComments)
                 .artistComments(this.artistComments)
+                .isArtist(this.isArtist)
+                .isEmailVerified(this.isEmailVerified)
                 .build();
     }
 
@@ -51,6 +55,8 @@ public class AppUserDTO {
                 .userPurchasedOffers(user.getUserPurchasedOffers())
                 .buyerComments(user.getBuyerComments())
                 .artistComments(user.getArtistComments())
+                .isArtist(user.isArtist())
+                .isEmailVerified(user.isEmailVerified())           
                 .build();
     }
 }
