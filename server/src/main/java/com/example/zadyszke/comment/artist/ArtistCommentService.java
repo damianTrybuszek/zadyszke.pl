@@ -20,6 +20,10 @@ public class ArtistCommentService {
         this.artistCommentRepository = artistCommentRepository;
     }
 
+    public List<ArtistComment> getAll(){
+        return artistCommentRepository.findAll();
+    }
+
     public List<ArtistComment> get(long artistId){
         return appUserRepository.findById(artistId).orElseThrow().getArtistComments();
     }

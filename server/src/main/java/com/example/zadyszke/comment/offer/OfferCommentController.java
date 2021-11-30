@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/api")
 class OfferCommentController {
 
     private final OfferCommentService service;
@@ -15,6 +16,16 @@ class OfferCommentController {
     @Autowired
     public OfferCommentController(OfferCommentService service) {
         this.service = service;
+    }
+
+
+
+    @GetMapping("/offers/comments")
+    public List<OfferCommentDTO> getAll(){
+        return service.getAll()
+                .stream()
+                .map(OfferCommentDTO::of)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/offers/{offerId}/comments")
