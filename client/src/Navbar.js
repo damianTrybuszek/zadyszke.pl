@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col';
 import './App.css';
 import logo from './logo.svg'
 
-class Header extends Component {
+class Navbar extends Component {
     constructor(props){
         super(props);
     }
@@ -49,5 +49,5 @@ class Header extends Component {
         
     }
     
-    export default Header;
+    export default Navbar;
     

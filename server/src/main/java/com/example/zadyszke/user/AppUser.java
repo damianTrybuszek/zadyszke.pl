@@ -31,8 +31,12 @@ public class AppUser {
     @Column(unique = true)
     private String email;
     private String password;
+    private String phoneNumber;
     private LocalDateTime registeredTime;
     private LocalDateTime lastModifiedDate;
+    private AppUserRole role;
+    private boolean isArtist;
+    private boolean isEmailVerified;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
@@ -63,6 +67,8 @@ public class AppUser {
         modifyUsername(modifiedUser);
         modifyEmail(modifiedUser);
         modifyPassword(modifiedUser);
+//        modifyIsArtist(modifiedUser);
+//        modifyIsEmailVerified(modifiedUser);
     }
 
     public void addBuyerComment(BuyerComment buyerComment){
@@ -129,6 +135,14 @@ public class AppUser {
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
+
+    //TODO add modifyArtist and modifyEmailVerified
+//    private void modifyIsArtist(AppUser modifiedUser) {
+//        if (modifiedUser.isEmailVerified() !){
+//            this.setEmailVerified(modifiedUser.isEmailVerified());
+//            this.setLastModifiedDate(LocalDateTime.now());
+//        }
+//    }
 
 
 }
