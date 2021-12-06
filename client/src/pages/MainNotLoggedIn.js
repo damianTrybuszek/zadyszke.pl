@@ -1,5 +1,6 @@
 import { Component } from "react";
 import NavbarTop from "../components/NavbarTop";
+import Footer from "../components/Footer";
 import RecommendedOffersCarousel from "../components/RecommendedOffersCarousel.js";
 
 class MainNotLoggedInPage extends Component {
@@ -9,6 +10,7 @@ class MainNotLoggedInPage extends Component {
         <NavbarTop />
         <h1>Main page for users that are not logged in</h1>
         <RecommendedOffersCarousel/>
+        <Footer/>
       </div>
     );
   }
