@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Card from "../components/Card";
 import NavbarTop from "../components/NavbarTop";
+import Footer from "../components/Footer";
 import RecommendedOffersCarousel from "../components/RecommendedOffersCarousel.js";
 import lady_banner from "../graphics/tempImages/main_banner_lady_cutoff.png";
 import SearchBar from "../components/SearchBar";
@@ -13,7 +14,7 @@ import JoinButton from "../components/JoinButton";
 import { Typography } from "@mui/material";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "transparent"
+  backgroundColor: "transparent",
 }));
 
 class MainNotLoggedInPage extends Component {
@@ -65,6 +66,8 @@ class MainNotLoggedInPage extends Component {
         </Container>
 
         <RecommendedOffersCarousel />
+
+        <Footer />
       </div>
     );
   }
