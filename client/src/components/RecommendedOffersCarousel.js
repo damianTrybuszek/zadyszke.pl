@@ -10,7 +10,7 @@ function RecommendedOffersCarousel() {
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
+    <Carousel activeIndex={index} onSelect={handleSelect} indicators={false}>
       <Carousel.Item>
         <RecommendedOffersSlide />
       </Carousel.Item>
@@ -24,4 +24,4 @@ function RecommendedOffersCarousel() {
   );
 }
 
-export default RecommendedOffersCarousel
+export default RecommendedOffersCarousel;

@@ -10,6 +10,7 @@ import RegisterPage from "./pages/Register";
 
 const theme = createTheme({
   palette: {
+    background: "#2F303A", 
     primary: {
       main: "#ED8627",
       white: "#FFFFFF"
