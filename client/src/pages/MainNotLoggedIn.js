@@ -10,7 +10,6 @@ class MainNotLoggedInPage extends Component {
         <NavbarTop />
         <h1>Main page for users that are not logged in</h1>
         <RecommendedOffersCarousel/>
-        <Footer/>
       </div>
     );
   }
