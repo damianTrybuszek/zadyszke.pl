@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/Button";
+import JoinButton from "./JoinButton";
 
-import Logo from '../components/Logo'
+import Logo from "../components/Logo";
 
 class NavbarTop extends Component {
   render() {
@@ -17,7 +17,7 @@ class NavbarTop extends Component {
             <Container>
               <Link to="/">
                 <Navbar.Brand>
-                  <Logo/>
+                  <Logo />
                 </Navbar.Brand>
               </Link>
 
@@ -31,18 +31,8 @@ class NavbarTop extends Component {
                 <Link to="/login" style={{ textDecoration: "none" }}>
                   <Navbar.Brand>Zaloguj się</Navbar.Brand>
                 </Link>
-                <Link to="/Register">
-                  <Button
-                    variant="outline-warning"
-                    style={{
-                      color: "white",
-                      fontFamily: "Poppins",
-                      fontWeight: "bold",
-                      marginLeft: 10,
-                    }}
-                  >
-                    Dołącz do nas
-                  </Button>
+                <Link to="/Register" style={{ textDecoration: "none" }}>
+                  <JoinButton>Dołącz do nas</JoinButton>
                 </Link>
               </Nav>
             </Container>
