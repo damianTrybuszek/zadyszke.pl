@@ -7,6 +7,7 @@ import MainNotLoggedInPage from "./pages/MainNotLoggedIn";
 import MainLoggedInPage from "./pages/MainLoggedIn";
 import LoginPage from "./pages/Login";
 import RegisterPage from "./pages/Register";
+import Footer from "./components/Footer";
 
 const theme = createTheme({
   palette: {
@@ -45,6 +46,7 @@ class App extends Component {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
           </Routes>
+          <Footer />
         </ThemeProvider>
       </div>
     );
