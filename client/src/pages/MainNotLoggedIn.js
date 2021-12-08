@@ -46,7 +46,7 @@ class MainNotLoggedInPage extends Component {
 
                 <Grid
                   container
-                  xs={6}
+                  xs={3}
                   direction="column"
                   justifyContent="flex-start"
                   alignItems="flex-end"
