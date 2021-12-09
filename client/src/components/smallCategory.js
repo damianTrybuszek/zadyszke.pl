@@ -8,10 +8,10 @@ class smallCategory extends Component {
     this.title = "";
   }
 
-  render(props) {
+  render() {
     return (
       <div>
-        <Typography>Biznes</Typography>
+        <Typography>{this.title}</Typography>
         <img
           alt={this.title}
           src={this.imagePath}

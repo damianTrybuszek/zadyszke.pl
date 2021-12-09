@@ -64,9 +64,10 @@ class MainNotLoggedInPage extends Component {
             </Box>
           </Card>
         </Container>
-
         <RecommendedOffersCarousel />
+        <CategoriesAd />
       </div>
+
     );
   }
 }
