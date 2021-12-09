@@ -9,6 +9,8 @@ import Box from "@mui/material/Box";
 import Card from "../components/Card";
 import { Col } from "react-bootstrap";
 import { Typography } from "@mui/material";
+import LoginButton from "./LoginButton";
+
 
 
 
@@ -26,30 +28,15 @@ export default function RegisterForms() {
 
         <Col>
           <Typography variant="h3" marginTop="50%" marginLeft="20%">
-            Rejestracja
+            Logowanie
           </Typography>
         </Col>
 
         <Col>
 
           <Card>
-            <Form >
-              <Form.Group className="mb-3" controlId="formBasicFirstName">
-                <Form.Label>Imię</Form.Label>
-                <Form.Control size="sm" type="firstName" placeholder="Wprowadź imię" />
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicLastName">
-                <Form.Label>Nazwisko</Form.Label>
-                <Form.Control size="sm" type="LastName" placeholder="Wprowadź nazwisko" />
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicNickName">
-                <Form.Label>Nazwa użytkownika</Form.Label>
-                <Form.Control size="sm" type="NickName" placeholder="Wprowadź nazwę użytkownika" />
-              </Form.Group>
-
-
+            <Form>
+            
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Adres e-mail</Form.Label>
                 <Form.Control size="sm" type="email" placeholder="Wprowadź adres email" />
@@ -63,15 +50,8 @@ export default function RegisterForms() {
                 <Form.Control size="sm" type="password" placeholder="Wprowadź hasło" />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPasswordRepeated">
-                <Form.Label>Powtórz hasło</Form.Label>
-                <Form.Control size="sm" type="passwordRepeated" placeholder="Powtórz hasło" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Akceptuję warunki korzystania z serwisu" />
-              </Form.Group>
             </Form>
-            <RegisterButton />
+            <LoginButton />
 
           </Card>
         </Col>
