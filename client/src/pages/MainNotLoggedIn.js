@@ -8,6 +8,7 @@ import Card from "../components/Card";
 import NavbarTop from "../components/NavbarTop";
 import Footer from "../components/Footer";
 import RecommendedOffersCarousel from "../components/RecommendedOffersCarousel.js";
+import CategoriesAd from "../components/CategoriesAd.js";
 import lady_banner from "../graphics/tempImages/main_banner_lady_cutoff.png";
 import SearchBar from "../components/SearchBar";
 import JoinButton from "../components/JoinButton";
@@ -22,7 +23,6 @@ class MainNotLoggedInPage extends Component {
     return (
       <div>
         <NavbarTop />
-
         <Container>
           <Card>
             <Box sx={{ width: "100%" }}>
@@ -64,11 +64,10 @@ class MainNotLoggedInPage extends Component {
             </Box>
           </Card>
         </Container>
-
         <RecommendedOffersCarousel />
-
-        <Footer />
+        <CategoriesAd />
       </div>
+
     );
   }
 }

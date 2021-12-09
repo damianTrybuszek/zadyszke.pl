@@ -27,6 +27,9 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "Poppins"
+  },
+  shape: {
+    adIconSize: 50
   }
 });
 

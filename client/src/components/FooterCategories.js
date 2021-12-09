@@ -11,7 +11,7 @@ class FooterCategories extends Component {
   render(props) {
     return (
       <Container>
-        <Row >
+        <Row>
           <Col item xs={2}>
             <Row>
               <Typography variant="h5">Kategorie</Typography>
@@ -73,13 +73,19 @@ class FooterCategories extends Component {
               <Typography variant="h5">Polityka Prywatności</Typography>
             </Row>
             <Row>
-              <Typography variant="subtitle1">Polityka Prywatności 1</Typography>
+              <Typography variant="subtitle1">
+                Polityka Prywatności 1
+              </Typography>
             </Row>
             <Row>
-              <Typography variant="subtitle1">Polityka Prywatności 2</Typography>
+              <Typography variant="subtitle1">
+                Polityka Prywatności 2
+              </Typography>
             </Row>
             <Row>
-              <Typography variant="subtitle1">Polityka Prywatności 3</Typography>
+              <Typography variant="subtitle1">
+                Polityka Prywatności 3
+              </Typography>
             </Row>
           </Col>
         </Row>
