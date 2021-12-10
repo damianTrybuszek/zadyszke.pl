@@ -2,7 +2,6 @@ import { Component } from "react";
 import { Container } from "react-bootstrap";
 import { Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import Divider from "@mui/material/Divider";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import PaidIcon from "@mui/icons-material/Paid";

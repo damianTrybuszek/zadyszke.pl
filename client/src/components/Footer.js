@@ -17,10 +17,10 @@ function Copyright() {
 export default function Footer() {
   return (
     <Box
+      mt={5}
       sx={{
         display: "flex",
         flexDirection: "column",
-        minHeight: "100vh",
       }}
     >
       <CssBaseline />
@@ -33,7 +33,7 @@ export default function Footer() {
           backgroundColor: (theme) => theme.palette.primary.main,
         }}
       >
-        <FooterCategories copyright={Copyright()}/>
+        <FooterCategories copyright={Copyright()} />
       </Box>
     </Box>
   );
