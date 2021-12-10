@@ -13,7 +13,7 @@ const theme = createTheme({
   palette: {
     background: "#2F303A",
     primary: {
-      main: "#ED8627",
+      main: "#ecbf9533",
       white: "#FFFFFF",
       black: "#000000"
     },
@@ -42,6 +42,7 @@ const theme = createTheme({
 
   shape: {
     adIconSize: 50,
+    adIconSizeLarge: 200,
   },
 });
 
