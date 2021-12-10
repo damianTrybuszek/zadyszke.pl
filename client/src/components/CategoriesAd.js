@@ -24,9 +24,11 @@ const Item = styled("div")(({ theme }) => ({
 class CategoriesAd extends Component {
   render() {
     return (
-      <Box sx={{ backgroundColor: (theme) => theme.palette.primary.main }}>
+      <Box mt={10} sx={{ backgroundColor: (theme) => theme.palette.primary.main }}>
         <Container>
-            <Typography variant="h3" align="center">Wybieraj spośród 100+ kategorii</Typography>
+          <Typography variant="h3" align="center">
+            Wybieraj spośród 100+ kategorii
+          </Typography>
           <Stack
             direction="row"
             justifyContent="space-between"
