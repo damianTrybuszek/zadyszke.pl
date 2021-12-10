@@ -4,8 +4,8 @@ import { Form, Button, Container } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import Card from "../components/Card";
-import { Col } from "react-bootstrap";
+import FormBackground from "../components/FormBackground";
+import { Col, Row} from "react-bootstrap";
 import { Typography } from "@mui/material";
 import LoginButton from "./LoginButton";
 import GoogleLoginButton from "./GoogleLoginButton";
@@ -13,29 +13,18 @@ import FacebookLoginButton from "./FacebookLoginButton";
 
 
 
-
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "FFE4CB",
-
-}));
-
-export default function RegisterForms() {
-
+export default function LoginForms() {
   return (
     <Container>
-
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 2fr)', pt: 10 }}>
-
+      <Row>
         <Col>
           <Typography variant="h3" marginTop="40%" marginLeft="20%">
-            Logowanie
+            Rejestracja
           </Typography>
         </Col>
-
         <Col>
-
-          <Card>
+          <FormBackground>
+            <Box sx={{ width: "100%", display: 'grid', gridTemplateColumns: 'repeat(1, 2fr)' }}>
             <Form>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -52,17 +41,15 @@ export default function RegisterForms() {
               </Form.Group>
 
             </Form>
-            <LoginButton />
-            <p></p>
-            <FacebookLoginButton />
-            <p></p>
-            <GoogleLoginButton />
-            <p></p>
-          </Card>
+              <LoginButton />
+              <p></p>
+              <FacebookLoginButton />
+              <p></p>
+              <GoogleLoginButton />
+            </Box>
+          </FormBackground>
         </Col>
-
-      </Box>
-
+      </Row>
     </Container>
   );
 }
