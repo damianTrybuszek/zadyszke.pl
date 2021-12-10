@@ -11,26 +11,38 @@ import Footer from "./components/Footer";
 
 const theme = createTheme({
   palette: {
-    background: "#2F303A", 
+    background: "#2F303A",
     primary: {
       main: "#ED8627",
-      white: "#FFFFFF"
+      white: "#FFFFFF",
+      black: "#000000"
     },
     secondary: {
       main: "#2F303A",
-      white: "#FFFFFF"
+      white: "#FFFFFF",
     },
     text: {
       primary: "#FFFFFF",
-      secondary: "#000000"
-    }
+      secondary: "#000000",
+    },
   },
   typography: {
-    fontFamily: "Poppins"
+    fontFamily: "'Poppins', sans-serif",
+    mainBannerOrange: {
+      color: "#ED8627",
+      fontWeight: 400,
+      fontSize: "2.125rem",
+    },
+    mainBannerRegular: {
+      color: "#FFFFFF",
+      fontWeight: 400,
+      fontSize: "2.125rem",
+    },
   },
+
   shape: {
-    adIconSize: 50
-  }
+    adIconSize: 50,
+  },
 });
 
 class App extends Component {
