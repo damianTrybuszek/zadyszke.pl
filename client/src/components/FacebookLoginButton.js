@@ -1,0 +1,21 @@
+import * as React from "react";
+import Button from "@mui/material/Button";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#1246FF",
+      textColor: "#ffffff",
+      // primaryTextColor: "#ffffff",
+    },
+  },
+});
+
+export default function BasicButtons() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Button variant="contained">Zaloguj się przez Facebook</Button>
+    </ThemeProvider>
+  );
+}
