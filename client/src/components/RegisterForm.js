@@ -2,6 +2,8 @@ import * as React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Form, Button, Container } from "react-bootstrap";
 import RegisterButton from "./RegisterButton";
+import FacebookRegisterButton from "./FacebookRegisterButton";
+import GoogleRegisterButton from "./GoogleRegisterButton";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
@@ -22,10 +24,10 @@ export default function RegisterForms() {
   return (
     <Container>
 
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 2fr)' }}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 2fr)', pt: 10}}>
 
         <Col>
-          <Typography variant="h3" marginTop="50%" marginLeft="20%">
+          <Typography variant="h3" marginTop="40%" marginLeft="20%">
             Rejestracja
           </Typography>
         </Col>
@@ -71,7 +73,13 @@ export default function RegisterForms() {
                 <Form.Check type="checkbox" label="Akceptuję warunki korzystania z serwisu" />
               </Form.Group>
             </Form>
+            <p></p>
             <RegisterButton />
+            <p></p>
+            <FacebookRegisterButton />
+            <p></p>
+            <GoogleRegisterButton />
+            <p></p>
 
           </Card>
         </Col>
