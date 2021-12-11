@@ -7,6 +7,7 @@ import MainNotLoggedInPage from "./pages/MainNotLoggedIn";
 import MainLoggedInPage from "./pages/MainLoggedIn";
 import LoginPage from "./pages/Login";
 import RegisterPage from "./pages/Register";
+import CreateGigPage from "./pages/CreateGig"
 import Footer from "./components/Footer";
 
 const theme = createTheme({
@@ -62,6 +63,7 @@ class App extends Component {
             <Route path="/logged-in" element={<MainLoggedInPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/create-gig" element={<CreateGigPage />} />
           </Routes>
           <Footer />
         </ThemeProvider>
