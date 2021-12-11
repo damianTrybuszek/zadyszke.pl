@@ -6,7 +6,6 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import SearchBar from "./SearchBar";
-import JoinButton from "./JoinButton";
 import Stack from "@mui/material/Stack";
 import Card from "./Card";
 import CategoryButton from "./CategoryButton";

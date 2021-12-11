@@ -33,8 +33,8 @@ class CreateGig extends Component {
     this.state = {
       activeStep: 0,
     };
-    this.handleNext = this.handleNext.bind(this)
-    this.handleBack = this.handleBack.bind(this)
+    this.handleNext = this.handleNext.bind(this);
+    this.handleBack = this.handleBack.bind(this);
   }
 
   handleNext() {
@@ -73,19 +73,26 @@ class CreateGig extends Component {
       <div>
         <NavbarTop />
         <CssBaseline />
-        <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+        <Container component="main" sx={{ mb: 4 }}>
           <Box mt={2}>
             <Typography component="h1" variant="h4" align="center">
               Stwórz Ofertę
             </Typography>
           </Box>
-          <Stepper activeStep={this.state.activeStep} sx={{ pt: 3, pb: 5 }}>
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
+          <Box
+            sx={{
+              mt: "auto",
+              backgroundColor: (theme) => theme.palette.primary.orange,
+            }}
+          >
+            <Stepper activeStep={this.state.activeStep} sx={{ pt: 3, pb: 5 }}>
+              {steps.map((label) => (
+                <Step key={label}>
+                  <StepLabel>{label}</StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+          </Box>
           <React.Fragment>
             {this.state.activeStep === steps.length ? (
               <React.Fragment>
@@ -105,8 +112,7 @@ class CreateGig extends Component {
                     <Button onClick={this.handleBack} sx={{ mt: 3, ml: 1 }}>
                       Wróć
                     </Button>
-                  )}
-                  {" "}
+                  )}{" "}
                   <Button
                     variant="contained"
                     onClick={this.handleNext}
