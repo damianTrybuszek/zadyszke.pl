@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
-import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
-import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 
 const Item = styled("div")(({ theme }) => ({
   padding: theme.spacing(1),
@@ -28,7 +28,12 @@ class MainInstruction extends Component {
           <Grid container spacing={2}>
             <Grid item xs={4}>
               <Item>
-                <HowToRegIcon sx={{ fontSize: (theme) => theme.shape.adIconSizeLarge }}/>
+                <HowToRegIcon
+                  sx={{
+                    fontSize: (theme) => theme.shape.adIconSizeLarge,
+                    color: (theme) => theme.palette.primary.orange,
+                  }}
+                />
                 <Typography variant="h5" align="center">
                   1. Zarejestruj się za darmo
                 </Typography>
@@ -37,7 +42,12 @@ class MainInstruction extends Component {
             <Grid item xs={4}>
               <Item>
                 {" "}
-                <PersonAddAltIcon sx={{ fontSize: (theme) => theme.shape.adIconSizeLarge }}/>
+                <PersonAddAltIcon
+                  sx={{
+                    fontSize: (theme) => theme.shape.adIconSizeLarge,
+                    color: (theme) => theme.palette.primary.orange,
+                  }}
+                />
                 <Typography variant="h5" align="center">
                   2. Stwórz swój profil
                 </Typography>
@@ -46,7 +56,12 @@ class MainInstruction extends Component {
             <Grid item xs={4}>
               <Item>
                 {" "}
-                <LocalAtmIcon sx={{ fontSize: (theme) => theme.shape.adIconSizeLarge }}/>
+                <LocalAtmIcon
+                  sx={{
+                    fontSize: (theme) => theme.shape.adIconSizeLarge,
+                    color: (theme) => theme.palette.primary.orange,
+                  }}
+                />
                 <Typography variant="h5" align="center">
                   3. Zacznij zarabiać
                 </Typography>

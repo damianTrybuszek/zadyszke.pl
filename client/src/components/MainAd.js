@@ -15,7 +15,14 @@ import classes from "./MainAd.module.css";
 import GreenRectangle from "../graphics/customIcons/green_rectangle.png";
 import BlueRectangle from "../graphics/customIcons/blue_rectangle.png";
 import GreenCross from "../graphics/customIcons/green_cross.png";
+import Stack from "@mui/material/Stack";
+import { styled } from "@mui/material/styles";
 
+const Item = styled("div")(({ theme }) => ({
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.primary,
+}));
 
 const tiers = [
   {
@@ -77,7 +84,11 @@ function PricingContent() {
                   <CardHeader
                     title={tier.title}
                     subheader={tier.subheader}
-                    titleTypographyProps={{ align: "center" }}
+                    titleTypographyProps={{
+                      align: "center",
+                      variant: "h4",
+                      color: (theme) => theme.palette.primary.orange,
+                    }}
                     action={tier.title === "Premium" ? <StarIcon /> : null}
                     subheaderTypographyProps={{
                       align: "center",
@@ -95,23 +106,25 @@ function PricingContent() {
                         mb: 2,
                       }}
                     >
-                      <Box>
-                        <img
-                          alt="Symbol"
-                          src={tier.symbol}
-                          width="60"
-                          height="60"
-                        ></img>
-                      </Box>
-                      <Box>
-                        <Typography
-                          component="h2"
-                          variant="h3"
-                          color="text.primary"
-                        >
-                          PLN {tier.price}
-                        </Typography>
-                      </Box>
+                      <Stack>
+                        <Item>
+                          <img
+                            alt="Symbol"
+                            src={tier.symbol}
+                            width="100"
+                            height="100"
+                          ></img>
+                        </Item>
+                        <Item>
+                          <Typography
+                            component="h3"
+                            variant="h4"
+                            color="text.primary"
+                          >
+                            PLN {tier.price}
+                          </Typography>
+                        </Item>
+                      </Stack>
                     </Box>
                     <ul>
                       {tier.description.map((line) => (

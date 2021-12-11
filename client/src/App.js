@@ -15,7 +15,8 @@ const theme = createTheme({
     primary: {
       main: "#ecbf9533",
       white: "#FFFFFF",
-      black: "#000000"
+      black: "#000000",
+      orange: "#ED8627",
     },
     secondary: {
       main: "#2F303A",
