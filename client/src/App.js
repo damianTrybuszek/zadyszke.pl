@@ -2,13 +2,16 @@ import React from "react";
 import { Component } from "react";
 import { Route, Routes } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
 import MainNotLoggedInPage from "./pages/MainNotLoggedIn";
 import MainLoggedInPage from "./pages/MainLoggedIn";
 import LoginPage from "./pages/Login";
 import RegisterPage from "./pages/Register";
-import CreateGigPage from "./pages/CreateGig"
+import CreateGigPage from "./pages/CreateGig";
 import Footer from "./components/Footer";
+import UserInfo from "./pages/UserInfo";
+import UserSafety from "./pages/UserSafety";
+import UserOrders from "./pages/UserOrders";
+import UserOffers from "./pages/UserOffers";
 
 const theme = createTheme({
   palette: {
@@ -64,6 +67,10 @@ class App extends Component {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/create-gig" element={<CreateGigPage />} />
+            <Route path="/user/info" element={<UserInfo />} />
+            <Route path="/user/safety" element={<UserSafety />} />
+            <Route path="/user/orders" element={<UserOrders />} />
+            <Route path="/user/offers" element={<UserOffers />} />
           </Routes>
           <Footer />
         </ThemeProvider>
