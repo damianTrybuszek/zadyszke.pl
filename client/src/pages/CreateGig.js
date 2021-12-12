@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
-import CssBaseline from "@mui/material/CssBaseline";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Stepper from "@mui/material/Stepper";
@@ -9,6 +9,7 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import NavbarTop from "../components/NavbarTop";
+import Grid from "@mui/material/Grid";
 
 import CreateGig1 from "../components/gigPageComponents/CreateGig1";
 import CreateGig2 from "../components/gigPageComponents/CreateGig2";
@@ -25,6 +26,31 @@ const steps = [
   "Galeria",
   "Opublikuj",
 ];
+
+const NextButton = styled(Button)(({ theme }) => ({
+  boxShadow: "none",
+  textTransform: "none",
+  fontSize: 25,
+  padding: "10px 100px",
+  border: "1px solid",
+  borderColor: theme.palette.primary.orange,
+  lineHeight: 1,
+  fontFamily: ["Poppins", "sans-serif"],
+  backgroundColor: theme.palette.primary.orange,
+  color: theme.palette.primary.white,
+}));
+
+const BackButton = styled(Button)(({ theme }) => ({
+  boxShadow: "none",
+  textTransform: "none",
+  fontSize: 25,
+  padding: "10px 100px",
+  border: "1px solid",
+  borderColor: theme.palette.primary.orange,
+  lineHeight: 1,
+  fontFamily: ["Poppins", "sans-serif"],
+  color: theme.palette.primary.white,
+}));
 
 class CreateGig extends Component {
   constructor(props) {
@@ -72,7 +98,6 @@ class CreateGig extends Component {
     return (
       <div>
         <NavbarTop />
-        <CssBaseline />
         <Container component="main" sx={{ mb: 4 }}>
           <Box mt={2}>
             <Typography component="h1" variant="h4" align="center">
@@ -81,8 +106,7 @@ class CreateGig extends Component {
           </Box>
           <Box
             sx={{
-              mt: "auto",
-              backgroundColor: (theme) => theme.palette.primary.orange,
+              mt: 3,
             }}
           >
             <Stepper activeStep={this.state.activeStep} sx={{ pt: 3, pb: 5 }}>
@@ -103,26 +127,38 @@ class CreateGig extends Component {
                   Teraz nie pozostaje już nic innego jak czekać, aż ktoś ją
                   wykupi i będziecie mogli razem działać.
                 </Typography>
+                <Box mb={30}></Box>
               </React.Fragment>
             ) : (
               <React.Fragment>
                 {this.getStepContent(this.state.activeStep)}
-                <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                  {this.state.activeStep !== 0 && (
-                    <Button onClick={this.handleBack} sx={{ mt: 3, ml: 1 }}>
-                      Wróć
-                    </Button>
-                  )}{" "}
-                  <Button
-                    variant="contained"
-                    onClick={this.handleNext}
-                    sx={{ mt: 3, ml: 1 }}
-                  >
-                    {this.state.activeStep === steps.length - 1
-                      ? "Zakończ"
-                      : "Dalej"}
-                  </Button>
-                </Box>
+                <Grid container direction="row" spacing={2}>
+                  <Grid item xs={6}>
+                    <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+                      {this.state.activeStep !== 0 && (
+                        <BackButton
+                          onClick={this.handleBack}
+                          sx={{ mt: 3, ml: 1 }}
+                        >
+                          Wróć
+                        </BackButton>
+                      )}{" "}
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                      <NextButton
+                        variant="contained"
+                        onClick={this.handleNext}
+                        sx={{ mt: 3, ml: 1 }}
+                      >
+                        {this.state.activeStep === steps.length - 1
+                          ? "Zakończ"
+                          : "Dalej"}
+                      </NextButton>
+                    </Box>
+                  </Grid>
+                </Grid>
               </React.Fragment>
             )}
           </React.Fragment>
