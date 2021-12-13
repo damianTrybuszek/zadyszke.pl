@@ -17,7 +17,7 @@ export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
       <Link to="/user/safety">
-        <Button variant="outlined" style={{width:'100%'}}>Bespieczeństwo</Button>
+        <Button variant="outlined" style={{width:'100%'}}>Bezpieczeństwo</Button>
       </Link>
     </ThemeProvider>
   );

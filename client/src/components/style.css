@@ -1,13 +1,26 @@
 .offerList{
     /* flex: 1; */
     /* display: flex; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
+    justify-content: space-between;
+    align-items: center;
     border-radius: 12px;
-    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     /* margin: 2rem; */
     height: 100%;
     width: 100%;
-    background-color: '#ED8627';
-    color: '#ED8627';
+    background: #ED8627;
+}
+
+.userTheme {
+    /* flex: 1; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    /* margin: 2rem; */
+
+    height: 100%;
+    width: 100%;
+    background: rgba(236, 191, 149, 0.2);
 }
