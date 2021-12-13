@@ -19,7 +19,7 @@ export default function LoginForms() {
       <Row>
         <Col>
           <Typography variant="h3" marginTop="40%" marginLeft="20%">
-            Rejestracja
+            Logowanie
           </Typography>
         </Col>
         <Col>
