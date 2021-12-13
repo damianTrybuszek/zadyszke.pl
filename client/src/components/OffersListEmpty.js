@@ -15,27 +15,38 @@ import FormBackground from "../components/FormBackground";
 import { Typography } from "@mui/material";
 import UserTheme from "../components/UserTheme";
 import { Repeat } from "@mui/icons-material";
-import style from '../components/style.css'
+import "./style.css";
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
   color: theme.palette.text.primary,
 }));
 
-
 class OffersListEmpty extends Component {
   render() {
     return (
-      <div>
-        <div className="offerList">
-          <Box sx={{ width: "100%", display: 'grid', gridTemplateColumns: 'repeat(15, 1fr)', gap: 5, gridAutoRows: 'repeat(4, 1fr)' }}>
-            <Item sx={{ gridRow: '2', gridColumn: '2/16', display: 'grid' }}><Typography variant="h5">Wygląda na to, że nie masz jeszcze ogłoszeń.</Typography></Item>
-            <Item sx={{ gridRow: '3', gridColumn: '8/15', display: 'grid' }}><NewOfferButton /></Item>
-          </Box>
-        </div>
-      </div>
+      <Container className="offerList">
+        <Box
+          sx={{
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "repeat(15, 1fr)",
+            gap: 5,
+            gridAutoRows: "repeat(4, 1fr)",
+          }}
+        >
+          <Item sx={{ gridRow: "2", gridColumn: "2/16", display: "grid" }}>
+            <Typography variant="h5">
+              Wygląda na to, że nie masz jeszcze ogłoszeń.
+            </Typography>
+          </Item>
+          <Item sx={{ gridRow: "3", gridColumn: "8/15", display: "grid" }}>
+            <NewOfferButton />
+          </Item>
+        </Box>
+      </Container>
     );
-  };
-};
+  }
+}
 
 export default OffersListEmpty;

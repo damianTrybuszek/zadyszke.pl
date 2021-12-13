@@ -34,41 +34,8 @@ class UserInfo extends Component {
           <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButton /></Item>
 
           <Item sx={{ gridRow: '2/5', gridColumn: '5/12' }}><OffersListEmpty /></Item>
-          <Item sx={{ gridRow: '2/6', gridColumn: '12/15'}}>
-          <UserTheme>
-              <Grid
-                container
-                rowSpacing={1}
-              >
-                <Grid item xs={6}>
-                  <Item xs={6}>
-
-                  </Item>
-                </Grid>
-
-                <Grid
-                  container
-                  // xs={6}
-                  direction="column"
-                  // justifyContent="flex-start"
-                  alignItems="flex-end"
-                >
-                  <Item>
-                    <img
-                      alt="Banner - zdjęcie"
-                      src={sample_profile_picture}
-                      width="200"
-                      height="100%"
-                    />
-                  </Item>
-                </Grid>
-              </Grid>
-           
-          </UserTheme>
-          </Item>
+          <Item sx={{ gridRow: '2/7', gridColumn: '12/15'}}><UserTheme /></Item>
           </Box>
-
-
       </div>
     );
   }

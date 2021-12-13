@@ -16,7 +16,7 @@ const theme = createTheme({
 export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
-      <Link to="/user/offer/new">
+      <Link to="/create-gig">
         <Button variant="contained" style={{width:'100%'}}>Stwórz ogłoszenie</Button>
       </Link>
     </ThemeProvider>
