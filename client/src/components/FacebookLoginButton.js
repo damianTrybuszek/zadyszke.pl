@@ -5,8 +5,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ED8627",
+      main: "#1246FF",
       textColor: "#ffffff",
+      // primaryTextColor: "#ffffff",
     },
   },
 });
@@ -14,7 +15,7 @@ const theme = createTheme({
 export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
-      <Button variant="contained">Zaloguj się</Button>
+      <Button variant="contained">Zaloguj się przez Facebook</Button>
     </ThemeProvider>
   );
 }

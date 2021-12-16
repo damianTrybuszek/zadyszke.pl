@@ -2,7 +2,6 @@ import { Component } from "react";
 import { Container } from "react-bootstrap";
 import { Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import Divider from "@mui/material/Divider";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import PaidIcon from "@mui/icons-material/Paid";
@@ -24,12 +23,20 @@ const Item = styled("div")(({ theme }) => ({
 class CategoriesAd extends Component {
   render() {
     return (
-      <Box mt={10} sx={{ backgroundColor: (theme) => theme.palette.primary.main }}>
+      <Box
+        mt={10}
+        sx={{ backgroundColor: (theme) => theme.palette.primary.main }}
+      >
         <Container>
-          <Typography variant="h3" align="center">
+          <Typography
+            variant="h3"
+            align="center"
+            sx={{ color: (theme) => theme.palette.primary.orange }}
+          >
             Wybieraj spośród 100+ kategorii
           </Typography>
           <Stack
+            mt={2}
             direction="row"
             justifyContent="space-between"
             alignItems="center"

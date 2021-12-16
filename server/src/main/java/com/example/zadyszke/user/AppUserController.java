@@ -1,5 +1,6 @@
 package com.example.zadyszke.user;
 
+import com.example.zadyszke.exception.InvalidIdException;
 import com.example.zadyszke.user.dto.AppUserGetDTO;
 import com.example.zadyszke.user.dto.AppUserLoginDTO;
 import com.example.zadyszke.user.dto.AppUserModifyDTO;
@@ -31,7 +32,11 @@ public class AppUserController {
 
     @GetMapping("/users/{id}")
     public AppUserGetDTO get(@PathVariable long id) {
-        return AppUserGetDTO.of(service.getById(id));
+        try {
+            return AppUserGetDTO.of(service.getById(id));
+        } catch (Exception e) {
+            throw new InvalidIdException(id);
+        }
     }
 
     @PostMapping("/users/validate-login")
