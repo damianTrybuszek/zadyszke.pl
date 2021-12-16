@@ -13,40 +13,41 @@ import sample_profile_picture from "../graphics/tempImages/sample_profile_pictur
 import UserSafetyButton from "../components/UserSafetyButton";
 import FormBackground from "../components/FormBackground";
 import { Typography } from "@mui/material";
-import UserTheme from "../components/UserTheme";
-import { Repeat } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+
+import { CenterFocusStrong, Repeat } from "@mui/icons-material";
 import "./style.css";
 
-const Item = styled("div")(({ theme }) => ({
-  textAlign: "left",
-  color: theme.palette.text.primary,
-}));
+const Item = styled("div")(({ theme }) => ({}));
 
-class OffersListEmpty extends Component {
+class UserDescription extends Component {
   render() {
     return (
-      <Container className="offerList">
+      <Container className="userDescription">
         <Box
           sx={{
             width: "100%",
             display: "grid",
-            gridTemplateColumns: "repeat(15, 1fr)",
-            gap: 5,
-            gridAutoRows: "repeat(4, 1fr)",
           }}
         >
-          <Item sx={{ gridRow: "2", gridColumn: "2/16", display: "grid" }}>
-            <Typography variant="h6">
-              Wygląda na to, że nie masz jeszcze ogłoszeń.
-            </Typography>
-          </Item>
-          <Item sx={{ gridRow: "3", gridColumn: "8/15", display: "grid" }}>
-            <NewOfferButton />
-          </Item>
+          <Grid alignItems="flex-start">
+            <Item>
+              <Typography variant="h5" textAlign="left">
+                Opis:
+              </Typography>
+            </Item>
+            <Item>
+            <Link to="/user/description/add" style={{ textDecoration: "none" }}>
+              <Typography variant="h6" textAlign="right" color="#ED8627">
+                Dodaj
+              </Typography>
+              </Link>
+            </Item>
+          </Grid>
         </Box>
       </Container>
     );
   }
 }
 
-export default OffersListEmpty;
+export default UserDescription;

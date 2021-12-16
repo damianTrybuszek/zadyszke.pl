@@ -2,7 +2,7 @@
     /* flex: 1; */
     /* display: flex; */
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     /* margin: 2rem; */
@@ -12,6 +12,34 @@
 }
 
 .userTheme {
+    /* flex: 1; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    /* margin: 2rem; */
+
+    height: 100%;
+    width: 100%;
+    background: rgba(236, 191, 149, 0.2);
+}
+
+.userDescription {
+    /* flex: 1; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    /* margin: 2rem; */
+
+    height: 100%;
+    width: 100%;
+    background: rgba(236, 191, 149, 0.2);
+}
+
+.userQualities {
     /* flex: 1; */
     /* display: flex; */
     /* justify-content: space-between; */
