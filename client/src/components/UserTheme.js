@@ -21,7 +21,7 @@ const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
 }));
 
-class OffersListEmpty extends Component {
+class UserTheme extends Component {
   render() {
     return (
       <Container className="userTheme">
@@ -53,4 +53,4 @@ class OffersListEmpty extends Component {
   }
 }
 
-export default OffersListEmpty;
+export default UserTheme;
