@@ -15,7 +15,8 @@ import UserInfoButtonActive from "../components/UserInfoButtonActive";
 import { Typography } from "@mui/material";
 import UserTheme from "../components/UserTheme";
 import { Repeat } from "@mui/icons-material";
-
+import UserDescription from "../components/UserDescription";
+import UserQualities from "../components/UserQualities";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "transparent",
@@ -35,6 +36,8 @@ class UserInfo extends Component {
 
           <Item sx={{ gridRow: '2/5', gridColumn: '5/12' }}><OffersListEmpty /></Item>
           <Item sx={{ gridRow: '2/7', gridColumn: '12/15'}}><UserTheme /></Item>
+          <Item sx={{ gridRow: '7/8', gridColumn: '12/15'}}><UserDescription /></Item>
+          <Item sx={{ gridRow: '8/10', gridColumn: '12/15'}}><UserQualities /></Item>
           </Box>
       </div>
     );
