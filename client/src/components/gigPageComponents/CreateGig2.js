@@ -1,9 +1,13 @@
 import { Component } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import OfferType from "./OfferType";
+import tempImage from "../../graphics/tempImages/sample_offer_1.jpg";
+import OfferRedosAmountSelect from "./OfferRedosAmountSelect";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import Price from "./Price";
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -17,82 +21,104 @@ class CreateGig2 extends Component {
         <Box
           component="form"
           noValidate
-          sx={{ mt: 3, border: 1, borderRadius: 5 }}
+          sx={{ mt: 3, border: 1, borderRadius: 5, padding: 5 }}
         >
-          <Grid
-            container
-            spacing={2}
-            direction="row"
-            justifyContent="space-evenly"
-            alignItems="center"
-          >
-            <Grid item xs={12}>
+          <Grid container spacing={2}>
+            <Grid item xs={2}>
               <Item>
-                <Typography variant="h4">Pakiety</Typography>
+                <Typography variant="h5" align="left">
+                  Pakiety
+                </Typography>
               </Item>
+            </Grid>
+            <Grid item xs={3}>
               <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  name="title"
-                  multiline={true}
-                  rows={5}
-                  required
-                  fullWidth
-                  id="title"
-                  label="Podstawowy / Standardowy / Premium..."
-                  autoFocus
+                <OfferType title="Podstawowy" imageUrl={tempImage} />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <OfferType title="Standardowy" imageUrl={tempImage} />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <OfferType title="Premium" imageUrl={tempImage} />
+              </Item>
+            </Grid>
+
+            <Grid item xs={2}>
+              <Item>
+                <Typography variant="h5" align="left">
+                  Ilość Poprawek
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <OfferRedosAmountSelect />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <OfferRedosAmountSelect />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <OfferRedosAmountSelect />
+              </Item>
+            </Grid>
+
+            <Grid item xs={2}>
+              <Item>
+                <Typography variant="h5" align="left">
+                  Przyspieszona dostawa
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <CheckCircleOutlineIcon
+                  sx={{ fontSize: (theme) => theme.shape.adIconSize }}
                 />
               </Item>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={3}>
               <Item>
-                <Typography variant="h4">Ilość Poprawek</Typography>
-              </Item>
-              <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  name="title"
-                  multiline={true}
-                  rows={5}
-                  required
-                  fullWidth
-                  id="title"
-                  label="Wybierz..."
+                <CheckCircleOutlineIcon
+                  sx={{ fontSize: (theme) => theme.shape.adIconSize }}
                 />
               </Item>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={3}>
               <Item>
-                <Typography variant="h4">Przyspieszona Dostawa</Typography>
-              </Item>
-              <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  name="title"
-                  multiline={true}
-                  rows={5}
-                  required
-                  fullWidth
-                  id="title"
-                  label="Tick"
+                <CheckCircleOutlineIcon
+                  sx={{ fontSize: (theme) => theme.shape.adIconSize }}
                 />
               </Item>
             </Grid>
-            <Grid item xs={12}>
+
+            <Grid item xs={2}>
               <Item>
-                <Typography variant="h4">Cena</Typography>
+                <Typography variant="h5" align="left">
+                  Cena
+                </Typography>
               </Item>
+            </Grid>
+            <Grid item xs={3}>
               <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  name="title"
-                  multiline={true}
-                  rows={5}
-                  required
-                  fullWidth
-                  id="title"
-                  label="PLN"
-                />
+                <Price price="10"/>
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <Price price="50"/>
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <Price price="600"/>
               </Item>
             </Grid>
           </Grid>

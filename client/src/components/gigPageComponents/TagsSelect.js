@@ -50,7 +50,7 @@ export default function TagsSelect() {
   return (
     <div>
       <FormControl fullWidth>
-        <InputLabel id="multiple-tag-select-label">Tagi</InputLabel>
+        <InputLabel id="multiple-tag-select-label" sx={{ color: "white" }}>Tagi</InputLabel>
         <Select
           labelId="multiple-tag-select-label"
           id="multiple-tag-select"

@@ -14,24 +14,6 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 class CreateGig1 extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tags: [],
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.allTags = ["tag1", "tag2", "tag3"];
-  }
-
-  handleChange(event) {
-    const {
-      target: { value },
-    } = event;
-    this.setState({
-      tags: typeof value === "string" ? value.split(",") : value,
-    });
-  }
-
   render() {
     return (
       <div>
