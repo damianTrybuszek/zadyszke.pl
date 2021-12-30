@@ -4,6 +4,9 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import CategorySelect from "./CategorySelect";
+import SubcategorySelect from "./SubcategorySelect";
+import TagsSelect from "./TagsSelect";
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -17,31 +20,21 @@ class CreateGig6 extends Component {
         <Box
           component="form"
           noValidate
-          sx={{ mt: 3, border: 1, borderRadius: 5 }}
+          sx={{ mt: 3, border: 1, borderRadius: 5, padding: 5 }}
         >
-          <Grid
-            container
-            spacing={2}
-            direction="row"
-            justifyContent="space-evenly"
-            alignItems="center"
-          >
+          <Grid container spacing={2}>
             <Grid item xs={12}>
               <Item>
-                <Typography variant="h4">Opublikuj</Typography>
+                <Typography variant="h5" align="left">
+                  OPUBLIKUJ
+                </Typography>
               </Item>
+            </Grid>
+            <Grid item xs={12}>
               <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  name="title"
-                  multiline={true}
-                  rows={10}
-                  required
-                  fullWidth
-                  id="title"
-                  label="Preview..."
-                  autoFocus
-                />
+                <Typography variant="h4" align="center">
+                  Preview
+                </Typography>
               </Item>
             </Grid>
           </Grid>
