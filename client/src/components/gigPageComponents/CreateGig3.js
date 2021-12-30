@@ -74,22 +74,24 @@ class CreateGig3 extends Component {
             </Grid>
             <Grid item xs={2}></Grid>
             <Grid item xs={10}>
-              <Stack
-                direction="row"
-                justifyContent="center"
-                alignItems="stretch"
-                spacing={2}
-              >
-                <Item>
-                  <OutlinedTextbox title="Pytanie" />
-                </Item>
-                <Item>
-                  <OutlinedTextbox title="Odpowiedź" />
-                </Item>
-                <Item>
-                  <BackButton>Dodaj</BackButton>
-                </Item>
-              </Stack>
+              <Box sx={{ border: 1, borderRadius: 3, padding: 1 }}>
+                <Stack
+                  direction="row"
+                  justifyContent="center"
+                  alignItems="stretch"
+                  spacing={2}
+                >
+                  <Item>
+                    <OutlinedTextbox title="Pytanie" />
+                  </Item>
+                  <Item>
+                    <OutlinedTextbox title="Odpowiedź" />
+                  </Item>
+                  <Item>
+                    <BackButton>Dodaj</BackButton>
+                  </Item>
+                </Stack>
+              </Box>
             </Grid>
           </Grid>
         </Box>
