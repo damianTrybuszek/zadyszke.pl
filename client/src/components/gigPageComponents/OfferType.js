@@ -1,0 +1,28 @@
+import { Component } from "react";
+import Box from "@mui/material/Box";
+import { Typography } from "@mui/material";
+
+class OfferType extends Component {
+  constructor(props) {
+    super(props);
+    this.title = "Tytuł";
+    this.imageUrl = "";
+  }
+  render() {
+    return (
+      <Box>
+        <Typography variant="h6" align="center">
+          {this.props.title}
+        </Typography>
+        <img
+          alt="Oferta - zdjęcie"
+          src={this.props.imageUrl}
+          width="100%"
+          height="100%"
+        />
+      </Box>
+    );
+  }
+}
+
+export default OfferType;

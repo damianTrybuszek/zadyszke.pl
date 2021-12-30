@@ -4,6 +4,9 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import CategorySelect from "./CategorySelect";
+import SubcategorySelect from "./SubcategorySelect";
+import TagsSelect from "./TagsSelect"
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -17,19 +20,17 @@ class CreateGig1 extends Component {
         <Box
           component="form"
           noValidate
-          sx={{ mt: 3, border: 1, borderRadius: 5 }}
+          sx={{ mt: 3, border: 1, borderRadius: 5, padding: 5 }}
         >
-          <Grid
-            container
-            spacing={2}
-            direction="row"
-            justifyContent="space-evenly"
-            alignItems="center"
-          >
-            <Grid item xs={12}>
+          <Grid container spacing={2}>
+            <Grid item xs={2}>
               <Item>
-                <Typography variant="h4">Tytuł</Typography>
+                <Typography variant="h5" align="left">
+                  Tytuł
+                </Typography>
               </Item>
+            </Grid>
+            <Grid item xs={10}>
               <Item>
                 <TextField
                   sx={{ label: { color: "white" } }}
@@ -44,38 +45,35 @@ class CreateGig1 extends Component {
                 />
               </Item>
             </Grid>
-            <Grid item xs={12}>
+
+            <Grid item xs={2}>
               <Item>
-                <Typography variant="h4">Kategoria</Typography>
-              </Item>
-              <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  name="title"
-                  multiline={true}
-                  rows={5}
-                  required
-                  fullWidth
-                  id="title"
-                  label="Wybierz kategorie..."
-                />
+                <Typography variant="h5" align="left">
+                  Kategoria
+                </Typography>
               </Item>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={5}>
               <Item>
-                <Typography variant="h4">Tagi</Typography>
+                <CategorySelect />
               </Item>
+            </Grid>
+            <Grid item xs={5}>
               <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  name="title"
-                  multiline={true}
-                  rows={5}
-                  required
-                  fullWidth
-                  id="title"
-                  label="Minimum 3 tagi"
-                />
+                <SubcategorySelect/>
+              </Item>
+            </Grid>
+
+            <Grid item xs={2}>
+              <Item>
+                <Typography variant="h5" align="left">
+                  Tagi
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={10}>
+              <Item>
+                <TagsSelect/>
               </Item>
             </Grid>
           </Grid>
