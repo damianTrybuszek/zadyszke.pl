@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useState, useCallback} from 'react';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Form, Button, Container } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
@@ -13,7 +13,34 @@ import FacebookLoginButton from "./FacebookLoginButton";
 
 
 
-export default function LoginForms() {
+function LoginForm() {
+    const [error, setError] = useState(null);
+
+    // const fetchLoginHandler = useCallback(async () => {
+    //   setError(null);
+    //   try {
+    //     const response = await fetch('');
+    //     if (!response.ok) {
+    //       throw new Error('Something went wrong!');
+    //     } 
+    //     } catch (error) {
+    //       setError(error.message)
+
+    //   }
+    // }, []);
+    async function checkUserCredentials(user) {
+      const response = await fetch('https://localhost:300/api/users/validate-login', {
+        method: 'POST',
+        body: JSON.stringify(user),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const data = await response.json();
+      console.log(data);
+    }
+
+
   return (
     <Container>
       <Row>
@@ -42,7 +69,8 @@ export default function LoginForms() {
 
             </Form>
               <LoginButton />
-              <p></p>
+              {error && <p>{error}</p>}
+              {!error && <p></p>}
               <FacebookLoginButton />
               <p></p>
               <GoogleLoginButton />
@@ -53,3 +81,6 @@ export default function LoginForms() {
     </Container>
   );
 }
+
+
+export default LoginForm;
