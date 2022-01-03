@@ -1,6 +1,6 @@
 import { Component } from "react";
-import NavbarTop from "../components/NavbarTop";
-import LoginForm from "../components/LoginForm";
+import NavbarTop from "../components/ui/NavbarTop";
+import LoginForm from "../components/loginPageComponents/LoginForm";
 
 class LoginPage extends Component {
   render() {

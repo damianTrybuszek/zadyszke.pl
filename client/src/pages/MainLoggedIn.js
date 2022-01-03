@@ -1,5 +1,5 @@
 import { Component } from "react";
-import NavbarTop from "../components/NavbarTop";
+import NavbarTop from "../components/ui/NavbarTop";
 
 class MainLoggedInPage extends Component {
   render() {

@@ -6,7 +6,7 @@ import GoogleRegisterButton from "./GoogleRegisterButton";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import FormBackground from "../components/FormBackground";
+import FormBackground from "../loginPageComponents/FormBackground";
 import { Col, Row } from "react-bootstrap";
 import { Typography } from "@mui/material";
 

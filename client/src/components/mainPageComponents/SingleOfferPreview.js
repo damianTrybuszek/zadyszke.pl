@@ -1,6 +1,6 @@
 import { Component } from "react";
-import OfferImage from "../components/OfferImage";
-import Rating from "../components/Rating";
+import OfferImage from "./OfferImage";
+import Rating from "../ui/Rating";
 
 class SingleOfferPreview extends Component {
   render() {

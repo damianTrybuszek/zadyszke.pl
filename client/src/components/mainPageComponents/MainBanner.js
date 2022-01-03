@@ -1,13 +1,13 @@
 import { Typography } from "@mui/material";
 import { Component } from "react";
-import LadyBanner from "../graphics/tempImages/main_banner_lady_cutoff.png";
+import LadyBanner from "../../graphics/tempImages/main_banner_lady_cutoff.png";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import SearchBar from "./SearchBar";
 import Stack from "@mui/material/Stack";
-import Card from "./Card";
+import Card from "../ui/Card";
 import CategoryButton from "./CategoryButton";
 
 const Item = styled("div")(({ theme }) => ({

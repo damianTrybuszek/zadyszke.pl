@@ -5,17 +5,17 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import NavbarTop from "../components/NavbarTop";
-import NewOfferButton from "../components/NewOfferButton";
-import UserOrdersButton from "../components/UserOrdersButton.js";
-import lady_banner from "../graphics/tempImages/main_banner_lady_cutoff.png";
-import sample_profile_picture from "../graphics/tempImages/sample_profile_picture.png";
-import UserSafetyButton from "../components/UserSafetyButton";
-import FormBackground from "../components/FormBackground";
+import NavbarTop from "../ui/NavbarTop";
+import NewOfferButton from "./NewOfferButton";
+import UserOrdersButton from "./UserOrdersButton.js";
+import lady_banner from "../../graphics/tempImages/main_banner_lady_cutoff.png";
+import sample_profile_picture from "../../graphics/tempImages/sample_profile_picture.png";
+import UserSafetyButton from "./UserSafetyButton";
+import FormBackground from "../loginPageComponents/FormBackground";
 import { Typography } from "@mui/material";
 
 import { CenterFocusStrong, Repeat } from "@mui/icons-material";
-import "./style.css";
+import "../ui/style.css";
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",

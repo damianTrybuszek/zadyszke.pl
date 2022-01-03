@@ -4,19 +4,19 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import OffersListEmpty from "../components/OffersListEmpty";
-import NavbarTop from "../components/NavbarTop";
-import UserOffersButton from "../components/UserOffersButton";
-import UserOrdersButton from "../components/UserOrdersButton.js";
+import OffersListEmpty from "../components/userPageComponents/OffersListEmpty";
+import NavbarTop from "../components/ui/NavbarTop";
+import UserOffersButton from "../components/userPageComponents/UserOffersButton";
+import UserOrdersButton from "../components/userPageComponents/UserOrdersButton.js";
 import lady_banner from "../graphics/tempImages/main_banner_lady_cutoff.png";
 import sample_profile_picture from "../graphics/tempImages/sample_profile_picture.png";
-import UserSafetyButton from "../components/UserSafetyButton";
-import UserInfoButtonActive from "../components/UserInfoButtonActive";
+import UserSafetyButton from "../components/userPageComponents/UserSafetyButton";
+import UserInfoButtonActive from "../components/userPageComponents/UserInfoButtonActive";
 import { Typography } from "@mui/material";
-import UserTheme from "../components/UserTheme";
+import UserTheme from "../components/userPageComponents/UserTheme";
 import { Repeat } from "@mui/icons-material";
-import UserDescription from "../components/UserDescription";
-import UserQualities from "../components/UserQualities";
+import UserDescription from "../components/userPageComponents/UserDescription";
+import UserQualities from "../components/userPageComponents/UserQualities";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "transparent",
