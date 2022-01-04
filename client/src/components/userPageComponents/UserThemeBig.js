@@ -36,15 +36,15 @@ class UserTheme extends Component {
               <img
                 alt="Banner - zdjęcie"
                 src={sample_profile_picture}
-                width="100%"
-                height="100%"
+                width="80%"
+                height="80%"
               />
             </Item>
             <Item>
-              <Typography variant="h5">Super użytkownik</Typography>
+              <Typography variant="h4">Super użytkownik</Typography>
             </Item>
             <Item>
-              <Typography variant="h7">Miasto: Kraków</Typography>
+              <Typography variant="h7">Aktywny od: 01.01.2022</Typography>
             </Item>
           </Grid>
         </Box>
