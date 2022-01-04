@@ -3,6 +3,7 @@ package com.example.zadyszke.offer.dto;
 import com.example.zadyszke.comment.offer.OfferComment;
 import com.example.zadyszke.offer.Category;
 import com.example.zadyszke.offer.Offer;
+import com.example.zadyszke.offer.OfferImage;
 import com.example.zadyszke.user.AppUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,7 @@ public class OfferCreateDTO {
     private AppUser author;
     private Category category;
     private List<OfferComment> comments;
+    private List<OfferImage> images;
 
     public Offer toOffer(){
         return Offer.builder()
@@ -34,6 +36,7 @@ public class OfferCreateDTO {
                 .price(this.price)
                 .author(this.author)
                 .comments(this.comments)
+                .offerImages(this.images)
                 .build();
     }
 
@@ -45,6 +48,7 @@ public class OfferCreateDTO {
                 .price(offer.getPrice())
                 .author(offer.getAuthor())
                 .comments(offer.getComments())
+                .images(offer.getOfferImages())
                 .build();
     }
 
