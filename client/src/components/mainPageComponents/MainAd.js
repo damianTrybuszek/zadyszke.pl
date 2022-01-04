@@ -12,9 +12,9 @@ import GlobalStyles from "@mui/material/GlobalStyles";
 import Container from "@mui/material/Container";
 import Chip from "@mui/material/Chip";
 import classes from "./MainAd.module.css";
-import GreenRectangle from "../graphics/customIcons/green_rectangle.png";
-import BlueRectangle from "../graphics/customIcons/blue_rectangle.png";
-import GreenCross from "../graphics/customIcons/green_cross.png";
+import GreenRectangle from "../../graphics/customIcons/green_rectangle.png";
+import BlueRectangle from "../../graphics/customIcons/blue_rectangle.png";
+import GreenCross from "../../graphics/customIcons/green_cross.png";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import sample_offer_1 from "../graphics/tempImages/sample_offer_1.jpg";
+import sample_offer_1 from "../../graphics/tempImages/sample_offer_1.jpg";
 
 class OfferImage extends Component {
   render() {

@@ -7,7 +7,7 @@ import MainLoggedInPage from "./pages/MainLoggedIn";
 import LoginPage from "./pages/Login";
 import RegisterPage from "./pages/Register";
 import CreateGigPage from "./pages/CreateGig";
-import Footer from "./components/Footer";
+import Footer from "./components/ui/Footer";
 import UserInfo from "./pages/UserInfo";
 import UserSafety from "./pages/UserSafety";
 import UserOrders from "./pages/UserOrders";

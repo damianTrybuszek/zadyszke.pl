@@ -7,7 +7,7 @@ import Nav from "react-bootstrap/Nav";
 import JoinButton from "./JoinButton";
 import Box from "@mui/material/Box";
 
-import Logo from "../components/Logo";
+import Logo from "./Logo";
 
 class NavbarTop extends Component {
   render() {
