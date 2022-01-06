@@ -18,12 +18,19 @@ function LoginForm() {
   const [enteredLoginIsValid, setEnteredLoginIsValid] = useState(false);
   const [enteredLoginTouched, setEnteredLoginTouched] = useState(false);
   const [enteredPasswordIsValid, setEnteredPasswordIsValid] = useState(false);
+  const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
 
   useEffect(() => {
     if (enteredLoginIsValid) {
       console.log('Login is valid!');
     }
   }, [enteredLoginIsValid]);
+
+  useEffect(() => {
+    if (enteredPasswordIsValid) {
+      console.log('Login is valid!');
+    }
+  }, [enteredPasswordIsValid]);
 
   const enteredLoginChangeHandler = (event) => {
     setEnteredLogin(event.target.value);
@@ -37,6 +44,7 @@ function LoginForm() {
     event.preventDefault(); //to prevent sending HTTP request instantly, page would be reloaded
 
     setEnteredLoginTouched(true);
+    setEnteredPasswordTouched(true);
 
     // console.log(enteredLogin);
 
@@ -47,6 +55,13 @@ function LoginForm() {
 
     setEnteredLoginIsValid(true);
 
+    if(enteredPassword == '') {
+      setEnteredPasswordIsValid(false);
+      return;
+    }
+
+    setEnteredPasswordIsValid(true);
+
     setEnteredLogin("");
     setEnteredPassword("");
   };
@@ -54,6 +69,7 @@ function LoginForm() {
   const InputReader = (props) => {};
 
   const loginInputIsInvalid =!enteredLoginIsValid && enteredLoginTouched;
+  const passwordInputIsInvalid =!enteredPasswordIsValid && enteredPasswordTouched;
 
   // const fetchLoginHandler = useCallback(async () => {
   //   setError(null);
@@ -124,6 +140,9 @@ function LoginForm() {
                     onChange={enteredPasswordHandler}
                     value={enteredPassword}
                   />
+                  <Form.Text className="text-muted">
+                  {passwordInputIsInvalid && <p>Pole hasło nie może być puste</p>}
+                  </Form.Text>
                 </Form.Group>
 
                 <LoginButton />
