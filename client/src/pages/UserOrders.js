@@ -4,74 +4,41 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import Card from "../components/ui/Card";
+import OffersListEmpty from "../components/userPageComponents/OffersListEmpty";
 import NavbarTop from "../components/ui/NavbarTop";
-import Footer from "../components/ui/Footer";
-import RecommendedOffersCarousel from "../components/mainPageComponents/RecommendedOffersCarousel.js";
+import UserOffersButton from "../components/userPageComponents/UserOffersButton";
+import UserOrdersButtonActive from "../components/userPageComponents/UserOrdersButtonActive";
 import lady_banner from "../graphics/tempImages/main_banner_lady_cutoff.png";
-import SearchBar from "../components/mainPageComponents/SearchBar";
-import JoinButton from "../components/ui/JoinButton";
+import sample_profile_picture from "../graphics/tempImages/sample_profile_picture.png";
+import UserSafetyButton from "../components/userPageComponents/UserSafetyButton";
+import UserInfoButton from "../components/userPageComponents/UserInfoButton";
 import { Typography } from "@mui/material";
+import UserThemeBig from "../components/userPageComponents/UserThemeBig";
+import { Repeat } from "@mui/icons-material";
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "transparent",
 }));
 
-class MainNotLoggedInPage extends Component {
+class UserInfo extends Component {
   render() {
     return (
       <div>
         <NavbarTop />
 
-        <Container>
-          <Card>
-            <Box sx={{ width: "100%" }}>
-              <Grid
-                container
-                rowSpacing={1}
-                columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-              >
-                <Grid item xs={6}>
-                  <Item xs={6}>
-                    <Typography variant="h3">Masz pomysł?</Typography>
+        <Box sx={{ width: "100%", display: 'grid', gridTemplateColumns:'repeat(15, 1fr)', gap:5, gridAutoRows:'repeat(15, 1fr)'}}>
+          <Item sx={{ gridRow: '2', gridColumn: '2/5', display: 'grid'}}><UserInfoButton /></Item>
+          <Item sx={{ gridRow: '3', gridColumn: '2/5', display: 'grid'}}><UserSafetyButton /></Item>
+          <Item sx={{ gridRow: '4', gridColumn: '2/5', display: 'grid'}}><UserOrdersButtonActive /></Item>
+          <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButton /></Item>
 
-                    <Typography variant="h3">
-                      Zrealizuj go z pomocą EKSPERTÓW
-                    </Typography>
 
-                    <SearchBar />
-                    <JoinButton></JoinButton>
-                  </Item>
-                </Grid>
-
-                <Grid
-                  container
-                  xs={6}
-                  direction="column"
-                  justifyContent="flex-start"
-                  alignItems="flex-end"
-                >
-                  <Item xs={6}>
-                    <img
-                      alt="Banner - zdjęcie"
-                      src={lady_banner}
-                      width="450"
-                      height="100%"
-                    />
-                  </Item>
-                </Grid>
-              </Grid>
-            </Box>
-          </Card>
-        </Container>
-
-        <RecommendedOffersCarousel />
-
-        <Footer />
-
+          <Item sx={{ gridRow: '2/8', gridColumn: '12/15'}}><UserThemeBig /></Item>
+          </Box>
       </div>
     );
   }
 }
 
-export default MainNotLoggedInPage;
+export default UserInfo;

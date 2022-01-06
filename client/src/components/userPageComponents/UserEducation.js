@@ -13,18 +13,17 @@ import sample_profile_picture from "../../graphics/tempImages/sample_profile_pic
 import UserSafetyButton from "./UserSafetyButton";
 import FormBackground from "../loginPageComponents/FormBackground";
 import { Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import { CenterFocusStrong, Repeat } from "@mui/icons-material";
 import "../ui/style.css";
 
-const Item = styled("div")(({ theme }) => ({
-  textAlign: "center",
-}));
+const Item = styled("div")(({ theme }) => ({}));
 
-class UserTheme extends Component {
+class UserDescription extends Component {
   render() {
     return (
-      <Container className="userTheme">
+      <Container className="userDescription">
         <Box
           sx={{
             width: "100%",
@@ -33,18 +32,16 @@ class UserTheme extends Component {
         >
           <Grid alignItems="flex-start">
             <Item>
-              <img
-                alt="Banner - zdjęcie"
-                src={sample_profile_picture}
-                width="100%"
-                height="100%"
-              />
+              <Typography variant="h5" textAlign="left">
+                Edukacja:
+              </Typography>
             </Item>
             <Item>
-              <Typography variant="h5">Super użytkownik</Typography>
-            </Item>
-            <Item>
-              <Typography variant="h7">Miasto: Kraków</Typography>
+            <Link to="/user/description/add" style={{ textDecoration: "none" }}>
+              <Typography variant="h6" textAlign="right" color="#ED8627">
+                Dodaj
+              </Typography>
+              </Link>
             </Item>
           </Grid>
         </Box>
@@ -53,4 +50,4 @@ class UserTheme extends Component {
   }
 }
 
-export default UserTheme;
+export default UserDescription;

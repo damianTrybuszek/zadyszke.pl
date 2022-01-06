@@ -17,7 +17,7 @@ export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
       <Link to="/user/orders">
-        <Button variant="contained" style={{width:'100%'}}>Zamówienia</Button>
+        <Button variant="contained" style={{width:'100%'}}>Bezpieczeństwo</Button>
       </Link>
     </ThemeProvider>
   );
