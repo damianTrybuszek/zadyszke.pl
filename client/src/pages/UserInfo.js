@@ -17,6 +17,10 @@ import UserTheme from "../components/userPageComponents/UserTheme";
 import { Repeat } from "@mui/icons-material";
 import UserDescription from "../components/userPageComponents/UserDescription";
 import UserQualities from "../components/userPageComponents/UserQualities";
+import UserSkills from "../components/userPageComponents/UserSkills";
+import UserEducation from "../components/userPageComponents/UserEducation";
+import UserCertificates from "../components/userPageComponents/UserCertificates";
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "transparent",
@@ -26,18 +30,19 @@ class UserInfo extends Component {
   render() {
     return (
       <div>
-        <NavbarTop />
 
+        <NavbarTop />
         <Box sx={{ width: "100%", display: 'grid', gridTemplateColumns:'repeat(15, 1fr)', gap:5, gridAutoRows:'repeat(15, 1fr)'}}>
-          <Item sx={{ gridRow: '2', gridColumn: '2/5', display: 'grid'}}><UserInfoButtonActive /></Item>
+          <Item sx={{ gridRow: '2', gridColumn: '2/5', display: 'grid' }}><UserInfoButtonActive /></Item>
           <Item sx={{ gridRow: '3', gridColumn: '2/5', display: 'grid'}}><UserSafetyButton /></Item>
           <Item sx={{ gridRow: '4', gridColumn: '2/5', display: 'grid'}}><UserOrdersButton /></Item>
           <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButton /></Item>
-
-          <Item sx={{ gridRow: '2/5', gridColumn: '5/12' }}><OffersListEmpty /></Item>
-          <Item sx={{ gridRow: '2/7', gridColumn: '12/15'}}><UserTheme /></Item>
-          <Item sx={{ gridRow: '7/8', gridColumn: '12/15'}}><UserDescription /></Item>
-          <Item sx={{ gridRow: '8/10', gridColumn: '12/15'}}><UserQualities /></Item>
+          
+          <Item sx={{ gridRow: '2/8', gridColumn: '12/15'}}><UserTheme /></Item>
+          <Item sx={{ gridRow: '2/4', gridColumn: '5/12'}}><UserDescription /></Item>
+          <Item sx={{ gridRow: '4/6', gridColumn: '5/12'}}><UserSkills /></Item>
+          <Item sx={{ gridRow: '6/10', gridColumn: '5/12'}}><UserEducation /></Item>
+          <Item sx={{ gridRow: '10/14', gridColumn: '5/12'}}><UserCertificates /></Item>
           </Box>
       </div>
     );
