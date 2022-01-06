@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Form, Button, Container } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
@@ -15,6 +15,15 @@ function LoginForm() {
   const [error, setError] = useState(null);
   const [enteredLogin, setEnteredLogin] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
+  const [enteredLoginIsValid, setEnteredLoginIsValid] = useState(false);
+  const [enteredLoginTouched, setEnteredLoginTouched] = useState(false);
+  const [enteredPasswordIsValid, setEnteredPasswordIsValid] = useState(false);
+
+  useEffect(() => {
+    if (enteredLoginIsValid) {
+      console.log('Login is valid!');
+    }
+  }, [enteredLoginIsValid]);
 
   const enteredLoginChangeHandler = (event) => {
     setEnteredLogin(event.target.value);
@@ -27,13 +36,24 @@ function LoginForm() {
   const formSubmissionHandler = (event) => {
     event.preventDefault(); //to prevent sending HTTP request instantly, page would be reloaded
 
-    console.log(enteredLogin);
+    setEnteredLoginTouched(true);
+
+    // console.log(enteredLogin);
+
+    if(enteredLogin.trim() == '') {
+      setEnteredLoginIsValid(false);
+      return;
+    }
+
+    setEnteredLoginIsValid(true);
 
     setEnteredLogin("");
     setEnteredPassword("");
   };
 
   const InputReader = (props) => {};
+
+  const loginInputIsInvalid =!enteredLoginIsValid && enteredLoginTouched;
 
   // const fetchLoginHandler = useCallback(async () => {
   //   setError(null);
@@ -90,6 +110,7 @@ function LoginForm() {
                     value={enteredLogin}
                   />
                   <Form.Text className="text-muted">
+                  {loginInputIsInvalid && <p>Pole login nie może być puste</p>}
                     Bez obaw, nikomu nie podamy Twojego adresu email.
                   </Form.Text>
                 </Form.Group>
