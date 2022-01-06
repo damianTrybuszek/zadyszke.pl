@@ -13,10 +13,9 @@ import sample_profile_picture from "../graphics/tempImages/sample_profile_pictur
 import UserSafetyButton from "../components/userPageComponents/UserSafetyButton";
 import UserInfoButton from "../components/userPageComponents/UserInfoButton";
 import { Typography } from "@mui/material";
-import UserTheme from "../components/userPageComponents/UserTheme";
+import UserThemeBig from "../components/userPageComponents/UserThemeBig";
 import { Repeat } from "@mui/icons-material";
-import UserDescription from "../components/userPageComponents/UserDescription";
-import UserQualities from "../components/userPageComponents/UserQualities";
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "transparent",
@@ -34,10 +33,8 @@ class UserInfo extends Component {
           <Item sx={{ gridRow: '4', gridColumn: '2/5', display: 'grid'}}><UserOrdersButtonActive /></Item>
           <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButton /></Item>
 
-          <Item sx={{ gridRow: '2/5', gridColumn: '5/12' }}><OffersListEmpty /></Item>
-          <Item sx={{ gridRow: '2/7', gridColumn: '12/15'}}><UserTheme /></Item>
-          <Item sx={{ gridRow: '7/8', gridColumn: '12/15'}}><UserDescription /></Item>
-          <Item sx={{ gridRow: '8/10', gridColumn: '12/15'}}><UserQualities /></Item>
+
+          <Item sx={{ gridRow: '2/8', gridColumn: '12/15'}}><UserThemeBig /></Item>
           </Box>
       </div>
     );

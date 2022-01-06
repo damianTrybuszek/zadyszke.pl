@@ -15,8 +15,8 @@ import UserInfoButton from "../components/userPageComponents/UserInfoButton";
 import { Typography } from "@mui/material";
 import UserThemeBig from "../components/userPageComponents/UserThemeBig";
 import { Repeat } from "@mui/icons-material";
-import UserDescription from "../components/userPageComponents/UserDescription";
-import UserQualities from "../components/userPageComponents/UserQualities";
+import SafetyForm from "../components/userPageComponents/SafetyForm";
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "transparent",
@@ -34,7 +34,7 @@ class UserInfo extends Component {
           <Item sx={{ gridRow: '4', gridColumn: '2/5', display: 'grid'}}><UserOrdersButton /></Item>
           <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButton /></Item>
 
-          {/* <Item sx={{ gridRow: '2/5', gridColumn: '5/10' }}><OffersListEmpty /></Item> */}
+          <Item sx={{ gridRow: '2/10', gridColumn: '5/12' }}><SafetyForm /></Item>
           <Item sx={{ gridRow: '2/8', gridColumn: '12/15'}}><UserThemeBig /></Item>
           </Box>
       </div>
