@@ -13,13 +13,15 @@ import sample_profile_picture from "../graphics/tempImages/sample_profile_pictur
 import UserSafetyButtonActive from "../components/userPageComponents/UserSafetyButtonActive";
 import UserInfoButton from "../components/userPageComponents/UserInfoButton";
 import { Typography } from "@mui/material";
+import TextField from "@mui/material/TextField";
 import UserThemeBig from "../components/userPageComponents/UserThemeBig";
 import { Repeat } from "@mui/icons-material";
 import SafetyForm from "../components/userPageComponents/SafetyForm";
 
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "transparent",
+const Item = styled("div")(({ theme }) => ({
+  textAlign: "center",
+  color: theme.palette.text.primary,
 }));
 
 class UserInfo extends Component {
@@ -34,9 +36,12 @@ class UserInfo extends Component {
           <Item sx={{ gridRow: '4', gridColumn: '2/5', display: 'grid'}}><UserOrdersButton /></Item>
           <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButton /></Item>
 
+
           <Item sx={{ gridRow: '2/10', gridColumn: '5/12' }}><SafetyForm /></Item>
           <Item sx={{ gridRow: '2/8', gridColumn: '12/15'}}><UserThemeBig /></Item>
           </Box>
+
+
       </div>
     );
   }
