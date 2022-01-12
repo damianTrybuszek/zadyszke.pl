@@ -15,7 +15,7 @@ const theme = createTheme({
 export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
-      <Button variant="contained">Zaloguj się przez Google</Button>
+      <Button variant="contained" style={{width:'100%'}}>Zaloguj się przez Google</Button>
     </ThemeProvider>
   );
 }
