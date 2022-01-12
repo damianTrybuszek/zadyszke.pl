@@ -20,24 +20,56 @@ function LoginForm() {
   const [enteredPasswordIsValid, setEnteredPasswordIsValid] = useState(false);
   const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
 
+  let formIsValid = false;
+
+  if (enteredLoginIsValid && enteredPasswordIsValid) {
+    formIsValid = true;
+  }
+
   useEffect(() => {
     if (enteredLoginIsValid) {
-      console.log('Login is valid!');
+      console.log("Login is valid!");
     }
   }, [enteredLoginIsValid]);
 
   useEffect(() => {
     if (enteredPasswordIsValid) {
-      console.log('Login is valid!');
+      console.log("Password is valid!");
     }
   }, [enteredPasswordIsValid]);
 
   const enteredLoginChangeHandler = (event) => {
     setEnteredLogin(event.target.value);
+
+    if (enteredLogin.trim() !== "") {
+      setEnteredLoginIsValid(true);
+      return;
+    }
   };
 
   const enteredPasswordHandler = (event) => {
     setEnteredPassword(event.target.value);
+
+    if (enteredPassword.trim() !== "") {
+      setEnteredPasswordIsValid(true);
+      return;
+    }
+  };
+
+  const loginInputBlurHandler = (event) => {
+    setEnteredLoginTouched(true);
+
+    if (event.target.value.trim() === "") {
+      setEnteredLoginIsValid(false);
+    }
+  };
+
+  const passwordInputBlurHandler = (event) => {
+    setEnteredPasswordTouched(true);
+
+    if (event.target.value.trim() === "") {
+      setEnteredPasswordIsValid(false);
+    }
   };
 
   const formSubmissionHandler = (event) => {
@@ -48,14 +80,14 @@ function LoginForm() {
 
     // console.log(enteredLogin);
 
-    if(enteredLogin.trim() == '') {
+    if (enteredLogin.trim() === "") {
       setEnteredLoginIsValid(false);
       return;
     }
 
     setEnteredLoginIsValid(true);
 
-    if(enteredPassword == '') {
+    if (enteredPassword === "") {
       setEnteredPasswordIsValid(false);
       return;
     }
@@ -68,8 +100,9 @@ function LoginForm() {
 
   const InputReader = (props) => {};
 
-  const loginInputIsInvalid =!enteredLoginIsValid && enteredLoginTouched;
-  const passwordInputIsInvalid =!enteredPasswordIsValid && enteredPasswordTouched;
+  const loginInputIsInvalid = !enteredLoginIsValid && enteredLoginTouched;
+  const passwordInputIsInvalid =
+    !enteredPasswordIsValid && enteredPasswordTouched;
 
   // const fetchLoginHandler = useCallback(async () => {
   //   setError(null);
@@ -123,10 +156,13 @@ function LoginForm() {
                     type="email"
                     placeholder="Wprowadź adres email"
                     onChange={enteredLoginChangeHandler}
+                    onBlur={loginInputBlurHandler}
                     value={enteredLogin}
                   />
                   <Form.Text className="text-muted">
-                  {loginInputIsInvalid && <p>Pole login nie może być puste</p>}
+                    {loginInputIsInvalid && (
+                      <p>Pole login nie może być puste</p>
+                    )}
                     Bez obaw, nikomu nie podamy Twojego adresu email.
                   </Form.Text>
                 </Form.Group>
@@ -138,10 +174,13 @@ function LoginForm() {
                     type="password"
                     placeholder="Wprowadź hasło"
                     onChange={enteredPasswordHandler}
+                    onBlur={passwordInputBlurHandler}
                     value={enteredPassword}
                   />
                   <Form.Text className="text-muted">
-                  {passwordInputIsInvalid && <p>Pole hasło nie może być puste</p>}
+                    {passwordInputIsInvalid && (
+                      <p>Pole hasło nie może być puste</p>
+                    )}
                   </Form.Text>
                 </Form.Group>
 
