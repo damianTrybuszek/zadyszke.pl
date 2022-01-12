@@ -4,12 +4,47 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function SubcategorySelect(theme) {
-  const [category, setCategory] = React.useState("");
+export default function SubcategorySelect(props) {
+  const subCategories = new Map();
+  subCategories.set("", [""].sort());
+  subCategories.set(
+    "Projektowanie Logo",
+    ["Duże Logo", "Średnie Logo", "Małe logo", "Szkice"].sort()
+  );
+  subCategories.set("Sztuka", ["Obrazy", "Szkice", "Rysunki"].sort());
+  subCategories.set(
+    "Muzyka",
+    ["Wokale", "Riffy", "Beat'y", "Aranżacje"].sort()
+  );
+  subCategories.set(
+    "Projektowanie Stron",
+    ["Małe strony", "Średnie strony", "Duże strony", "E-commerce"].sort()
+  );
+  subCategories.set(
+    "Programowanie",
+    ["Skrypty", "CRM", "ERP", "Bazy Danych"].sort()
+  );
+  subCategories.set(
+    "Boty komputerowe",
+    ["Discord", "Windows", "Fora internetowe"].sort()
+  );
+  subCategories.set(
+    "Przepisywanie PDF",
+    ["Do Excela", "Do Notatnika (.CSV)"].sort()
+  );
+  subCategories.set(
+    "Grafika komputerowa",
+    ["Wizualizacje 2D", "Wizualizacje 3D", "Animacje"].sort()
+  );
+  subCategories.set("Inne", ["Inne"].sort());
 
-  const handleChange = (event) => {
-    setCategory(event.target.value);
-  };
+  const displaySubCategories = subCategories
+    .get(props.category)
+    .map((subCategory) => (
+      <MenuItem key={subCategory} value={subCategory}>
+        {subCategory}
+      </MenuItem>
+    ));
 
   return (
     <div>
@@ -20,16 +55,14 @@ export default function SubcategorySelect(theme) {
         <Select
           labelId="category-select-label"
           id="category-select"
-          value={category}
-          label="Category"
-          onChange={handleChange}
+          value={props.subCategory === "" ? "" : props.subCategory}
+          label="SubCategory"
+          onChange={props.handleSubCategoryChange}
         >
           <MenuItem value="">
             <em>Brak</em>
           </MenuItem>
-          <MenuItem value={"Kat 1"}>Podkat 1</MenuItem>
-          <MenuItem value={"Kat 2"}>Podkat 2</MenuItem>
-          <MenuItem value={"Kat 3"}>Podkat 3</MenuItem>
+          {displaySubCategories}
         </Select>
       </FormControl>
     </div>

@@ -1,12 +1,9 @@
 import { Component } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import CategorySelect from "./CategorySelect";
-import SubcategorySelect from "./SubcategorySelect";
-import TagsSelect from "./TagsSelect";
+
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",

@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import * as React from "react";
+import { useTheme } from "@mui/material/styles";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -17,12 +17,7 @@ const MenuProps = {
   },
 };
 
-const tags = [
-  'Tag 1',
-  'Tag 2',
-  'Tag 3',
-  'Tag 4',
-];
+const tags = ["Muzyka", "Programowanie", "WWW", "Gotowanie", "Zdjęcia"].sort();
 
 function getStyles(tag, tags, theme) {
   return {
@@ -33,7 +28,7 @@ function getStyles(tag, tags, theme) {
   };
 }
 
-export default function TagsSelect() {
+export default function TagsSelect(props) {
   const theme = useTheme();
   const [tag, setTag] = React.useState([]);
 
@@ -43,29 +38,30 @@ export default function TagsSelect() {
     } = event;
     setTag(
       // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value,
+      typeof value === "string" ? value.split(",") : value
     );
   };
+
+  console.log(props.tags);
 
   return (
     <div>
       <FormControl fullWidth>
-        <InputLabel id="multiple-tag-select-label" sx={{ color: "white" }}>Tagi</InputLabel>
+        <InputLabel id="multiple-tag-select-label" sx={{ color: "white" }}>
+          Tagi
+        </InputLabel>
         <Select
           labelId="multiple-tag-select-label"
           id="multiple-tag-select"
           multiple
           value={tag}
           onChange={handleChange}
+          onBlur={props.handleTagsChange}
           input={<OutlinedInput label="Tag" />}
           MenuProps={MenuProps}
         >
           {tags.map((tag) => (
-            <MenuItem
-              key={tag}
-              value={tag}
-              style={getStyles(tag, tags, theme)}
-            >
+            <MenuItem key={tag} value={tag} style={getStyles(tag, tags, theme)}>
               {tag}
             </MenuItem>
           ))}

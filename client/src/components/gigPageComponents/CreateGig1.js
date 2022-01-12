@@ -6,7 +6,7 @@ import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import CategorySelect from "./CategorySelect";
 import SubcategorySelect from "./SubcategorySelect";
-import TagsSelect from "./TagsSelect"
+import TagsSelect from "./TagsSelect";
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -14,6 +14,44 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 class CreateGig1 extends Component {
+  constructor() {
+    super();
+    this.state = {
+      title: "",
+      category: "",
+      subCategory: "",
+      tags: [],
+    };
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    this.handleSubCategoryChange = this.handleSubCategoryChange.bind(this);
+    this.handleTagsChange = this.handleTagsChange.bind(this);
+  }
+
+  handleTitleChange(event) {
+    this.setState({
+      title: event.target.value,
+    });
+  }
+
+  handleCategoryChange(event) {
+    this.setState({
+      category: event.target.value,
+    });
+  }
+
+  handleSubCategoryChange(event) {
+    this.setState({
+      subCategory: event.target.value,
+    });
+  }
+
+  handleTagsChange(event) {
+    this.setState({
+      tags: event.target.value,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -42,6 +80,7 @@ class CreateGig1 extends Component {
                   id="title"
                   label="Wykonam / Zaprojektuję / Stworzę..."
                   autoFocus
+                  onChange={this.handleTitleChange}
                 />
               </Item>
             </Grid>
@@ -55,12 +94,19 @@ class CreateGig1 extends Component {
             </Grid>
             <Grid item xs={5}>
               <Item>
-                <CategorySelect />
+                <CategorySelect
+                  category={this.state.category}
+                  handleCategoryChange={this.handleCategoryChange}
+                />
               </Item>
             </Grid>
             <Grid item xs={5}>
               <Item>
-                <SubcategorySelect/>
+                <SubcategorySelect
+                  category={this.state.category}
+                  subCategory={this.state.subCategory}
+                  handleSubCategoryChange={this.handleSubCategoryChange}
+                />
               </Item>
             </Grid>
 
@@ -73,7 +119,10 @@ class CreateGig1 extends Component {
             </Grid>
             <Grid item xs={10}>
               <Item>
-                <TagsSelect/>
+                <TagsSelect
+                  tags={this.state.tags}
+                  handleTagsChange={this.handleTagsChange}
+                />
               </Item>
             </Grid>
           </Grid>
