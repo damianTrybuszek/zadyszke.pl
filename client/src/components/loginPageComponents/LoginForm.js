@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Form, Button, Container } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
@@ -19,6 +19,7 @@ function LoginForm() {
   const [enteredLoginTouched, setEnteredLoginTouched] = useState(false);
   const [enteredPasswordIsValid, setEnteredPasswordIsValid] = useState(false);
   const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
 
   let formIsValid = false;
 
@@ -78,8 +79,6 @@ function LoginForm() {
     setEnteredLoginTouched(true);
     setEnteredPasswordTouched(true);
 
-    // console.log(enteredLogin);
-
     if (enteredLogin.trim() === "") {
       setEnteredLoginIsValid(false);
       return;
@@ -94,41 +93,65 @@ function LoginForm() {
 
     setEnteredPasswordIsValid(true);
 
+    submitHandler();
+    // checkUserCredentials();
+
     setEnteredLogin("");
     setEnteredPassword("");
   };
 
-  const InputReader = (props) => {};
+  const submitHandler = () => {
+
+    if (isLogin) {
+    } else {
+      const fetchTest = 
+      fetch("http://localhost:8080/api/users/validate-login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: enteredLogin,
+          password: enteredPassword
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res) => {
+        if (res.ok) {
+          console.log(res);
+        } else {
+          return res.json().then((data) => {
+            // show an error modal
+            console.log(data);
+          });
+        }
+      });
+    }
+  };
 
   const loginInputIsInvalid = !enteredLoginIsValid && enteredLoginTouched;
   const passwordInputIsInvalid =
     !enteredPasswordIsValid && enteredPasswordTouched;
 
-  // const fetchLoginHandler = useCallback(async () => {
-  //   setError(null);
-  //   try {
-  //     const response = await fetch('');
-  //     if (!response.ok) {
-  //       throw new Error('Something went wrong!');
-  //     }
-  //     } catch (error) {
-  //       setError(error.message)
-
-  //   }
-  // }, []);
-  async function checkUserCredentials(user) {
+  async function checkUserCredentials() {
+    try {
     const response = await fetch(
-      "https://localhost:300/api/users/validate-login",
+      "http://localhost:8080/api/users/validate-login",
       {
         method: "POST",
-        body: JSON.stringify(user),
+        body: JSON.stringify({
+          email: "chip4@gmail.com",
+          password: "password"
+        }),
         headers: {
           "Content-Type": "application/json",
+
         },
       }
     );
     const data = await response.json();
-    console.log(data);
+    console.log(data); }
+    catch (error) {
+      console.log(error.message);
+    }
   }
 
   return (
