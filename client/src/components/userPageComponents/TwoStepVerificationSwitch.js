@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Button from "@mui/material/Button";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Switch from "react-switch";
 
 

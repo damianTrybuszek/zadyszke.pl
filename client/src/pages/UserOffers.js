@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
@@ -8,17 +7,15 @@ import OffersListEmpty from "../components/userPageComponents/OffersListEmpty";
 import NavbarTop from "../components/ui/NavbarTop";
 import UserOffersButtonActive from "../components/userPageComponents/UserOffersButtonActive";
 import UserOrdersButton from "../components/userPageComponents/UserOrdersButton";
-import lady_banner from "../graphics/tempImages/main_banner_lady_cutoff.png";
-import sample_profile_picture from "../graphics/tempImages/sample_profile_picture.png";
 import UserSafetyButton from "../components/userPageComponents/UserSafetyButton";
 import UserInfoButton from "../components/userPageComponents/UserInfoButton";
-import { Typography } from "@mui/material";
 import UserThemeBig from "../components/userPageComponents/UserThemeBig";
-import { Repeat } from "@mui/icons-material";
 
+const paddingBottomValue = 5;
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "transparent",
+const Item = styled("div")(({ theme }) => ({
+  textAlign: "center",
+  color: theme.palette.text.primary,
 }));
 
 class UserInfo extends Component {
@@ -27,15 +24,49 @@ class UserInfo extends Component {
       <div>
         <NavbarTop />
 
-        <Box sx={{ width: "100%", display: 'grid', gridTemplateColumns:'repeat(15, 1fr)', gap:5, gridAutoRows:'repeat(15, 1fr)'}}>
-          <Item sx={{ gridRow: '2', gridColumn: '2/5', display: 'grid'}}><UserInfoButton /></Item>
-          <Item sx={{ gridRow: '3', gridColumn: '2/5', display: 'grid'}}><UserSafetyButton /></Item>
-          <Item sx={{ gridRow: '4', gridColumn: '2/5', display: 'grid'}}><UserOrdersButton /></Item>
-          <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButtonActive /></Item>
+        <Box sx={{ display: "grid" }}>
+          <Grid container spacing={5}>
+            <Grid
+              direction="column"
+              justifyContent="center"
+              item
+              xs={2}
+              marginLeft={5}
+            >
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserInfoButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserSafetyButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOrdersButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOffersButtonActive />
+                </Item>
+              </Grid>
+            </Grid>
 
-          <Item sx={{ gridRow: '2/5', gridColumn: '5/10' }}><OffersListEmpty /></Item>
-          <Item sx={{ gridRow: '2/8', gridColumn: '12/15'}}><UserThemeBig /></Item>
-          </Box>
+            <Grid item xs>
+              <Item>
+                <OffersListEmpty />
+              </Item>
+            </Grid>
+            <Grid item xs={2} marginRight={5}>
+              <Item>
+                <UserThemeBig />
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
       </div>
     );
   }

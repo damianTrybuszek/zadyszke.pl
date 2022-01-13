@@ -18,6 +18,7 @@ import UserThemeBig from "../components/userPageComponents/UserThemeBig";
 import { Repeat } from "@mui/icons-material";
 import SafetyForm from "../components/userPageComponents/SafetyForm";
 
+const paddingBottomValue = 5;
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -28,17 +29,50 @@ class UserInfo extends Component {
   render() {
     return (
       <div>
-        <NavbarTop />
+        <NavbarTop />       
 
-        <Box sx={{ width: "100%", display: 'grid', gridTemplateColumns:'repeat(15, 1fr)', gap:5, gridAutoRows:'repeat(15, 1fr)'}}>
-          <Item sx={{ gridRow: '2', gridColumn: '2/5', display: 'grid'}}><UserInfoButton /></Item>
-          <Item sx={{ gridRow: '3', gridColumn: '2/5', display: 'grid'}}><UserSafetyButtonActive /></Item>
-          <Item sx={{ gridRow: '4', gridColumn: '2/5', display: 'grid'}}><UserOrdersButton /></Item>
-          <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButton /></Item>
+        <Box sx={{ display: "grid" }}>
+          <Grid container spacing={5}>
+            <Grid
+              direction="column"
+              justifyContent="center"
+              item
+              xs={2}
+              marginLeft={5}
+            >
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserInfoButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserSafetyButtonActive />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOrdersButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOffersButton />
+                </Item>
+              </Grid>
+            </Grid>
 
+            <Grid item xs>
+              <Item><SafetyForm /></Item>
+            </Grid>
+            <Grid item xs={2} marginRight={5}>
+              <Item>
+                <UserThemeBig />
+              </Item>
+            </Grid>
+          </Grid>
+        
 
-          <Item sx={{ gridRow: '2/10', gridColumn: '5/12' }}><SafetyForm /></Item>
-          <Item sx={{ gridRow: '2/8', gridColumn: '12/15'}}><UserThemeBig /></Item>
           </Box>
 
 
