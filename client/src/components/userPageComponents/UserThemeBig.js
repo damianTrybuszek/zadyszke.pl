@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import React from "react";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
@@ -10,6 +10,7 @@ import "../ui/style.css";
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
+  color: theme.palette.text.primary,
 }));
 
 class UserTheme extends Component {

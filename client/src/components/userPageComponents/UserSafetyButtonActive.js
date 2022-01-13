@@ -8,7 +8,6 @@ const theme = createTheme({
     primary: {
       main: "#ED8627",
       textColor: "#ffffff",
-      // primaryTextColor: "#ffffff",
     },
   },
 });
@@ -17,7 +16,9 @@ export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
       <Link to="/user/orders">
-        <Button variant="contained" style={{width:'100%'}}>Bezpieczeństwo</Button>
+        <Button variant="contained" style={{ width: "100%" }}>
+          Bezpieczeństwo
+        </Button>
       </Link>
     </ThemeProvider>
   );

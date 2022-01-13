@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import NavbarTop from "../components/ui/NavbarTop";
@@ -56,7 +55,9 @@ class UserInfo extends Component {
             </Grid>
 
             <Grid item xs>
-              <Item><OrdersListEmpty /></Item>
+              <Item>
+                <OrdersListEmpty />
+              </Item>
             </Grid>
             <Grid item xs={2} marginRight={5}>
               <Item>
