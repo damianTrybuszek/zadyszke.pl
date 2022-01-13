@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import "../ui/style.css";
-import ChangePasswordButton from "../userPageComponents/ChangePasswordButton.js"
-import TwoStepVerificationSwitch from "../userPageComponents/TwoStepVerificationSwitch.js"
+import ChangePasswordButton from "../userPageComponents/ChangePasswordButton.js";
+import TwoStepVerificationSwitch from "../userPageComponents/TwoStepVerificationSwitch.js";
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -32,96 +32,89 @@ function ChangePassword() {
   }
 
   return (
-
-      <Box
-        sx={{
-          width: "100%",
-          display: "grid",
-          gap: 1,
-        }}
-      >
-        <Grid container spacing={2}>
+    <Box
+      sx={{
+        width: "100%",
+        display: "grid",
+        gap: 1,
+      }}
+    >
+      <Grid container spacing={2}>
         <Grid item xs={2}>
-        <Item>
-          <Typography variant="body1" align="left">
-            Hasło
-          </Typography>
-        </Item>
+          <Item>
+            <Typography variant="body1" align="left">
+              Hasło
+            </Typography>
+          </Item>
         </Grid>
 
         <Grid item xs={8}>
-        <Item>
-          <TextField
-            sx={{ label: { color: "white" } }}
-            name="password"
-            hintText="Password"
-            floatingLabelText="Password"
-            type="password"
-            multiline={false}
-            rows={1}
-            required
-            fullWidth
-            id="password"
-            label="Zmień hasło"
-            autoFocus
-            size="small"
-            
-          />
-          <Typography variant="body2" align="left">
-            Ostatnia zmiana hasła:
-          </Typography>
-        </Item>
+          <Item>
+            <TextField
+              sx={{ label: { color: "white" } }}
+              name="password"
+              hintText="Password"
+              floatingLabelText="Password"
+              type="password"
+              multiline={false}
+              rows={1}
+              required
+              fullWidth
+              id="password"
+              label="Zmień hasło"
+              autoFocus
+              size="small"
+            />
+            <Typography variant="body2" align="left">
+              Ostatnia zmiana hasła:
+            </Typography>
+          </Item>
         </Grid>
 
         <Grid item xs={2}>
-          <Item><ChangePasswordButton/></Item>
-        </Grid>
-
-
-
-
-
-
-        <Grid item xs={2}>
-        <Item>
-          <Typography variant="body1" align="left">
-            Weryfikacja dwuetapowa
-          </Typography>
-        </Item>
-        </Grid>
-
-       <Grid item xs={8}>
-        <Item>
-          <TextField
-            sx={{ label: { color: "white" } }}
-            name="phoneNumber"
-            multiline={false}
-            rows={1}
-            required
-            fullWidth
-            id="phoneNumber"
-            label="Wprowadź numer telefonu"
-            autoFocus
-            size="small"
-          />
-          <Typography variant="body2" align="left">
-            Numer telefonu: 123 456 789
-          </Typography>
-          <Typography variant="body2" align="left">
-            Na ten numer będziesz otrzymywać kody.
-          </Typography>
-        </Item>
+          <Item>
+            <ChangePasswordButton />
+          </Item>
         </Grid>
 
         <Grid item xs={2}>
-        <Item>
-          <TwoStepVerificationSwitch/>
-        </Item>
+          <Item>
+            <Typography variant="body1" align="left">
+              Weryfikacja dwuetapowa
+            </Typography>
+          </Item>
         </Grid>
-        </Grid>
-        
-      </Box>
 
+        <Grid item xs={8}>
+          <Item>
+            <TextField
+              sx={{ label: { color: "white" } }}
+              name="phoneNumber"
+              multiline={false}
+              rows={1}
+              required
+              fullWidth
+              id="phoneNumber"
+              label="Wprowadź numer telefonu"
+              autoFocus
+              size="small"
+            />
+            <Typography variant="body2" align="left">
+              Numer telefonu: 123 456 789
+            </Typography>
+            <Typography variant="body2" align="left">
+              Na ten numer będziesz otrzymywać kody.
+            </Typography>
+          </Item>
+        </Grid>
+
+        <Grid item xs={2}>
+          <Item>
+            <TwoStepVerificationSwitch />
+          </Item>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 

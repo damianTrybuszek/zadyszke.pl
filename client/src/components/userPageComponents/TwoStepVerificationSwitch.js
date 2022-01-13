@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Switch from "react-switch";
 
-
 class TwoStepVerificationSwitch extends Component {
   constructor() {
     super();
@@ -21,4 +20,4 @@ class TwoStepVerificationSwitch extends Component {
     );
   }
 }
-export default TwoStepVerificationSwitch
+export default TwoStepVerificationSwitch;
