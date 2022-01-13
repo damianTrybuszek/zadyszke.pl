@@ -21,28 +21,84 @@ import UserSkills from "../components/userPageComponents/UserSkills";
 import UserEducation from "../components/userPageComponents/UserEducation";
 import UserCertificates from "../components/userPageComponents/UserCertificates";
 
+const paddingBottomValue = 5;
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "transparent",
+const Item = styled("div")(({ theme }) => ({
+  textAlign: "center",
+  color: theme.palette.text.primary,
 }));
 
 class UserInfo extends Component {
   render() {
     return (
       <div>
-
         <NavbarTop />
-        <Box sx={{ width: "100%", display: 'grid', gridTemplateColumns:'repeat(15, 1fr)', gap:5, gridAutoRows:'repeat(15, 1fr)'}}>
-          <Item sx={{ gridRow: '2', gridColumn: '2/5', display: 'grid' }}><UserInfoButtonActive /></Item>
-          <Item sx={{ gridRow: '3', gridColumn: '2/5', display: 'grid'}}><UserSafetyButton /></Item>
-          <Item sx={{ gridRow: '4', gridColumn: '2/5', display: 'grid'}}><UserOrdersButton /></Item>
-          <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButton /></Item>
-          
-          <Item sx={{ gridRow: '2/8', gridColumn: '12/15'}}><UserTheme /></Item>
-          <Item sx={{ gridRow: '2/4', gridColumn: '5/12'}}><UserDescription /></Item>
-          <Item sx={{ gridRow: '4/6', gridColumn: '5/12'}}><UserSkills /></Item>
-          <Item sx={{ gridRow: '6/10', gridColumn: '5/12'}}><UserEducation /></Item>
-          <Item sx={{ gridRow: '10/14', gridColumn: '5/12'}}><UserCertificates /></Item>
+
+        <Box sx={{ display: "grid" }}>
+          <Grid container spacing={5}>
+            <Grid
+              direction="column"
+              justifyContent="center"
+              item
+              xs={2}
+              marginLeft={5}
+            >
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserInfoButtonActive />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserSafetyButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOrdersButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOffersButton />
+                </Item>
+              </Grid>
+            </Grid>
+
+            <Grid
+              direction="column"
+              justifyContent="center"
+              item
+              xs
+            >
+                   <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserDescription />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserSkills />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserEducation />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserCertificates />
+                </Item>
+              </Grid>
+            </Grid>
+            <Grid item xs={2} marginRight={5}>
+              <Item>
+                <UserTheme />
+              </Item>
+            </Grid>
+          </Grid>
+
           </Box>
       </div>
     );

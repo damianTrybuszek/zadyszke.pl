@@ -16,7 +16,7 @@ const theme = createTheme({
 export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
-      <Link to="/user/info">
+      <Link to="/user/offers">
         <Button variant="contained" style={{width:'100%'}}>Twoje oferty</Button>
       </Link>
     </ThemeProvider>
