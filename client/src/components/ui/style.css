@@ -65,4 +65,10 @@
     max-width: 95%;
     /* background-color: rgba(236, 191, 149, 0.2); */
     padding: 5%;
+
+    
+}
+
+.selectors{
+    background-color: rgba(236, 191, 149, 0.2);
 }
