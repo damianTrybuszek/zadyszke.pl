@@ -4,15 +4,13 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import sample_profile_picture from "../../graphics/tempImages/sample_profile_picture.png";
-import ChangePhotoButton from "./ChangePhotoButton"
-import AddButtonGoogle from "./AddButtonGoogle"
-import AddButtonFacebook from "./AddButtonFacebook"
-import AddButtonInstagram from "./AddButtonInstagram"
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GoogleIcon from '@mui/icons-material/Google';
-
+import AddButtonGoogle from "./AddButtonGoogle";
+import AddButtonFacebook from "./AddButtonFacebook";
+import AddButtonInstagram from "./AddButtonInstagram";
+import AddButtonSite from "./AddButtonSite";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GoogleIcon from "@mui/icons-material/Google";
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -23,11 +21,7 @@ class CreateProfile3 extends Component {
   render() {
     return (
       <div>
-        <Box
-          component="form"
-          noValidate
-          sx={{ padding: 5 }}
-        >
+        <Box component="form" noValidate sx={{ padding: 5 }}>
           <Grid container spacing={2} paddingBottom={5}>
             <Grid item xs={12}>
               <Item>
@@ -39,8 +33,9 @@ class CreateProfile3 extends Component {
             <Grid item xs={4}>
               <Item>
                 <Typography variant="body2" align="left">
-                Badania dowodzą, że ludzie chętniej kupują od ludzi z którymi czują bardziej osobistą więź, 
-                więc nie ma na co czekać - dodaj swoje konta social media, dzięki którym łatwiej Cię odnajdą.
+                  Badania dowodzą, że ludzie chętniej kupują od ludzi z którymi
+                  czują bardziej osobistą więź, więc nie ma na co czekać - dodaj
+                  swoje konta social media, dzięki którym łatwiej Cię odnajdą.
                 </Typography>
               </Item>
             </Grid>
@@ -55,94 +50,68 @@ class CreateProfile3 extends Component {
             </Grid>
             <Grid item xs={6}>
               <Item>
-
-                 
                 <Typography variant="h5" align="left" paddingBottom={5}>
-                <GoogleIcon fontSize="large"/> Google
+                  <GoogleIcon fontSize="large" /> Google
                 </Typography>
               </Item>
             </Grid>
             <Grid item xs={2}>
               <Item>
-                  <AddButtonGoogle />
+                <AddButtonGoogle />
               </Item>
             </Grid>
             <Grid item xs={4}></Grid>
             <Grid item xs={6}>
               <Item>
                 <Typography variant="h5" align="left" paddingBottom={5}>
-                <FacebookIcon fontSize="large"/> Facebook
+                  <FacebookIcon fontSize="large" /> Facebook
                 </Typography>
               </Item>
             </Grid>
             <Grid item xs={2}>
               <Item>
-                  <AddButtonFacebook />
+                <AddButtonFacebook />
               </Item>
             </Grid>
             <Grid item xs={4}></Grid>
             <Grid item xs={6}>
               <Item>
                 <Typography variant="h5" align="left" paddingBottom={5}>
-                <InstagramIcon fontSize="large"/> Instagram
+                  <InstagramIcon fontSize="large" /> Instagram
                 </Typography>
               </Item>
             </Grid>
             <Grid item xs={2}>
               <Item>
-                  <AddButtonInstagram />
+                <AddButtonInstagram />
               </Item>
             </Grid>
             <Grid item xs={4}>
               <Item>
-                <Typography variant="h5" align="left" >
-                  Zdjęcie profilowe
+                <Typography variant="h5" align="left">
+                  Strona internetowa
                 </Typography>
               </Item>
             </Grid>
-            <Grid item xs={3} paddingBottom={5}>
-              <Item>
-              <img
-                alt="Banner - zdjęcie"
-                src={sample_profile_picture}
-                width="100%"
-                height="100%"
-              />
-              </Item>
-            </Grid>
-            <Grid item xs={2}>
-              <Item>
-                
-              </Item>
-            </Grid>
-
-            <Grid item xs={3}>
-              <Item>
-
-              <ChangePhotoButton />
-              </Item>
-            </Grid>
-            <Grid item xs={4}>
-              <Item>
-              <Typography variant="h5" align="left">
-                  Opis
-                </Typography>
-              </Item>
-            </Grid>
-
-            <Grid item xs={8}>
+            <Grid item xs={6} paddingBottom={5}>
               <Item>
                 <TextField
                   sx={{ label: { color: "white" } }}
-                  name="description"
+                  name="site"
                   multiline={true}
-                  rows={5}
+                  rows={1}
                   fullWidth
-                  id="title"
-                  label="Opis"
+                  id="site"
+                  label="Strona internetowa"
                   autoFocus
-                  
+                  size="small"
                 />
+              </Item>
+            </Grid>
+
+            <Grid item xs={2}>
+              <Item>
+                <AddButtonSite />
               </Item>
             </Grid>
           </Grid>
