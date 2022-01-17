@@ -10,7 +10,7 @@ import "../ui/style.css";
 
 const Item = styled("div")(({ theme }) => ({}));
 
-class UserQualities extends Component {
+class UserDescription extends Component {
   render() {
     return (
       <Container className="userDescription">
@@ -22,37 +22,13 @@ class UserQualities extends Component {
         >
           <Grid alignItems="flex-start">
             <Item>
-              <Typography variant="h6" textAlign="left">
-                Umiejętności:
-              </Typography>
-            </Item>
-            <Item>
-              <Link to="/user/skills/add" style={{ textDecoration: "none" }}>
-                <Typography variant="h6" textAlign="right" color="#ED8627">
-                  Dodaj
-                </Typography>
-              </Link>
-            </Item>
-            <Item>
-              <Typography variant="h6" textAlign="left">
+              <Typography variant="h5" textAlign="left">
                 Edukacja:
               </Typography>
             </Item>
             <Item>
-              <Link to="/user/education/add" style={{ textDecoration: "none" }}>
-                <Typography variant="h6" textAlign="right" color="#ED8627">
-                  Dodaj
-                </Typography>
-              </Link>
-            </Item>
-            <Item>
-              <Typography variant="h6" textAlign="left">
-                Certyfikaty:
-              </Typography>
-            </Item>
-            <Item>
               <Link
-                to="/user/certificates/add"
+                to="/user/description/add"
                 style={{ textDecoration: "none" }}
               >
                 <Typography variant="h6" textAlign="right" color="#ED8627">
@@ -67,4 +43,4 @@ class UserQualities extends Component {
   }
 }
 
-export default UserQualities;
+export default UserDescription;

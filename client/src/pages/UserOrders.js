@@ -1,77 +1,74 @@
 import { Component } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import Card from "../components/ui/Card";
 import NavbarTop from "../components/ui/NavbarTop";
-import Footer from "../components/ui/Footer";
-import RecommendedOffersCarousel from "../components/mainPageComponents/RecommendedOffersCarousel.js";
-import lady_banner from "../graphics/tempImages/main_banner_lady_cutoff.png";
-import SearchBar from "../components/mainPageComponents/SearchBar";
-import JoinButton from "../components/ui/JoinButton";
-import { Typography } from "@mui/material";
+import UserOffersButton from "../components/userPageComponents/UserOffersButton";
+import UserOrdersButtonActive from "../components/userPageComponents/UserOrdersButtonActive";
+import UserSafetyButton from "../components/userPageComponents/UserSafetyButton";
+import UserInfoButton from "../components/userPageComponents/UserInfoButton";
+import UserThemeBig from "../components/userPageComponents/UserThemeBig";
+import OrdersListEmpty from "../components/userPageComponents/OrdersListEmpty";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "transparent",
+const paddingBottomValue = 5;
+
+const Item = styled("div")(({ theme }) => ({
+  textAlign: "center",
+  color: theme.palette.text.primary,
 }));
 
-class MainNotLoggedInPage extends Component {
+class UserInfo extends Component {
   render() {
     return (
       <div>
         <NavbarTop />
 
-        <Container>
-          <Card>
-            <Box sx={{ width: "100%" }}>
-              <Grid
-                container
-                rowSpacing={1}
-                columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-              >
-                <Grid item xs={6}>
-                  <Item xs={6}>
-                    <Typography variant="h3">Masz pomysł?</Typography>
-
-                    <Typography variant="h3">
-                      Zrealizuj go z pomocą EKSPERTÓW
-                    </Typography>
-
-                    <SearchBar />
-                    <JoinButton></JoinButton>
-                  </Item>
-                </Grid>
-
-                <Grid
-                  container
-                  xs={6}
-                  direction="column"
-                  justifyContent="flex-start"
-                  alignItems="flex-end"
-                >
-                  <Item xs={6}>
-                    <img
-                      alt="Banner - zdjęcie"
-                      src={lady_banner}
-                      width="450"
-                      height="100%"
-                    />
-                  </Item>
-                </Grid>
+        <Box sx={{ display: "grid" }}>
+          <Grid container spacing={5}>
+            <Grid
+              direction="column"
+              justifyContent="center"
+              item
+              xs={2}
+              marginLeft={5}
+            >
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserInfoButton />
+                </Item>
               </Grid>
-            </Box>
-          </Card>
-        </Container>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserSafetyButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOrdersButtonActive />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOffersButton />
+                </Item>
+              </Grid>
+            </Grid>
 
-        <RecommendedOffersCarousel />
-
-        <Footer />
-
+            <Grid item xs>
+              <Item>
+                <OrdersListEmpty />
+              </Item>
+            </Grid>
+            <Grid item xs={2} marginRight={5}>
+              <Item>
+                <UserThemeBig />
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
       </div>
     );
   }
 }
 
-export default MainNotLoggedInPage;
+export default UserInfo;

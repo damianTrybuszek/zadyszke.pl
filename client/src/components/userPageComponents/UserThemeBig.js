@@ -23,21 +23,31 @@ class UserTheme extends Component {
             display: "grid",
           }}
         >
-          <Grid alignItems="flex-start">
-            <Item>
-              <img
-                alt="Banner - zdjęcie"
-                src={sample_profile_picture}
-                width="100%"
-                height="100%"
-              />
-            </Item>
-            <Item>
-              <Typography variant="h5">Super użytkownik</Typography>
-            </Item>
-            <Item>
-              <Typography variant="h7">Miasto: Kraków</Typography>
-            </Item>
+          <Grid
+            alignItems="flex-start"
+            direction="column"
+            justifyContent="center"
+          >
+            <Grid paddingBottom={1}>
+              <Item>
+                <img
+                  alt="Banner - zdjęcie"
+                  src={sample_profile_picture}
+                  height="80%"
+                  width="80%"
+                />
+              </Item>
+            </Grid>
+            <Grid paddingBottom={1}>
+              <Item>
+                <Typography variant="h4">Super użytkownik</Typography>
+              </Item>
+            </Grid>
+            <Grid>
+              <Item>
+                <Typography variant="body2">Aktywny od: 01.01.2022</Typography>
+              </Item>
+            </Grid>
           </Grid>
         </Box>
       </Container>

@@ -12,6 +12,7 @@ import UserInfo from "./pages/UserInfo";
 import UserSafety from "./pages/UserSafety";
 import UserOrders from "./pages/UserOrders";
 import UserOffers from "./pages/UserOffers";
+import CreateProfile from "./pages/CreateProfile";
 
 const theme = createTheme({
   palette: {
@@ -71,6 +72,7 @@ class App extends Component {
             <Route path="/user/safety" element={<UserSafety />} />
             <Route path="/user/orders" element={<UserOrders />} />
             <Route path="/user/offers" element={<UserOffers />} />
+            <Route path="/create-profile" element={<CreateProfile />} />
           </Routes>
           <Footer />
         </ThemeProvider>
