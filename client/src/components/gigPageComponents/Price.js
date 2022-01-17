@@ -1,22 +1,48 @@
 import { Component } from "react";
-import { Typography } from "@mui/material";
-import Box from "@mui/material/Box";
+import { alpha, styled } from "@mui/material/styles";
+import InputBase from "@mui/material/InputBase";
 
-class Price extends Component{
-    constructor(props){
-        super(props);
-        this.price = -1;
-    }
-    render(){
-        return(
-            <Box sx={{ border: 1, borderRadius: 3, padding: 1 }}>
-                <Typography>
-                    {this.props.price} PLN
-                </Typography>
-            </Box>
+const BasicTextbox = styled(InputBase)(({ theme }) => ({
+  "label + &": {
+    marginTop: theme.spacing(3),
+  },
+  "& .MuiInputBase-input": {
+    borderRadius: 4,
+    position: "relative",
+    border: "1px solid #ced4da",
+    fontSize: 16,
+    width: "auto",
+    padding: "10px 12px",
+    transition: theme.transitions.create([
+      "border-color",
+      "background-color",
+      "box-shadow",
+    ]),
+    "&:focus": {
+      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
+    },
+  },
+}));
 
-        )
-    }
+class Price extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <BasicTextbox
+        value={this.props.priceValue}
+        id="outlined-number"
+        label="Price"
+        type="Price"
+        InputLabelProps={{
+          shrink: true,
+        }}
+        onChange={this.props.handleChange}
+      />
+    );
+  }
 }
 
 export default Price;

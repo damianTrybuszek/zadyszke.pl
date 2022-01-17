@@ -3,10 +3,10 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Checkbox from "@mui/material/Checkbox";
 import OfferType from "./OfferType";
 import tempImage from "../../graphics/tempImages/sample_offer_1.jpg";
 import OfferRedosAmountSelect from "./OfferRedosAmountSelect";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import Price from "./Price";
 
 const Item = styled("div")(({ theme }) => ({
@@ -14,7 +14,94 @@ const Item = styled("div")(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 
+const BasicCheckbox = styled(Checkbox)(({ theme }) => ({
+  color: "white",
+  boxShadow: "white",
+}));
+
 class CreateGig2 extends Component {
+  constructor() {
+    super();
+    this.state = {
+      basicRedos: 0,
+      standardRedos: 0,
+      premiumRedos: 0,
+      basicSpeedDelivery: false,
+      standardSpeedDelivery: false,
+      premiumSpeedDelivery: false,
+      basicPrice: 0,
+      standardPrice: 0,
+      premiumPrice: 0,
+    };
+    this.handleBasicRedosChange = this.handleBasicRedosChange.bind(this);
+    this.handleStandardRedosChange = this.handleStandardRedosChange.bind(this);
+    this.handlePremiumRedosChange = this.handlePremiumRedosChange.bind(this);
+    this.handleBasicSpeedDeliveryChange =
+      this.handleBasicSpeedDeliveryChange.bind(this);
+    this.handleStandardSpeedDeliveryChange =
+      this.handleStandardSpeedDeliveryChange.bind(this);
+    this.handlePremiumSpeedDeliveryChange =
+      this.handlePremiumSpeedDeliveryChange.bind(this);
+    this.handleBasicPriceChange = this.handleBasicPriceChange.bind(this);
+    this.handleStandardPriceChange = this.handleStandardPriceChange.bind(this);
+    this.handlePremiumPriceChange = this.handlePremiumPriceChange.bind(this);
+    this.printState = this.printState.bind(this);
+  }
+
+  handleBasicRedosChange(event) {
+    this.setState({
+      basicRedos: event.target.value,
+    });
+  }
+
+  handleStandardRedosChange(event) {
+    this.setState({
+      standardRedos: event.target.value,
+    });
+  }
+
+  handlePremiumRedosChange(event) {
+    this.setState({
+      premiumRedos: event.target.value,
+    });
+  }
+
+  handleBasicSpeedDeliveryChange() {
+    this.setState({
+      basicSpeedDelivery: !this.state.basicSpeedDelivery,
+    });
+  }
+
+  handleStandardSpeedDeliveryChange() {
+    this.setState({
+      standardSpeedDelivery: !this.state.standardSpeedDelivery,
+    });
+  }
+
+  handlePremiumSpeedDeliveryChange() {
+    this.setState({
+      premiumSpeedDelivery: !this.state.premiumSpeedDelivery,
+    });
+  }
+
+  handleBasicPriceChange(event) {
+    this.setState({
+      basicPrice: event.target.value,
+    });
+  }
+
+  handleStandardPriceChange(event) {
+    this.setState({
+      standardPrice: event.target.value,
+    });
+  }
+
+  handlePremiumPriceChange(event) {
+    this.setState({
+      premiumPrice: event.target.value,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -56,17 +143,26 @@ class CreateGig2 extends Component {
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <OfferRedosAmountSelect />
+                <OfferRedosAmountSelect
+                  handleChange={this.handleBasicRedosChange}
+                  changesAmount={this.state.basicRedos}
+                />
               </Item>
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <OfferRedosAmountSelect />
+                <OfferRedosAmountSelect
+                  handleChange={this.handleStandardRedosChange}
+                  changesAmount={this.state.standardRedos}
+                />
               </Item>
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <OfferRedosAmountSelect />
+                <OfferRedosAmountSelect
+                  handleChange={this.handlePremiumRedosChange}
+                  changesAmount={this.state.premiumRedos}
+                />
               </Item>
             </Grid>
 
@@ -79,22 +175,25 @@ class CreateGig2 extends Component {
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <CheckCircleOutlineIcon
-                  sx={{ fontSize: (theme) => theme.shape.adIconSize }}
+                <BasicCheckbox
+                  size="large"
+                  onChange={this.handleBasicSpeedDeliveryChange}
                 />
               </Item>
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <CheckCircleOutlineIcon
-                  sx={{ fontSize: (theme) => theme.shape.adIconSize }}
+                <BasicCheckbox
+                  size="large"
+                  onChange={this.handleStandardSpeedDeliveryChange}
                 />
               </Item>
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <CheckCircleOutlineIcon
-                  sx={{ fontSize: (theme) => theme.shape.adIconSize }}
+                <BasicCheckbox
+                  size="large"
+                  onChange={this.handlePremiumSpeedDeliveryChange}
                 />
               </Item>
             </Grid>
@@ -102,23 +201,32 @@ class CreateGig2 extends Component {
             <Grid item xs={2}>
               <Item>
                 <Typography variant="h5" align="left">
-                  Cena
+                  Cena (PLN)
                 </Typography>
               </Item>
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <Price price="10"/>
+                <Price
+                  priceVale={this.state.basicPrice}
+                  handleChange={this.handleBasicPriceChange}
+                />
               </Item>
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <Price price="50"/>
+                <Price
+                  priceVale={this.state.standardPrice}
+                  handleChange={this.handleStandardPriceChange}
+                />
               </Item>
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <Price price="600"/>
+                <Price
+                  priceVale={this.state.premiumPrice}
+                  handleChange={this.handlePremiumPriceChange}
+                />
               </Item>
             </Grid>
           </Grid>

@@ -42,8 +42,6 @@ export default function TagsSelect(props) {
     );
   };
 
-  console.log(props.tags);
-
   return (
     <div>
       <FormControl fullWidth>

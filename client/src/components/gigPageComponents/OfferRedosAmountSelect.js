@@ -4,12 +4,14 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function OfferRedosAmountSelect(theme) {
-  const [amount, setAmount] = React.useState("");
+export default function OfferRedosAmountSelect(props) {
+  const redosAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  const handleChange = (event) => {
-    setAmount(event.target.value);
-  };
+  const displayChangesAmount = redosAmount.map((amount) => (
+    <MenuItem key={amount} value={amount}>
+      {amount}
+    </MenuItem>
+  ));
 
   return (
     <div>
@@ -20,16 +22,14 @@ export default function OfferRedosAmountSelect(theme) {
         <Select
           labelId="offer-redos-label"
           id="offer-redos"
-          value={amount}
+          value={props.changesAmount === 0 ? 0 : props.changesAmount}
           label="Amount"
-          onChange={handleChange}
+          onChange={props.handleChange}
         >
           <MenuItem value="">
             <em>Brak</em>
           </MenuItem>
-          <MenuItem value={1}>1</MenuItem>
-          <MenuItem value={2}>2</MenuItem>
-          <MenuItem value={3}>3</MenuItem>
+          {displayChangesAmount}
         </Select>
       </FormControl>
     </div>
