@@ -25,10 +25,11 @@ export default function CategorySelect(theme) {
           onChange={handleChange}
           size="small"
         >
-          
-          <MenuItem value={"Pro 1"}>Początkujący</MenuItem>
-          <MenuItem value={"Pro 2"}>Średni</MenuItem>
-          <MenuItem value={"Pro 3"}>Specjalista</MenuItem>
+          <div style={{ backgroundColor: "#2F303A" }}>
+            <MenuItem value={"Pro 1"}>Początkujący</MenuItem>
+            <MenuItem value={"Pro 2"}>Średni</MenuItem>
+            <MenuItem value={"Pro 3"}>Specjalista</MenuItem>
+          </div>
         </Select>
       </FormControl>
     </div>

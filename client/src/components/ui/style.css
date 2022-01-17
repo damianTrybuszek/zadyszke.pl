@@ -72,3 +72,8 @@
 .selectors{
     background-color: rgba(236, 191, 149, 0.2);
 }
+
+.menuItems{
+    /* background-color: '#2F303A' */
+    background-color: 'red'
+}

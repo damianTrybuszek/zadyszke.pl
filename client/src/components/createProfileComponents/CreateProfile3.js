@@ -6,6 +6,13 @@ import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import sample_profile_picture from "../../graphics/tempImages/sample_profile_picture.png";
 import ChangePhotoButton from "./ChangePhotoButton"
+import AddButtonGoogle from "./AddButtonGoogle"
+import AddButtonFacebook from "./AddButtonFacebook"
+import AddButtonInstagram from "./AddButtonInstagram"
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import GoogleIcon from '@mui/icons-material/Google';
+
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -25,15 +32,15 @@ class CreateProfile3 extends Component {
             <Grid item xs={12}>
               <Item>
                 <Typography variant="h5" align="left">
-                  Dane personalne
+                  Połączone konta
                 </Typography>
               </Item>
             </Grid>
             <Grid item xs={4}>
               <Item>
                 <Typography variant="body2" align="left">
-                  Powiedz nam coś więcej o sobie. Te informacje zostaną wyświetlone na Twoim profilu, 
-                  aby potencjalni klienci mogli Cię lepiej poznać. 
+                Badania dowodzą, że ludzie chętniej kupują od ludzi z którymi czują bardziej osobistą więź, 
+                więc nie ma na co czekać - dodaj swoje konta social media, dzięki którym łatwiej Cię odnajdą.
                 </Typography>
               </Item>
             </Grid>
@@ -42,41 +49,48 @@ class CreateProfile3 extends Component {
             <Grid item xs={4}>
               <Item>
                 <Typography variant="h5" align="left" paddingBottom={5}>
-                  Imię i nazwisko
+                  Social media
                 </Typography>
               </Item>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
               <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  name="name"
-                  multiline={false}
-                  rows={1}
-                  required
-                  fullWidth
-                  id="title"
-                  label="Imię"
-                  autoFocus
-                  size="small"
-                />
+
+                 
+                <Typography variant="h5" align="left" paddingBottom={5}>
+                <GoogleIcon fontSize="large"/> Google
+                </Typography>
               </Item>
             </Grid>
-
-            <Grid item xs={4}>
+            <Grid item xs={2}>
               <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  name="lastName"
-                  multiline={false}
-                  rows={1}
-                  required
-                  fullWidth
-                  id="title"
-                  label="Nazwisko"
-                  autoFocus
-                  size="small"
-                />
+                  <AddButtonGoogle />
+              </Item>
+            </Grid>
+            <Grid item xs={4}></Grid>
+            <Grid item xs={6}>
+              <Item>
+                <Typography variant="h5" align="left" paddingBottom={5}>
+                <FacebookIcon fontSize="large"/> Facebook
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={2}>
+              <Item>
+                  <AddButtonFacebook />
+              </Item>
+            </Grid>
+            <Grid item xs={4}></Grid>
+            <Grid item xs={6}>
+              <Item>
+                <Typography variant="h5" align="left" paddingBottom={5}>
+                <InstagramIcon fontSize="large"/> Instagram
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={2}>
+              <Item>
+                  <AddButtonInstagram />
               </Item>
             </Grid>
             <Grid item xs={4}>

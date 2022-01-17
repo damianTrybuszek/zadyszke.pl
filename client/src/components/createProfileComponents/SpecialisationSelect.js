@@ -4,6 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import "../ui/style.css";
+import { Opacity } from "@mui/icons-material";
 
 export default function CategorySelect(theme) {
   const [specialisation, setSpecialisation] = React.useState("");
@@ -24,10 +25,13 @@ export default function CategorySelect(theme) {
           value={specialisation}
           label="Specialisation"
           onChange={handleChange}
+          size="small"
         >
-          <MenuItem value={"Spec 1"} >Programista</MenuItem>
-          <MenuItem value={"Spec 2"}>Grafik</MenuItem>
-          <MenuItem value={"Spec 3"}>Konstruktor</MenuItem>
+          <div style={{backgroundColor: '#2F303A'}}>
+            <MenuItem value={"Spec 1"}>Programista</MenuItem>
+            <MenuItem value={"Spec 2"}>Grafik</MenuItem>
+            <MenuItem value={"Spec 3"}>Konstruktor</MenuItem>
+          </div>
         </Select>
       </FormControl>
     </div>
