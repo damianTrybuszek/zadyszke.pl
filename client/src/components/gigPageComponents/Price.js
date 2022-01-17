@@ -25,10 +25,6 @@ const BasicTextbox = styled(InputBase)(({ theme }) => ({
 }));
 
 class Price extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <BasicTextbox
