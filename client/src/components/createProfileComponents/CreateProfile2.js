@@ -81,28 +81,47 @@ class CreateProfile2 extends Component {
                 <ProficiencySelect />
               </Item>
             </Grid>
-
-            <Grid item xs={3}>
-            </Grid>
             <Grid item xs={4}>
-              <Item>
-                <Typography variant="h5" align="left">
-                  Opis
+            <Item>
+                <Typography variant="h5" align="left" paddingBottom={5}>
+                  Edukacja
                 </Typography>
               </Item>
             </Grid>
-
-            <Grid item xs={8}>
+            <Grid item xs={7}>
               <Item>
-                <TextField
+              <TextField
                   sx={{ label: { color: "white" } }}
-                  name="description"
+                  name="education"
                   multiline={true}
-                  rows={5}
+                  rows={1}
                   fullWidth
-                  id="title"
-                  label="Opis"
+                  id="education"
+                  label="Szkoła / Kierunek / Tytuł / Rok ukończenia"
                   autoFocus
+                  size="small"
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+            <Item>
+                <Typography variant="h5" align="left">
+                  Certyfikaty
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={7}>
+              <Item>
+              <TextField
+                  sx={{ label: { color: "white" } }}
+                  name="certificates"
+                  multiline={true}
+                  rows={1}
+                  fullWidth
+                  id="certificates"
+                  label="Nazwa / Jednostka wydająca / Rok wydanie"
+                  autoFocus
+                  size="small"
                 />
               </Item>
             </Grid>
