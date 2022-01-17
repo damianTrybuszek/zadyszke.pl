@@ -1,21 +1,13 @@
 import { Component } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import OffersListEmpty from "../components/userPageComponents/OffersListEmpty";
+import Box from "@mui/material/Box";;
 import NavbarTop from "../components/ui/NavbarTop";
 import UserOffersButton from "../components/userPageComponents/UserOffersButton";
 import UserOrdersButton from "../components/userPageComponents/UserOrdersButton.js";
-import lady_banner from "../graphics/tempImages/main_banner_lady_cutoff.png";
-import sample_profile_picture from "../graphics/tempImages/sample_profile_picture.png";
 import UserSafetyButtonActive from "../components/userPageComponents/UserSafetyButtonActive";
 import UserInfoButton from "../components/userPageComponents/UserInfoButton";
-import { Typography } from "@mui/material";
-import TextField from "@mui/material/TextField";
 import UserThemeBig from "../components/userPageComponents/UserThemeBig";
-import { Repeat } from "@mui/icons-material";
 import SafetyForm from "../components/userPageComponents/SafetyForm";
 
 const paddingBottomValue = 5;

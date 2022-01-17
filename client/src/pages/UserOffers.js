@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import OffersListEmpty from "../components/userPageComponents/OffersListEmpty";
