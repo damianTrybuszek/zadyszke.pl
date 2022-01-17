@@ -4,12 +4,25 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function CategorySelect(theme) {
-  const [category, setCategory] = React.useState("");
+export default function CategorySelect(props) {
+  const categories = [
+    "",
+    "Projektowanie Logo",
+    "Sztuka",
+    "Muzyka",
+    "Projektowanie Stron",
+    "Programowanie",
+    "Boty komputerowe",
+    "Przepisywanie PDF",
+    "Grafika komputerowa",
+    "Inne",
+  ].sort();
 
-  const handleChange = (event) => {
-    setCategory(event.target.value);
-  };
+  const displayCategories = categories.map((category) => (
+    <MenuItem key={category} value={category}>
+      {category}
+    </MenuItem>
+  ));
 
   return (
     <div>
@@ -20,16 +33,14 @@ export default function CategorySelect(theme) {
         <Select
           labelId="category-select-label"
           id="category-select"
-          value={category}
+          value={props.category === '' ? '' : props.category}
           label="Category"
-          onChange={handleChange}
+          onChange={props.handleCategoryChange}
         >
           <MenuItem value="">
             <em>Brak</em>
           </MenuItem>
-          <MenuItem value={"Kat 1"}>Kat 1</MenuItem>
-          <MenuItem value={"Kat 2"}>Kat 2</MenuItem>
-          <MenuItem value={"Kat 3"}>Kat 3</MenuItem>
+          {displayCategories}
         </Select>
       </FormControl>
     </div>

@@ -30,16 +30,20 @@ public class Offer {
     private LocalDateTime lastModifiedDate;
     private Category category;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "offer_image")
+    private List<OfferImage> offerImages;
+
     @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "author_id")
     private AppUser author;
 
     @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name="offerId")
+    @JoinColumn(name="offer_comment")
     private List<OfferComment> comments;
 
     @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name="offerId")
+    @JoinColumn(name="offer_rating")
     private List<OfferRating> ratings;
 
     public void addComment(OfferComment offerComment){
