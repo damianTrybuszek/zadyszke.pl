@@ -45,7 +45,6 @@ class CreateGig2 extends Component {
     this.handleBasicPriceChange = this.handleBasicPriceChange.bind(this);
     this.handleStandardPriceChange = this.handleStandardPriceChange.bind(this);
     this.handlePremiumPriceChange = this.handlePremiumPriceChange.bind(this);
-    this.printState = this.printState.bind(this);
   }
 
   handleBasicRedosChange(event) {
