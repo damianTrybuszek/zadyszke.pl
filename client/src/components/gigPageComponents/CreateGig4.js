@@ -5,13 +5,24 @@ import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
   color: theme.palette.text.primary,
 }));
 
 class CreateGig4 extends Component {
+  constructor() {
+    super();
+    this.state = {
+      requirements: "",
+    };
+    this.handleRequirementsChange = this.handleRequirementsChange.bind(this);
+  }
+
+  handleRequirementsChange(event) {
+    this.setState({ requirements: event.target.value });
+  }
+
   render() {
     return (
       <div>
@@ -30,8 +41,9 @@ class CreateGig4 extends Component {
             </Grid>
             <Grid item xs={12}>
               <Item>
-              <Typography variant="subtitle2" align="left">
-                  Uwzględnij wszystkie potrzebne Ci informacje aby zacząć pracę nad projektem klienta
+                <Typography variant="subtitle2" align="left">
+                  Uwzględnij wszystkie potrzebne Ci informacje aby zacząć pracę
+                  nad projektem klienta
                 </Typography>
               </Item>
             </Grid>
@@ -55,11 +67,10 @@ class CreateGig4 extends Component {
                   id="title"
                   label="Dodaj swoje pytania i wymagania względem oferty..."
                   autoFocus
+                  onChange={this.handleRequirementsChange}
                 />
               </Item>
             </Grid>
-
-            
           </Grid>
         </Box>
       </div>

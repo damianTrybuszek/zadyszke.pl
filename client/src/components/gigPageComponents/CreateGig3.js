@@ -4,7 +4,6 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Stack from "@mui/material/Stack";
 import OutlinedTextbox from "./OutlinedTextbox";
 import Button from "@mui/material/Button";
 
@@ -54,6 +53,10 @@ class CreateGig3 extends Component {
   addNewQuestion() {
     this.state.questions.push(this.state.newQuestion);
     this.state.answers.push(this.state.newAnswer);
+    this.setState(
+      { questions: this.state.questions, answers: this.state.answers },
+      () => console.log("Callback")
+    );
   }
 
   handleNewQuestionChange(event) {
@@ -69,7 +72,6 @@ class CreateGig3 extends Component {
   }
 
   render() {
-    console.log(this.state);
     const faqLength = this.state.questions.length;
     const indices = Array.from(Array(faqLength).keys());
     const displayFaq = indices.map((i) => (
