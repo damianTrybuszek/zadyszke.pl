@@ -19,6 +19,7 @@ class OutlinedText extends Component {
           id="title"
           label={this.props.title}
           autoFocus
+          onChange={this.props.handleChange}
         />
       </Box>
     );

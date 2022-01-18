@@ -33,13 +33,10 @@ export default function CategorySelect(props) {
         <Select
           labelId="category-select-label"
           id="category-select"
-          value={props.category === '' ? '' : props.category}
+          value={props.category === "" ? "" : props.category}
           label="Category"
           onChange={props.handleCategoryChange}
         >
-          <MenuItem value="">
-            <em>Brak</em>
-          </MenuItem>
           {displayCategories}
         </Select>
       </FormControl>

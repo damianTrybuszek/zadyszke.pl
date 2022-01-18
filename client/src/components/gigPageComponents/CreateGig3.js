@@ -27,7 +27,77 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 class CreateGig3 extends Component {
+  constructor() {
+    super();
+    this.state = {
+      description: "",
+      newQuestion: "",
+      newAnswer: "",
+      questions: ["Od jak dawna to robisz?", "Akceptujesz zwroty?"],
+      answers: [
+        "Już przynajmniej 5 lat zawodowo!",
+        "Oczywiście, że tak. Każdy zakup ma 30 dni gwarancji lub zwrotu kosztów.",
+      ],
+    };
+    this.handleDescriptionChage = this.handleDescriptionChage.bind(this);
+    this.handleNewQuestionChange = this.handleNewQuestionChange.bind(this);
+    this.handleNewAnswerChange = this.handleNewAnswerChange.bind(this);
+    this.addNewQuestion = this.addNewQuestion.bind(this);
+  }
+
+  handleDescriptionChage(event) {
+    this.setState({
+      description: event.target.value,
+    });
+  }
+
+  addNewQuestion() {
+    this.state.questions.push(this.state.newQuestion);
+    this.state.answers.push(this.state.newAnswer);
+  }
+
+  handleNewQuestionChange(event) {
+    this.setState({
+      newQuestion: event.target.value,
+    });
+  }
+
+  handleNewAnswerChange(event) {
+    this.setState({
+      newAnswer: event.target.value,
+    });
+  }
+
   render() {
+    console.log(this.state);
+    const faqLength = this.state.questions.length;
+    const indices = Array.from(Array(faqLength).keys());
+    const displayFaq = indices.map((i) => (
+      <div>
+        <Grid container spacing={2}>
+          <Grid item xs={4}>
+            <Item>
+              <Box sx={{ border: 1, borderRadius: 3, padding: 1 }}>
+                <Typography>{this.state.questions[i]}</Typography>
+              </Box>
+            </Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Box sx={{ border: 1, borderRadius: 3, padding: 1 }}>
+              <Item>
+                <Typography>{this.state.answers[i]}</Typography>
+              </Item>
+            </Box>
+          </Grid>
+          <Grid item xs={4}>
+            <Item sx={{ visibility: "hidden" }}>
+              <BackButton>Dodaj</BackButton>
+            </Item>
+          </Grid>
+        </Grid>
+      </div>
+    ));
+
     return (
       <div>
         <Box
@@ -75,22 +145,32 @@ class CreateGig3 extends Component {
             <Grid item xs={2}></Grid>
             <Grid item xs={10}>
               <Box sx={{ border: 1, borderRadius: 3, padding: 1 }}>
-                <Stack
-                  direction="row"
-                  justifyContent="center"
-                  alignItems="stretch"
-                  spacing={2}
-                >
-                  <Item>
-                    <OutlinedTextbox title="Pytanie" />
-                  </Item>
-                  <Item>
-                    <OutlinedTextbox title="Odpowiedź" />
-                  </Item>
-                  <Item>
-                    <BackButton>Dodaj</BackButton>
-                  </Item>
-                </Stack>
+                {displayFaq}
+                <Grid container spacing={2}>
+                  <Grid item xs={4}>
+                    <Item>
+                      <OutlinedTextbox
+                        title="Pytanie"
+                        handleChange={this.handleNewQuestionChange}
+                      />
+                    </Item>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <Item>
+                      <OutlinedTextbox
+                        title="Odpowiedź"
+                        handleChange={this.handleNewAnswerChange}
+                      />
+                    </Item>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <Item>
+                      <BackButton onClick={this.addNewQuestion}>
+                        Dodaj
+                      </BackButton>
+                    </Item>
+                  </Grid>
+                </Grid>
               </Box>
             </Grid>
           </Grid>

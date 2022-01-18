@@ -59,9 +59,6 @@ export default function SubcategorySelect(props) {
           label="SubCategory"
           onChange={props.handleSubCategoryChange}
         >
-          <MenuItem value="">
-            <em>Brak</em>
-          </MenuItem>
           {displaySubCategories}
         </Select>
       </FormControl>
