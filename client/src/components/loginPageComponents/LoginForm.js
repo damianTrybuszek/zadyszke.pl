@@ -1,8 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import  { useNavigate } from 'react-router-dom';
 import { Form, Button, Container } from "react-bootstrap";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import FormBackground from "./FormBackground";
 import { Col, Row } from "react-bootstrap";
@@ -13,14 +11,19 @@ import FacebookLoginButton from "./FacebookLoginButton";
 
 function LoginForm() {
   const [error, setError] = useState(null);
+
   const [enteredLogin, setEnteredLogin] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
+
   const [enteredLoginIsValid, setEnteredLoginIsValid] = useState(false);
   const [enteredLoginTouched, setEnteredLoginTouched] = useState(false);
+
   const [enteredPasswordIsValid, setEnteredPasswordIsValid] = useState(false);
   const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
 
+  const [isLogin, setIsLogin] = useState(false);
+  
+  let navigate = useNavigate();
   let formIsValid = false;
 
   if (enteredLoginIsValid && enteredPasswordIsValid) {
@@ -117,6 +120,7 @@ function LoginForm() {
       }).then((res) => {
         if (res.ok) {
           console.log(res);
+          navigate('/');
         } else {
           return res.json().then((data) => {
             // show an error modal
