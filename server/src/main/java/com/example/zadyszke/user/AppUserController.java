@@ -45,6 +45,7 @@ public class AppUserController {
         return service.validatePassword(userLoginDetails.getEmail(), userLoginDetails.getPassword());
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/users")
     public void create(@RequestBody AppUserRegisterDTO user) {
