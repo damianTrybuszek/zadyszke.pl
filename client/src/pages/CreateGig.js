@@ -57,10 +57,24 @@ class CreateGig extends Component {
     super(props);
     this.state = {
       activeStep: 0,
+      title: "",
+      category: "",
+      subCategory: "",
+      tags: [],
     };
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.submitOffer = this.submitOffer.bind(this);
+    this.saveStateFromPage1 = this.saveStateFromPage1.bind(this);
+  }
+
+  saveStateFromPage1(data) {
+    this.setState({
+      title: data.title,
+      category: data.category,
+      subCategory: data.subCategory,
+      tags: data.tags,
+    });
   }
 
   handleNext() {
@@ -82,7 +96,7 @@ class CreateGig extends Component {
   getStepContent(step) {
     switch (step) {
       case 0:
-        return <CreateGig1 />;
+        return <CreateGig1 saveStateFromPage1={this.saveStateFromPage1} />;
       case 1:
         return <CreateGig2 />;
       case 2:
@@ -99,6 +113,7 @@ class CreateGig extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <NavbarTop />

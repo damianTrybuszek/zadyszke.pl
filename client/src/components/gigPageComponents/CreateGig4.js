@@ -4,6 +4,20 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+
+const SaveButton = styled(Button)(({ theme }) => ({
+  boxShadow: "none",
+  textTransform: "none",
+  fontSize: 25,
+  padding: "10px 100px",
+  border: "1px solid",
+  borderColor: theme.palette.primary.orange,
+  lineHeight: 1,
+  fontFamily: ["Poppins", "sans-serif"],
+  backgroundColor: theme.palette.primary.orange,
+  color: theme.palette.primary.white,
+}));
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -71,6 +85,20 @@ class CreateGig4 extends Component {
                 />
               </Item>
             </Grid>
+            <Grid item xs={12}>
+                    <Item></Item>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Item>
+                      <SaveButton
+                        onClick={() =>
+                          this.props.saveStateFromPage1(this.state)
+                        }
+                      >
+                        Zapisz
+                      </SaveButton>
+                    </Item>
+                  </Grid>
           </Grid>
         </Box>
       </div>
