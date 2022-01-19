@@ -10,7 +10,6 @@ import { Col, Row } from "react-bootstrap";
 import { Typography } from "@mui/material";
 
 export default function RegisterForms() {
-  const [error, setError] = useState(null);
 
   const [enteredName, setEnteredName] = useState("");
   const [enteredSurname, setEnteredSurname] = useState("");
@@ -21,37 +20,21 @@ export default function RegisterForms() {
   const [areTermsAccepted, setTermsAccepted] = useState(false);
 
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
-  const [enteredNameTouched, setEnteredNameTouched] = useState(false);
   const [enteredSurnameIsValid, setEnteredSurnameIsValid] = useState(false);
-  const [enteredSurnameTouched, setEnteredSurnameTouched] = useState(false);
   const [enteredLoginIsValid, setEnteredLoginIsValid] = useState(false);
-  const [enteredLoginTouched, setEnteredLoginTouched] = useState(false);
   const [enteredEmailIsValid, setEnteredEmailIsValid] = useState(false);
-  const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
   const [enteredPasswordIsValid, setEnteredPasswordIsValid] = useState(false);
-  const [enteredPasswordTouched, setEnteredPasswordTouched] = useState(false);
   const [enteredRepeatedPasswordIsValid, setEnteredRepeatedPasswordIsValid] =
     useState(false);
-  const [enteredRepeatedPasswordTouched, setEnteredRepeatedPasswordTouched] =
-    useState(false);
+  
 
   let navigate = useNavigate();
   let formIsValid = false;
+  let isPasswordMatching = false;
 
-  if (
-    enteredLoginIsValid &&
-    enteredPasswordIsValid &&
-    enteredNameIsValid &&
-    enteredSurnameIsValid &&
-    enteredEmailIsValid &&
-    enteredRepeatedPasswordIsValid
-  ) {
-    formIsValid = true;
-  }
 
   const enteredNameChangeHandler = (event) => {
-    setEnteredName(event.target.value);
-    console.log(enteredName);
+    setEnteredName(event.target.value); 
 
     if (enteredName.trim() !== "") {
       setEnteredNameIsValid(true);
@@ -105,7 +88,6 @@ export default function RegisterForms() {
   };
 
   const nameInputBlurHandler = (event) => {
-    setEnteredNameTouched(true);
 
     if (event.target.value.trim() === "") {
       setEnteredNameIsValid(false);
@@ -113,7 +95,6 @@ export default function RegisterForms() {
   };
 
   const surnameInputBlurHandler = (event) => {
-    setEnteredSurnameTouched(true);
 
     if (event.target.value.trim() === "") {
       setEnteredSurnameIsValid(false);
@@ -121,7 +102,6 @@ export default function RegisterForms() {
   };
 
   const emailInputBlurHandler = (event) => {
-    setEnteredEmailTouched(true);
 
     if (event.target.value.trim() === "") {
       setEnteredEmailIsValid(false);
@@ -129,7 +109,6 @@ export default function RegisterForms() {
   };
 
   const loginInputBlurHandler = (event) => {
-    setEnteredLoginTouched(true);
 
     if (event.target.value.trim() === "") {
       setEnteredLoginIsValid(false);
@@ -137,7 +116,6 @@ export default function RegisterForms() {
   };
 
   const passwordInputBlurHandler = (event) => {
-    setEnteredPasswordTouched(true);
 
     if (event.target.value.trim() === "") {
       setEnteredPasswordIsValid(false);
@@ -145,7 +123,6 @@ export default function RegisterForms() {
   };
 
   const passwordRepeatedInputBlurHandler = (event) => {
-    setEnteredRepeatedPasswordTouched(true);
 
     if (event.target.value.trim() === "") {
       setEnteredRepeatedPasswordIsValid(false);
@@ -154,7 +131,6 @@ export default function RegisterForms() {
 
   const submitHandler = () => {
     if (formIsValid) {
-    } else {
       const fetchTest = fetch("http://localhost:8080/api/users", {
         method: "POST",
         body: JSON.stringify({
@@ -178,26 +154,18 @@ export default function RegisterForms() {
           });
         }
       });
+    } else {
+      console.log("error");
     }
   };
 
   const termsChangeHandler = () => {
     setTermsAccepted(!areTermsAccepted);
     console.log(areTermsAccepted);
-    // if (areTermsAccepted === false) {
-    //   setTermsAccepted(true);
-    //   console.log(areTermsAccepted);
-    // } else {
-    //   setTermsAccepted(false);
-    //   console.log(areTermsAccepted);
-    // }
   };
 
   const formSubmissionHandler = (event) => {
     event.preventDefault(); //to prevent sending HTTP request instantly, page would be reloaded
-
-    setEnteredLoginTouched(true);
-    setEnteredPasswordTouched(true);
 
     if (enteredLogin.trim() === "") {
       setEnteredLoginIsValid(false);
@@ -211,13 +179,29 @@ export default function RegisterForms() {
       return;
     }
 
-    setEnteredPasswordIsValid(true);
+    if ((enteredPassword === enteredRepeatedPassword) && enteredRepeatedPasswordIsValid && enteredPasswordIsValid) {
+      isPasswordMatching = true;
+    }
 
-    submitHandler();
-    // checkUserCredentials();
+    if (
+      enteredLoginIsValid &&
+      isPasswordMatching &&
+      enteredNameIsValid &&
+      enteredSurnameIsValid &&
+      enteredEmailIsValid
+    ) {
+      formIsValid = true;
+      submitHandler();
+    } else {
+      console.log("error");
+    }
 
     setEnteredLogin("");
     setEnteredPassword("");
+    setEnteredName("");
+    setEnteredSurname("");
+    setEnteredEmail("");
+    setEnteredRepeatedPassword("");
   };
 
   return (
