@@ -1,42 +1,73 @@
 import { Component } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import OffersListEmpty from "../components/userPageComponents/OffersListEmpty";
+import Box from "@mui/material/Box";;
 import NavbarTop from "../components/ui/NavbarTop";
 import UserOffersButton from "../components/userPageComponents/UserOffersButton";
 import UserOrdersButton from "../components/userPageComponents/UserOrdersButton.js";
-import lady_banner from "../graphics/tempImages/main_banner_lady_cutoff.png";
-import sample_profile_picture from "../graphics/tempImages/sample_profile_picture.png";
 import UserSafetyButtonActive from "../components/userPageComponents/UserSafetyButtonActive";
 import UserInfoButton from "../components/userPageComponents/UserInfoButton";
-import { Typography } from "@mui/material";
 import UserThemeBig from "../components/userPageComponents/UserThemeBig";
-import { Repeat } from "@mui/icons-material";
 import SafetyForm from "../components/userPageComponents/SafetyForm";
 
+const paddingBottomValue = 5;
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "transparent",
+const Item = styled("div")(({ theme }) => ({
+  textAlign: "center",
+  color: theme.palette.text.primary,
 }));
 
 class UserInfo extends Component {
   render() {
     return (
       <div>
-        <NavbarTop />
+        <NavbarTop />       
 
-        <Box sx={{ width: "100%", display: 'grid', gridTemplateColumns:'repeat(15, 1fr)', gap:5, gridAutoRows:'repeat(15, 1fr)'}}>
-          <Item sx={{ gridRow: '2', gridColumn: '2/5', display: 'grid'}}><UserInfoButton /></Item>
-          <Item sx={{ gridRow: '3', gridColumn: '2/5', display: 'grid'}}><UserSafetyButtonActive /></Item>
-          <Item sx={{ gridRow: '4', gridColumn: '2/5', display: 'grid'}}><UserOrdersButton /></Item>
-          <Item sx={{ gridRow: '5', gridColumn: '2/5', display: 'grid'}}><UserOffersButton /></Item>
+        <Box sx={{ display: "grid" }}>
+          <Grid container spacing={5}>
+            <Grid
+              direction="column"
+              justifyContent="center"
+              item
+              xs={2}
+              marginLeft={5}
+            >
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserInfoButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserSafetyButtonActive />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOrdersButton />
+                </Item>
+              </Grid>
+              <Grid paddingBottom={paddingBottomValue}>
+                <Item>
+                  <UserOffersButton />
+                </Item>
+              </Grid>
+            </Grid>
 
-          <Item sx={{ gridRow: '2/10', gridColumn: '5/12' }}><SafetyForm /></Item>
-          <Item sx={{ gridRow: '2/8', gridColumn: '12/15'}}><UserThemeBig /></Item>
+            <Grid item xs>
+              <Item><SafetyForm /></Item>
+            </Grid>
+            <Grid item xs={2} marginRight={5}>
+              <Item>
+                <UserThemeBig />
+              </Item>
+            </Grid>
+          </Grid>
+        
+
           </Box>
+
+
       </div>
     );
   }

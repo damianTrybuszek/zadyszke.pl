@@ -12,7 +12,7 @@ const Item = styled("div")(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 
-class OffersListEmpty extends Component {
+class OrdersListEmpty extends Component {
   render() {
     return (
       <Container className="offerList">
@@ -27,7 +27,7 @@ class OffersListEmpty extends Component {
         >
           <Item sx={{ gridRow: "2", gridColumn: "2/16", display: "grid" }}>
             <Typography variant="h6">
-              Wygląda na to, że nie masz jeszcze ogłoszeń.
+              Wygląda na to, że nie masz jeszcze zamówień.
             </Typography>
           </Item>
           <Item sx={{ gridRow: "3", gridColumn: "8/15", display: "grid" }}>
@@ -39,4 +39,4 @@ class OffersListEmpty extends Component {
   }
 }
 
-export default OffersListEmpty;
+export default OrdersListEmpty;

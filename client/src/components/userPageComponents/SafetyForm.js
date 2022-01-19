@@ -1,15 +1,16 @@
 import React, { useState, useCallback } from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Form, Button, Container } from "react-bootstrap";
+import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import { Col, Row } from "react-bootstrap";
+import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import "../ui/style.css";
+import ChangePasswordButton from "../userPageComponents/ChangePasswordButton.js";
+import TwoStepVerificationSwitch from "../userPageComponents/TwoStepVerificationSwitch.js";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "transparent",
+const Item = styled("div")(({ theme }) => ({
+  textAlign: "center",
+  color: theme.palette.text.primary,
 }));
 
 function ChangePassword() {
@@ -31,51 +32,89 @@ function ChangePassword() {
   }
 
   return (
-    <Container>
-      <Box
-        sx={{
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "repeat(10, 1fr)",
-          gap: 1,
-          gridAutoRows: "repeat(15, 1fr)",
-        }}
-      >
-        <Item sx={{ gridRow: "1/3", gridColumn: "1/3" }}>Hasło</Item>
-        <Item sx={{ gridRow: "3/6", gridColumn: "1/3" }}>
-          <p class='text-sm-left'>Weryfikacja dwuetapowa</p>
-        </Item>
-        <Item sx={{ gridRow: "1/3", gridColumn: "3/9" }}>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control
-                size="sm"
-                type="password"
-                placeholder="Wprowadź hasło"
-              />
-            </Form.Group>
-          </Form>
-        </Item>
-        <Item sx={{ gridRow: "3/6", gridColumn: "3/9" }}>
-          <Form>
-            <Form.Group
-              className="mb-3"
-              controlId="formBasicPhoneNumber"
-            >
-              <Form.Control
-                size="sm"
-                type="password"
-                placeholder="Wprowadź hasło"
-              />
-              <Form.Text>
-                <p>Twój numer telefonu: +48 123 456 789.</p>
-                <p>Na ten numer wyślemy kody.</p>
-              </Form.Text>
-            </Form.Group>
-          </Form>
-        </Item>
-      </Box>
-    </Container>
+    <Box
+      sx={{
+        width: "100%",
+        display: "grid",
+        gap: 1,
+      }}
+    >
+      <Grid container spacing={2}>
+        <Grid item xs={2}>
+          <Item>
+            <Typography variant="body1" align="left">
+              Hasło
+            </Typography>
+          </Item>
+        </Grid>
+
+        <Grid item xs={8}>
+          <Item>
+            <TextField
+              sx={{ label: { color: "white" } }}
+              name="password"
+              hintText="Password"
+              floatingLabelText="Password"
+              type="password"
+              multiline={false}
+              rows={1}
+              required
+              fullWidth
+              id="password"
+              label="Zmień hasło"
+              autoFocus
+              size="small"
+            />
+            <Typography variant="body2" align="left">
+              Ostatnia zmiana hasła:
+            </Typography>
+          </Item>
+        </Grid>
+
+        <Grid item xs={2}>
+          <Item>
+            <ChangePasswordButton />
+          </Item>
+        </Grid>
+
+        <Grid item xs={2}>
+          <Item>
+            <Typography variant="body1" align="left">
+              Weryfikacja dwuetapowa
+            </Typography>
+          </Item>
+        </Grid>
+
+        <Grid item xs={8}>
+          <Item>
+            <TextField
+              sx={{ label: { color: "white" } }}
+              name="phoneNumber"
+              multiline={false}
+              rows={1}
+              required
+              fullWidth
+              id="phoneNumber"
+              label="Wprowadź numer telefonu"
+              autoFocus
+              size="small"
+            />
+            <Typography variant="body2" align="left">
+              Numer telefonu: 123 456 789
+            </Typography>
+            <Typography variant="body2" align="left">
+              Na ten numer będziesz otrzymywać kody.
+            </Typography>
+          </Item>
+        </Grid>
+
+        <Grid item xs={2}>
+          <Item>
+            <TwoStepVerificationSwitch />
+          </Item>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 

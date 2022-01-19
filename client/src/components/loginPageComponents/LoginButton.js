@@ -14,7 +14,7 @@ const theme = createTheme({
 export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
-      <Button variant="contained" type="submit">Zaloguj się</Button>
+      <Button variant="contained" type="submit" style={{width:'100%'}}>Zaloguj się</Button>
     </ThemeProvider>
   );
 }
