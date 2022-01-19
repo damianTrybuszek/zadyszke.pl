@@ -14,8 +14,8 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 class CreateGig1 extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "",
       category: "",

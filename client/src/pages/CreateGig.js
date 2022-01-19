@@ -55,12 +55,12 @@ const BackButton = styled(Button)(({ theme }) => ({
 class CreateGig extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       activeStep: 0,
     };
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
+    this.submitOffer = this.submitOffer.bind(this);
   }
 
   handleNext() {
@@ -73,6 +73,10 @@ class CreateGig extends Component {
     this.setState({
       activeStep: this.state.activeStep - 1,
     });
+  }
+
+  submitOffer() {
+    console.log("Offer submited");
   }
 
   getStepContent(step) {
@@ -147,15 +151,23 @@ class CreateGig extends Component {
                   </Grid>
                   <Grid item xs={6}>
                     <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                      <NextButton
-                        variant="contained"
-                        onClick={this.handleNext}
-                        sx={{ mt: 3, ml: 1 }}
-                      >
-                        {this.state.activeStep === steps.length - 1
-                          ? "Zakończ"
-                          : "Dalej"}
-                      </NextButton>
+                      {this.state.activeStep === steps.length - 1 ? (
+                        <NextButton
+                          variant="contained"
+                          onClick={this.submitOffer}
+                          sx={{ mt: 3, ml: 1 }}
+                        >
+                          Zakończ
+                        </NextButton>
+                      ) : (
+                        <NextButton
+                          variant="contained"
+                          onClick={this.handleNext}
+                          sx={{ mt: 3, ml: 1 }}
+                        >
+                          Dalej
+                        </NextButton>
+                      )}
                     </Box>
                   </Grid>
                 </Grid>

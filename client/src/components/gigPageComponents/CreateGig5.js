@@ -10,7 +10,22 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 class CreateGig5 extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedFile: null,
+      uploadedFiles: [],
+    };
+  }
+
+  onFileChange = (event) => {
+    this.setState({ selectedFile: event.target.files[0] }, () =>
+      this.state.uploadedFiles.push(event.target.files[0].name)
+    );
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div>
         <Box
@@ -46,7 +61,7 @@ class CreateGig5 extends Component {
               <Item>
                 <Box sx={{ border: 1, borderRadius: 2, padding: 5 }}>
                   <Typography variant="subtitle2" align="center">
-                    Dodaj zdjęcie
+                    <input type="file" onChange={this.onFileChange} />
                   </Typography>
                   <Typography variant="overline" align="center">
                     Przeglądaj...
@@ -58,7 +73,7 @@ class CreateGig5 extends Component {
               <Item>
                 <Box sx={{ border: 1, borderRadius: 2, padding: 5 }}>
                   <Typography variant="subtitle2" align="center">
-                    Dodaj zdjęcie
+                    <input type="file" onChange={this.onFileChange} />
                   </Typography>
                   <Typography variant="overline" align="center">
                     Przeglądaj...
@@ -70,7 +85,7 @@ class CreateGig5 extends Component {
               <Item>
                 <Box sx={{ border: 1, borderRadius: 2, padding: 5 }}>
                   <Typography variant="subtitle2" align="center">
-                    Dodaj zdjęcie
+                    <input type="file" onChange={this.onFileChange} />
                   </Typography>
                   <Typography variant="overline" align="center">
                     Przeglądaj...
