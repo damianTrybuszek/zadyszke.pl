@@ -45,11 +45,8 @@ class CreateGig3 extends Component {
       description: "",
       newQuestion: "",
       newAnswer: "",
-      questions: ["Od jak dawna to robisz?", "Akceptujesz zwroty?"],
-      answers: [
-        "Już przynajmniej 5 lat zawodowo!",
-        "Oczywiście, że tak. Każdy zakup ma 30 dni gwarancji lub zwrotu kosztów.",
-      ],
+      questions: [],
+      answers: [],
     };
     this.handleDescriptionChage = this.handleDescriptionChage.bind(this);
     this.handleNewQuestionChange = this.handleNewQuestionChange.bind(this);
@@ -194,7 +191,7 @@ class CreateGig3 extends Component {
             <Grid item xs={12}>
               <Item>
                 <SaveButton
-                  onClick={() => this.props.saveStateFromPage1(this.state)}
+                  onClick={() => this.props.saveStateFromPage3(this.state)}
                 >
                   Zapisz
                 </SaveButton>

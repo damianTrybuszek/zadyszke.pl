@@ -77,9 +77,6 @@ class CreateGig5 extends Component {
                   <Typography variant="subtitle2" align="center">
                     <input type="file" onChange={this.onFileChange} />
                   </Typography>
-                  <Typography variant="overline" align="center">
-                    Przeglądaj...
-                  </Typography>
                 </Box>
               </Item>
             </Grid>
@@ -89,9 +86,6 @@ class CreateGig5 extends Component {
                   <Typography variant="subtitle2" align="center">
                     <input type="file" onChange={this.onFileChange} />
                   </Typography>
-                  <Typography variant="overline" align="center">
-                    Przeglądaj...
-                  </Typography>
                 </Box>
               </Item>
             </Grid>
@@ -100,9 +94,6 @@ class CreateGig5 extends Component {
                 <Box sx={{ border: 1, borderRadius: 2, padding: 5 }}>
                   <Typography variant="subtitle2" align="center">
                     <input type="file" onChange={this.onFileChange} />
-                  </Typography>
-                  <Typography variant="overline" align="center">
-                    Przeglądaj...
                   </Typography>
                 </Box>
               </Item>
@@ -121,7 +112,7 @@ class CreateGig5 extends Component {
             <Grid item xs={12}>
               <Item>
                 <SaveButton
-                  onClick={() => this.props.saveStateFromPage1(this.state)}
+                  onClick={() => this.props.saveStateFromPage5(this.state)}
                 >
                   Zapisz
                 </SaveButton>

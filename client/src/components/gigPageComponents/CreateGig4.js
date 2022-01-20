@@ -92,7 +92,7 @@ class CreateGig4 extends Component {
                     <Item>
                       <SaveButton
                         onClick={() =>
-                          this.props.saveStateFromPage1(this.state)
+                          this.props.saveStateFromPage4(this.state)
                         }
                       >
                         Zapisz

@@ -61,11 +61,29 @@ class CreateGig extends Component {
       category: "",
       subCategory: "",
       tags: [],
+      basicRedos: 0,
+      standardRedos: 0,
+      premiumRedos: 0,
+      basicSpeedDelivery: false,
+      standardSpeedDelivery: false,
+      premiumSpeedDelivery: false,
+      basicPrice: 0,
+      standardPrice: 0,
+      premiumPrice: 0,
+      description: "",
+      questions: [],
+      answers: [],
+      requirements: "",
+      uploadedFiles: [],
     };
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.submitOffer = this.submitOffer.bind(this);
     this.saveStateFromPage1 = this.saveStateFromPage1.bind(this);
+    this.saveStateFromPage2 = this.saveStateFromPage2.bind(this);
+    this.saveStateFromPage3 = this.saveStateFromPage3.bind(this);
+    this.saveStateFromPage4 = this.saveStateFromPage4.bind(this);
+    this.saveStateFromPage5 = this.saveStateFromPage5.bind(this);
   }
 
   saveStateFromPage1(data) {
@@ -75,6 +93,36 @@ class CreateGig extends Component {
       subCategory: data.subCategory,
       tags: data.tags,
     });
+  }
+
+  saveStateFromPage2(data) {
+    this.setState({
+      basicRedos: data.basicRedos,
+      standardRedos: data.standardRedos,
+      premiumRedos: data.premiumRedos,
+      basicSpeedDelivery: data.basicSpeedDelivery,
+      standardSpeedDelivery: data.standardSpeedDelivery,
+      premiumSpeedDelivery: data.premiumSpeedDelivery,
+      basicPrice: data.basicPrice,
+      standardPrice: data.standardPrice,
+      premiumPrice: data.premiumPrice,
+    });
+  }
+
+  saveStateFromPage3(data) {
+    this.setState({
+      description: data.description,
+      questions: data.questions,
+      answers: data.answers,
+    });
+  }
+
+  saveStateFromPage4(data) {
+    this.setState({ requirements: data.requirements });
+  }
+
+  saveStateFromPage5(data) {
+    this.setState({ uploadedFiles: data.uploadedFiles });
   }
 
   handleNext() {
@@ -98,13 +146,13 @@ class CreateGig extends Component {
       case 0:
         return <CreateGig1 saveStateFromPage1={this.saveStateFromPage1} />;
       case 1:
-        return <CreateGig2 />;
+        return <CreateGig2 saveStateFromPage2={this.saveStateFromPage2} />;
       case 2:
-        return <CreateGig3 />;
+        return <CreateGig3 saveStateFromPage3={this.saveStateFromPage3} />;
       case 3:
-        return <CreateGig4 />;
+        return <CreateGig4 saveStateFromPage4={this.saveStateFromPage4} />;
       case 4:
-        return <CreateGig5 />;
+        return <CreateGig5 saveStateFromPage5={this.saveStateFromPage5} />;
       case 5:
         return <CreateGig6 />;
       default:
