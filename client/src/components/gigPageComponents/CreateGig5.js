@@ -34,7 +34,7 @@ class CreateGig5 extends Component {
 
   onFileChange = (event) => {
     this.setState({ selectedFile: event.target.files[0] }, () =>
-      this.state.uploadedFiles.push(event.target.files[0].name)
+      this.state.uploadedFiles.push(["imagePath", event.target.files[0].name])
     );
   };
 

@@ -1,9 +1,10 @@
 package com.example.zadyszke.offer.dto;
 
 import com.example.zadyszke.comment.offer.OfferComment;
-import com.example.zadyszke.offer.Category;
+import com.example.zadyszke.offer.Faq;
 import com.example.zadyszke.offer.Offer;
 import com.example.zadyszke.offer.OfferImage;
+import com.example.zadyszke.offer.Tag;
 import com.example.zadyszke.user.AppUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +12,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -20,35 +20,71 @@ import java.util.List;
 @AllArgsConstructor
 public class OfferCreateDTO {
     private String title;
-    private String content;
-    private BigDecimal price;
+    private String description;
+    private String requirements;
+    private int basicRedos;
+    private int standardRedos;
+    private int premiumRedos;
+    private BigDecimal basicPrice;
+    private BigDecimal standardPrice;
+    private BigDecimal premiumPrice;
+    private boolean basicSpeedDelivery;
+    private boolean standardSpeedDelivery;
+    private boolean premiumSpeedDelivery;
+    private String category;
+    private String subCategory;
 
     private AppUser author;
-    private Category category;
     private List<OfferComment> comments;
-    private List<OfferImage> images;
+    private List<OfferImage> offerImages;
+    private List<Faq> faq;
+    private List<Tag> tags;
 
-    public Offer toOffer(){
+    public Offer toOffer() {
         return Offer.builder()
                 .title(this.title)
-                .content(this.content)
+                .description(this.description)
+                .requirements(this.requirements)
                 .category(this.category)
-                .price(this.price)
+                .subCategory(this.subCategory)
+                .basicRedos(this.basicRedos)
+                .standardRedos(this.standardRedos)
+                .premiumRedos(this.premiumRedos)
+                .basicPrice(this.basicPrice)
+                .standardPrice(this.standardPrice)
+                .premiumPrice(this.premiumPrice)
+                .basicSpeedDelivery(this.basicSpeedDelivery)
+                .standardSpeedDelivery(this.standardSpeedDelivery)
+                .premiumSpeedDelivery(this.premiumSpeedDelivery)
                 .author(this.author)
                 .comments(this.comments)
-                .offerImages(this.images)
+                .offerImages(this.offerImages)
+                .faq(this.faq)
+                .tags(this.tags)
                 .build();
     }
 
-    public static OfferCreateDTO of(Offer offer){
+    public static OfferCreateDTO of(Offer offer) {
         return OfferCreateDTO.builder()
                 .title(offer.getTitle())
-                .content(offer.getContent())
+                .description(offer.getDescription())
                 .category(offer.getCategory())
-                .price(offer.getPrice())
+                .requirements(offer.getRequirements())
+                .subCategory(offer.getSubCategory())
+                .basicRedos(offer.getBasicRedos())
+                .standardRedos(offer.getStandardRedos())
+                .premiumRedos(offer.getPremiumRedos())
+                .basicPrice(offer.getBasicPrice())
+                .standardPrice(offer.getStandardPrice())
+                .premiumPrice(offer.getPremiumPrice())
+                .basicSpeedDelivery(offer.isBasicSpeedDelivery())
+                .standardSpeedDelivery(offer.isStandardSpeedDelivery())
+                .premiumSpeedDelivery(offer.isPremiumSpeedDelivery())
                 .author(offer.getAuthor())
                 .comments(offer.getComments())
-                .images(offer.getOfferImages())
+                .offerImages(offer.getOfferImages())
+                .faq(offer.getFaq())
+                .tags(offer.getTags())
                 .build();
     }
 

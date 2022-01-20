@@ -75,6 +75,7 @@ class CreateGig extends Component {
       answers: [],
       requirements: "",
       uploadedFiles: [],
+      faq: [],
     };
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
@@ -137,8 +138,49 @@ class CreateGig extends Component {
     });
   }
 
+  createFaqList() {
+    let allFaq = [];
+    for (let i = 0; i < this.state.questions.length; i++) {
+      let tempQuestion = ["question", this.state.questions[i]];
+      let tempAnswer = ["answer", this.state.answers[i]];
+      let tempFaqEntry = [tempQuestion, tempAnswer];
+      let tempFaqObject = Object.fromEntries(tempFaqEntry);
+      allFaq.push(tempFaqObject);
+    }
+    this.setState({ faq: allFaq });
+  }
+
   submitOffer() {
-    console.log("Offer submited");
+    this.createFaqList();
+    fetch("http://localhost:8080/api/offers", {
+      method: "POST",
+      body: JSON.stringify({
+        title: this.state.title,
+        category: this.state.category,
+        subCategory: this.state.subCategory,
+        description: this.state.description,
+        tags: this.state.tags
+          .map((tag) => ["name", tag])
+          .map((tag) => Object.fromEntries([tag])),
+        basicRedos: this.state.basicRedos,
+        standardRedos: this.state.standardRedos,
+        premiumRedos: this.state.premiumRedos,
+        basicPrice: this.state.basicPrice,
+        standardPrice: this.state.standardPrice,
+        premiumPrice: this.state.premiumPrice,
+        basicSpeedDelivery: this.state.basicSpeedDelivery,
+        standardSpeedDelivery: this.state.standardSpeedDelivery,
+        premiumSpeedDelivery: this.state.premiumSpeedDelivery,
+        faq: this.state.faq,
+        requirements: this.state.requirements,
+        offerImages: this.state.uploadedFiles.map((image) =>
+          Object.fromEntries([image])
+        ),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
 
   getStepContent(step) {
