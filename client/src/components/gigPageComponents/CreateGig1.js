@@ -7,6 +7,20 @@ import { styled } from "@mui/material/styles";
 import CategorySelect from "./CategorySelect";
 import SubcategorySelect from "./SubcategorySelect";
 import TagsSelect from "./TagsSelect";
+import Button from "@mui/material/Button";
+
+const SaveButton = styled(Button)(({ theme }) => ({
+  boxShadow: "none",
+  textTransform: "none",
+  fontSize: 25,
+  padding: "10px 100px",
+  border: "1px solid",
+  borderColor: theme.palette.primary.orange,
+  lineHeight: 1,
+  fontFamily: ["Poppins", "sans-serif"],
+  backgroundColor: theme.palette.primary.orange,
+  color: theme.palette.primary.white,
+}));
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -14,8 +28,8 @@ const Item = styled("div")(({ theme }) => ({
 }));
 
 class CreateGig1 extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "",
       category: "",
@@ -123,6 +137,18 @@ class CreateGig1 extends Component {
                   tags={this.state.tags}
                   handleTagsChange={this.handleTagsChange}
                 />
+              </Item>
+            </Grid>
+            <Grid item xs={12}>
+              <Item></Item>
+            </Grid>
+            <Grid item xs={12}>
+              <Item>
+                <SaveButton
+                  onClick={() => this.props.saveStateFromPage1(this.state)}
+                >
+                  Zapisz
+                </SaveButton>
               </Item>
             </Grid>
           </Grid>

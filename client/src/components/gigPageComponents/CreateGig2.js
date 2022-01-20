@@ -8,6 +8,20 @@ import OfferType from "./OfferType";
 import tempImage from "../../graphics/tempImages/sample_offer_1.jpg";
 import OfferRedosAmountSelect from "./OfferRedosAmountSelect";
 import Price from "./Price";
+import Button from "@mui/material/Button";
+
+const SaveButton = styled(Button)(({ theme }) => ({
+  boxShadow: "none",
+  textTransform: "none",
+  fontSize: 25,
+  padding: "10px 100px",
+  border: "1px solid",
+  borderColor: theme.palette.primary.orange,
+  lineHeight: 1,
+  fontFamily: ["Poppins", "sans-serif"],
+  backgroundColor: theme.palette.primary.orange,
+  color: theme.palette.primary.white,
+}));
 
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -226,6 +240,18 @@ class CreateGig2 extends Component {
                   priceVale={this.state.premiumPrice}
                   handleChange={this.handlePremiumPriceChange}
                 />
+              </Item>
+            </Grid>
+            <Grid item xs={12}>
+              <Item></Item>
+            </Grid>
+            <Grid item xs={12}>
+              <Item>
+                <SaveButton
+                  onClick={() => this.props.saveStateFromPage2(this.state)}
+                >
+                  Zapisz
+                </SaveButton>
               </Item>
             </Grid>
           </Grid>
