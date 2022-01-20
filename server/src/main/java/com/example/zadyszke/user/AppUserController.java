@@ -39,11 +39,13 @@ public class AppUserController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/users/validate-login")
     public boolean validateLogin(@RequestBody AppUserLoginDTO userLoginDetails) {
         return service.validatePassword(userLoginDetails.getEmail(), userLoginDetails.getPassword());
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/users")
     public void create(@RequestBody AppUserRegisterDTO user) {
