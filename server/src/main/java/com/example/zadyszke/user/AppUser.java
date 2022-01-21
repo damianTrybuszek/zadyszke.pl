@@ -37,6 +37,15 @@ public class AppUser {
     private AppUserRole role;
     private boolean isArtist;
     private boolean isEmailVerified;
+    @ElementCollection
+    private List<Integer> description;
+    @ElementCollection
+    private List<Integer>  skills;
+    @ElementCollection
+    private List<Integer>  education;
+    @ElementCollection
+    private List<Integer>  certificates;
+
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
