@@ -1,0 +1,1059 @@
+2021-12-11 15:15:43.099  INFO 21454 --- [restartedMain] c.example.zadyszke.ZadyszkeApplication   : Starting ZadyszkeApplication using Java 17.0.1 on damian-HP-Notebook with PID 21454 (/home/damian/Documents/JavaProjects/zadyszke.pl/server/target/classes started by damian in /home/damian/Documents/JavaProjects/zadyszke.pl/server)
+2021-12-11 15:15:43.100  INFO 21454 --- [restartedMain] c.example.zadyszke.ZadyszkeApplication   : No active profile set, falling back to default profiles: default
+2021-12-11 15:15:43.226  INFO 21454 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-11 15:15:43.228  INFO 21454 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-11 15:15:44.365  INFO 21454 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-11 15:15:44.482  INFO 21454 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 12 JPA repository interfaces.
+2021-12-11 15:15:45.100  INFO 21454 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-11 15:15:45.106  INFO 21454 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-11 15:15:45.107  INFO 21454 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-12-11 15:15:45.180  INFO 21454 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2021-12-11 15:15:45.181  INFO 21454 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1952 ms
+2021-12-11 15:15:45.224 DEBUG 21454 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2021-12-11 15:15:45.388  INFO 21454 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-11 15:15:45.433  INFO 21454 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-11 15:15:45.549  INFO 21454 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-11 15:15:45.647  INFO 21454 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-11 15:15:45.965  INFO 21454 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-11 15:15:45.986  INFO 21454 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-12-11 15:15:46.944  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.944  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_artist" does not exist, skipping
+2021-12-11 15:15:46.945  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.945  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_order" does not exist, skipping
+2021-12-11 15:15:46.946  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.947  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_order" does not exist, skipping
+2021-12-11 15:15:46.948  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.948  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_user_user_purchased_offers" does not exist, skipping
+2021-12-11 15:15:46.949  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.950  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_user_user_purchased_offers" does not exist, skipping
+2021-12-11 15:15:46.951  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.952  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "artist_comment" does not exist, skipping
+2021-12-11 15:15:46.953  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.953  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "artist_rating" does not exist, skipping
+2021-12-11 15:15:46.954  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.954  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "buyer_comment" does not exist, skipping
+2021-12-11 15:15:46.955  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.956  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "buyer_rating" does not exist, skipping
+2021-12-11 15:15:46.958  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.958  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer" does not exist, skipping
+2021-12-11 15:15:46.959  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.959  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer" does not exist, skipping
+2021-12-11 15:15:46.960  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.960  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer" does not exist, skipping
+2021-12-11 15:15:46.961  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.961  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer_comment" does not exist, skipping
+2021-12-11 15:15:46.962  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.962  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer_rating" does not exist, skipping
+2021-12-11 15:15:46.963  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.963  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payment" does not exist, skipping
+2021-12-11 15:15:46.964  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.964  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payment" does not exist, skipping
+2021-12-11 15:15:46.965  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.965  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_certificates" does not exist, skipping
+2021-12-11 15:15:46.966  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.967  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_education" does not exist, skipping
+2021-12-11 15:15:46.967  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.967  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_skill" does not exist, skipping
+2021-12-11 15:15:46.968  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.968  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "wishlist" does not exist, skipping
+2021-12-11 15:15:46.971  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.971  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_artist" does not exist, skipping
+2021-12-11 15:15:46.972  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.973  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_order" does not exist, skipping
+2021-12-11 15:15:46.975  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.975  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_user" does not exist, skipping
+2021-12-11 15:15:46.976  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.976  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_user_user_purchased_offers" does not exist, skipping
+2021-12-11 15:15:46.977  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.977  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "artist_comment" does not exist, skipping
+2021-12-11 15:15:46.978  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.979  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "artist_rating" does not exist, skipping
+2021-12-11 15:15:46.979  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.980  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "buyer_comment" does not exist, skipping
+2021-12-11 15:15:46.981  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.981  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "buyer_rating" does not exist, skipping
+2021-12-11 15:15:46.982  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.982  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "offer" does not exist, skipping
+2021-12-11 15:15:46.983  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.983  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "offer_comment" does not exist, skipping
+2021-12-11 15:15:46.984  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.985  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "offer_rating" does not exist, skipping
+2021-12-11 15:15:46.985  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.985  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "payment" does not exist, skipping
+2021-12-11 15:15:46.986  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.987  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_certificates" does not exist, skipping
+2021-12-11 15:15:46.987  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.988  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_education" does not exist, skipping
+2021-12-11 15:15:46.989  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.989  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_skill" does not exist, skipping
+2021-12-11 15:15:46.990  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:15:46.990  WARN 21454 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "wishlist" does not exist, skipping
+2021-12-11 15:15:47.135  INFO 21454 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-11 15:15:47.141  INFO 21454 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-11 15:15:47.299  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.300  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.470  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.544  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.547  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.574  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.576  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.622  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.626  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.654  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.656  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.694  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.695  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.715  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.718  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.751  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.764  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.785  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.789  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.807  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.810  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.836  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.847  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.869  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.875  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.928  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.933  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.954  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:47.954  INFO 21454 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:48.010  WARN 21454 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-11 15:15:48.352  INFO 21454 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-12-11 15:15:48.381  INFO 21454 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2021-12-11 15:15:48.397  INFO 21454 --- [restartedMain] c.example.zadyszke.ZadyszkeApplication   : Started ZadyszkeApplication in 5.991 seconds (JVM running for 7.363)
+2021-12-11 15:15:57.157  INFO 21454 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-11 15:15:57.157  INFO 21454 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-11 15:15:57.159  INFO 21454 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-12-11 15:15:57.174 DEBUG 21454 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/buyer/comments, client=127.0.0.1, headers=[host:"localhost:8080", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.13 (Java/11.0.11)", accept-encoding:"gzip,deflate"]]
+2021-12-11 15:15:57.185  INFO 21454 --- [http-nio-8080-exec-1] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:15:57.187 DEBUG 21454 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [GET /api/buyer/comments, client=127.0.0.1, headers=[host:"localhost:8080", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.13 (Java/11.0.11)", accept-encoding:"gzip,deflate"]]
+2021-12-11 15:15:57.280  INFO 21454 --- [http-nio-8080-exec-1] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:23.433  INFO 21454 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-11 15:22:23.433  INFO 21454 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-11 15:22:23.569  INFO 21454 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-11 15:22:23.600  INFO 21454 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-11 15:22:28.820  INFO 21861 --- [restartedMain] c.example.zadyszke.ZadyszkeApplication   : Starting ZadyszkeApplication using Java 17.0.1 on damian-HP-Notebook with PID 21861 (/home/damian/Documents/JavaProjects/zadyszke.pl/server/target/classes started by damian in /home/damian/Documents/JavaProjects/zadyszke.pl/server)
+2021-12-11 15:22:28.838  INFO 21861 --- [restartedMain] c.example.zadyszke.ZadyszkeApplication   : No active profile set, falling back to default profiles: default
+2021-12-11 15:22:28.977  INFO 21861 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-11 15:22:28.978  INFO 21861 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-11 15:22:30.022  INFO 21861 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-11 15:22:30.134  INFO 21861 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 12 JPA repository interfaces.
+2021-12-11 15:22:30.757  INFO 21861 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-11 15:22:30.764  INFO 21861 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-11 15:22:30.765  INFO 21861 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-12-11 15:22:30.820  INFO 21861 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2021-12-11 15:22:30.820  INFO 21861 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1840 ms
+2021-12-11 15:22:30.859 DEBUG 21861 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2021-12-11 15:22:31.018  INFO 21861 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-11 15:22:31.067  INFO 21861 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-11 15:22:31.173  INFO 21861 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-11 15:22:31.279  INFO 21861 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-11 15:22:31.622  INFO 21861 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-11 15:22:31.641  INFO 21861 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-12-11 15:22:32.575  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.575  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_artist" does not exist, skipping
+2021-12-11 15:22:32.576  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.576  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_order" does not exist, skipping
+2021-12-11 15:22:32.577  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.578  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_order" does not exist, skipping
+2021-12-11 15:22:32.583  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.591  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_user_user_purchased_offers" does not exist, skipping
+2021-12-11 15:22:32.592  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.592  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_user_user_purchased_offers" does not exist, skipping
+2021-12-11 15:22:32.593  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.594  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "artist_comment" does not exist, skipping
+2021-12-11 15:22:32.595  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.595  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "artist_rating" does not exist, skipping
+2021-12-11 15:22:32.596  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.597  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "buyer_comment" does not exist, skipping
+2021-12-11 15:22:32.599  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.600  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "buyer_rating" does not exist, skipping
+2021-12-11 15:22:32.601  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.602  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer" does not exist, skipping
+2021-12-11 15:22:32.603  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.603  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer" does not exist, skipping
+2021-12-11 15:22:32.619  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.620  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer" does not exist, skipping
+2021-12-11 15:22:32.628  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.628  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer_comment" does not exist, skipping
+2021-12-11 15:22:32.631  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.632  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer_rating" does not exist, skipping
+2021-12-11 15:22:32.635  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.635  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payment" does not exist, skipping
+2021-12-11 15:22:32.639  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.640  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payment" does not exist, skipping
+2021-12-11 15:22:32.643  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.644  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_certificates" does not exist, skipping
+2021-12-11 15:22:32.647  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.648  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_education" does not exist, skipping
+2021-12-11 15:22:32.652  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.652  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_skill" does not exist, skipping
+2021-12-11 15:22:32.653  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.656  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "wishlist" does not exist, skipping
+2021-12-11 15:22:32.657  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.657  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_artist" does not exist, skipping
+2021-12-11 15:22:32.658  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.658  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_order" does not exist, skipping
+2021-12-11 15:22:32.660  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.660  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_user" does not exist, skipping
+2021-12-11 15:22:32.661  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.661  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_user_user_purchased_offers" does not exist, skipping
+2021-12-11 15:22:32.662  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.663  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "artist_comment" does not exist, skipping
+2021-12-11 15:22:32.668  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.668  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "artist_rating" does not exist, skipping
+2021-12-11 15:22:32.670  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.670  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "buyer_comment" does not exist, skipping
+2021-12-11 15:22:32.671  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.672  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "buyer_rating" does not exist, skipping
+2021-12-11 15:22:32.673  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.673  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "offer" does not exist, skipping
+2021-12-11 15:22:32.674  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.674  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "offer_comment" does not exist, skipping
+2021-12-11 15:22:32.675  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.675  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "offer_rating" does not exist, skipping
+2021-12-11 15:22:32.676  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.676  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "payment" does not exist, skipping
+2021-12-11 15:22:32.677  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.677  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_certificates" does not exist, skipping
+2021-12-11 15:22:32.678  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.679  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_education" does not exist, skipping
+2021-12-11 15:22:32.680  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.681  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_skill" does not exist, skipping
+2021-12-11 15:22:32.687  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:22:32.688  WARN 21861 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "wishlist" does not exist, skipping
+2021-12-11 15:22:32.891  INFO 21861 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-11 15:22:32.906  INFO 21861 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-11 15:22:33.091  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.092  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.230  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.287  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.288  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.323  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.326  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.366  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.367  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.389  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.390  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.414  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.415  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.430  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.431  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.462  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.470  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.491  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.494  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.516  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.517  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.561  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.562  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.585  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.587  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.627  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.631  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.647  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.647  INFO 21861 --- [restartedMain] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:33.694  WARN 21861 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-11 15:22:34.031  INFO 21861 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-12-11 15:22:34.062  INFO 21861 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2021-12-11 15:22:34.076  INFO 21861 --- [restartedMain] c.example.zadyszke.ZadyszkeApplication   : Started ZadyszkeApplication in 6.377 seconds (JVM running for 7.818)
+2021-12-11 15:22:44.153  INFO 21861 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-11 15:22:44.153  INFO 21861 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-11 15:22:44.155  INFO 21861 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-12-11 15:22:44.169 DEBUG 21861 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/buyer/comments, client=127.0.0.1, headers=[host:"localhost:8080", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.13 (Java/11.0.11)", accept-encoding:"gzip,deflate"]]
+2021-12-11 15:22:44.179  INFO 21861 --- [http-nio-8080-exec-1] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:22:44.181 DEBUG 21861 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [GET /api/buyer/comments, client=127.0.0.1, headers=[host:"localhost:8080", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.13 (Java/11.0.11)", accept-encoding:"gzip,deflate"]]
+2021-12-11 15:22:44.254  INFO 21861 --- [http-nio-8080-exec-1] i.StatisticalLoggingSessionEventListener : Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-12-11 15:24:53.826  INFO 21861 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-11 15:24:53.826  INFO 21861 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-11 15:24:53.937  INFO 21861 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-11 15:24:53.957  INFO 21861 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-11 15:24:58.069  INFO 22095 --- [restartedMain] c.example.zadyszke.ZadyszkeApplication   : Starting ZadyszkeApplication using Java 17.0.1 on damian-HP-Notebook with PID 22095 (/home/damian/Documents/JavaProjects/zadyszke.pl/server/target/classes started by damian in /home/damian/Documents/JavaProjects/zadyszke.pl/server)
+2021-12-11 15:24:58.072  INFO 22095 --- [restartedMain] c.example.zadyszke.ZadyszkeApplication   : No active profile set, falling back to default profiles: default
+2021-12-11 15:24:58.271  INFO 22095 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-11 15:24:58.279  INFO 22095 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-11 15:24:59.343  INFO 22095 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-11 15:24:59.453  INFO 22095 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 12 JPA repository interfaces.
+2021-12-11 15:25:00.129  INFO 22095 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-11 15:25:00.138  INFO 22095 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-11 15:25:00.138  INFO 22095 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-12-11 15:25:00.201  INFO 22095 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2021-12-11 15:25:00.202  INFO 22095 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1922 ms
+2021-12-11 15:25:00.243 DEBUG 22095 --- [restartedMain] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'logFilter' configured for use
+2021-12-11 15:25:00.375  INFO 22095 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-11 15:25:00.417  INFO 22095 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-11 15:25:00.508  INFO 22095 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-11 15:25:00.581  INFO 22095 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-11 15:25:00.875  INFO 22095 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-11 15:25:00.888  INFO 22095 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-12-11 15:25:01.735  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.735  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_artist" does not exist, skipping
+2021-12-11 15:25:01.737  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.737  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_order" does not exist, skipping
+2021-12-11 15:25:01.738  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.738  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_order" does not exist, skipping
+2021-12-11 15:25:01.747  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.748  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_user_user_purchased_offers" does not exist, skipping
+2021-12-11 15:25:01.749  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.749  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "app_user_user_purchased_offers" does not exist, skipping
+2021-12-11 15:25:01.751  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.752  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "artist_comment" does not exist, skipping
+2021-12-11 15:25:01.753  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.753  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "artist_rating" does not exist, skipping
+2021-12-11 15:25:01.754  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.754  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "buyer_comment" does not exist, skipping
+2021-12-11 15:25:01.755  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.755  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "buyer_rating" does not exist, skipping
+2021-12-11 15:25:01.756  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.756  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer" does not exist, skipping
+2021-12-11 15:25:01.758  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.761  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer" does not exist, skipping
+2021-12-11 15:25:01.762  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.763  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer" does not exist, skipping
+2021-12-11 15:25:01.767  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.768  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer_comment" does not exist, skipping
+2021-12-11 15:25:01.769  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.769  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "offer_rating" does not exist, skipping
+2021-12-11 15:25:01.770  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.770  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payment" does not exist, skipping
+2021-12-11 15:25:01.771  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.771  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "payment" does not exist, skipping
+2021-12-11 15:25:01.771  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.772  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_certificates" does not exist, skipping
+2021-12-11 15:25:01.772  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.772  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_education" does not exist, skipping
+2021-12-11 15:25:01.773  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.773  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_skill" does not exist, skipping
+2021-12-11 15:25:01.774  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.774  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "wishlist" does not exist, skipping
+2021-12-11 15:25:01.775  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.775  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_artist" does not exist, skipping
+2021-12-11 15:25:01.776  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.776  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_order" does not exist, skipping
+2021-12-11 15:25:01.777  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.777  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_user" does not exist, skipping
+2021-12-11 15:25:01.779  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.779  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "app_user_user_purchased_offers" does not exist, skipping
+2021-12-11 15:25:01.780  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.780  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "artist_comment" does not exist, skipping
+2021-12-11 15:25:01.780  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.780  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "artist_rating" does not exist, skipping
+2021-12-11 15:25:01.781  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.781  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "buyer_comment" does not exist, skipping
+2021-12-11 15:25:01.782  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.782  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "buyer_rating" does not exist, skipping
+2021-12-11 15:25:01.782  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.782  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "offer" does not exist, skipping
+2021-12-11 15:25:01.783  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.783  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "offer_comment" does not exist, skipping
+2021-12-11 15:25:01.784  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.784  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "offer_rating" does not exist, skipping
+2021-12-11 15:25:01.785  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.785  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "payment" does not exist, skipping
+2021-12-11 15:25:01.786  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.786  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_certificates" does not exist, skipping
+2021-12-11 15:25:01.787  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.787  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_education" does not exist, skipping
+2021-12-11 15:25:01.788  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.788  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_skill" does not exist, skipping
+2021-12-11 15:25:01.789  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2021-12-11 15:25:01.790  WARN 22095 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "wishlist" does not exist, skipping
+2021-12-11 15:25:02.003  INFO 22095 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-11 15:25:02.017  INFO 22095 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-11 15:25:02.845  WARN 22095 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-11 15:25:03.160  INFO 22095 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-12-11 15:25:03.194  INFO 22095 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2021-12-11 15:25:03.204  INFO 22095 --- [restartedMain] c.example.zadyszke.ZadyszkeApplication   : Started ZadyszkeApplication in 5.865 seconds (JVM running for 7.06)
+2021-12-11 15:25:10.659  INFO 22095 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-11 15:25:10.659  INFO 22095 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-11 15:25:10.661  INFO 22095 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-12-11 15:25:10.676 DEBUG 22095 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [GET /api/buyer/comments, client=127.0.0.1, headers=[host:"localhost:8080", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.13 (Java/11.0.11)", accept-encoding:"gzip,deflate"]]
+2021-12-11 15:25:10.689 DEBUG 22095 --- [http-nio-8080-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [GET /api/buyer/comments, client=127.0.0.1, headers=[host:"localhost:8080", connection:"Keep-Alive", user-agent:"Apache-HttpClient/4.5.13 (Java/11.0.11)", accept-encoding:"gzip,deflate"]]
+2021-12-11 17:02:59.345  INFO 22095 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-11 17:02:59.346  INFO 22095 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-12-11 17:02:59.426  INFO 22095 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-11 17:02:59.449  INFO 22095 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

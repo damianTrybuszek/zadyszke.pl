@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @RestController
 public class AppUserController {
     private final AppUserService service;
@@ -29,7 +30,7 @@ public class AppUserController {
                 .map(AppUserGetDTO::of)
                 .collect(Collectors.toList());
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping("/users/{id}")
     public AppUserGetDTO get(@PathVariable long id) {
         try {
