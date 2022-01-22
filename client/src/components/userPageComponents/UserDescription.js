@@ -8,21 +8,30 @@ import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import "../ui/style.css";
 import AddButton from "./AddButton";
+import EditButton from "./EditButton";
+import SaveButton from "./SaveButton";
+import CancelButton from "./CancelButton";
 
 import TextField from "@mui/material/TextField";
 
 const Item = styled("div")(({ theme }) => ({}));
-
 class UserDescription extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       error: null,
       isLoaded: false,
       descriptions: "",
       stan: "",
-      editMode: false,
+      isEditing: false,
+      descriptionEmpty: true,
+      textFieldValue: "",
+
     };
+    this.editingModeOn = this.editingModeOn.bind(this);
+    this.editingModeOff = this.editingModeOff.bind(this);
+    this.saveContent = this.saveContent.bind(this);
+
   }
 
   componentDidMount() {
@@ -45,6 +54,42 @@ class UserDescription extends React.Component {
       );
   }
 
+  checkUserCredentials() {
+    const response = fetch(
+      "https://localhost:300/api/users/validate-login",
+      {
+        method: "POST",
+        body: JSON.stringify(this.state.descriptions),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data =  response.json();
+    console.log(data);
+  }
+
+  editingModeOn() {
+    this.setState({ isEditing: true });
+  }
+
+  editingModeOff() {
+    this.setState({ isEditing: false });
+  }
+
+//   handleTextFieldChange(event) {
+//     this.setState({
+//         textFieldValue: event.target.value
+//     });
+// }
+
+  saveContent(){
+    this.setState({ isEditing: false })
+    
+  }
+
+
+
   render() {
     return (
       <Container className="userDescription">
@@ -63,39 +108,58 @@ class UserDescription extends React.Component {
               </Item>
             </Grid>
             <Grid item xs={12}>
-              {/* <Item>
-              <Typography variant="body2" textAlign="left">
-              {this.state.descriptions.username}
-              </Typography>
-            </Item> */}
-
-              <Item>
-                <TextField
-                  sx={{ label: { color: "white" } }}
-                  variant="standard"
-                  margin="none"
-                  name="title"
-                  disableUnderline={true}
-                  multiline={true}
-                  // rows={5}
-                  required
-                  fullWidth
-                  id="title"
-                  // label="Opis..."
-                  autoFocus
-                  defaultValue={this.state.descriptions.username}
-                  // value={this.state.descriptions.username}
-                  onChange={this.handleDescriptionChange}
-                />
-              </Item>
+              {this.state.isEditing ? (
+                <Item>
+                  <TextField
+                    sx={{ label: { color: "white" } }}
+                    variant="standard"
+                    margin="none"
+                    disableUnderline={true}
+                    multiline={true}
+                    required
+                    fullWidth
+                    id="description"
+                    autoFocus
+                    defaultValue={this.state.descriptions.username}
+                    // value={this.state.textFieldValue} 
+                    // onChange={this.handleTextFieldChange} 
+                  />
+                </Item>
+              ) : (
+                <Item>
+                  <Typography variant="body2" textAlign="left">
+                    {this.state.descriptions.username}
+                  </Typography>
+                </Item>
+              )}
             </Grid>
-            <Grid item xs={11}>
+            <Grid item xs={10}>
               <Item></Item>
             </Grid>
             <Grid item xs={1}>
-              <Item>
-                <AddButton />
-              </Item>
+            {this.state.isEditing ? 
+            <Item onClick={this.editingModeOff}>
+                  <CancelButton />
+                  </Item>
+                :
+                <Item></Item>
+                }
+
+            </Grid>
+            <Grid item xs={1}>
+              {this.state.isEditing ? (
+                <Item onClick={this.saveContent}>
+                  <SaveButton />
+                </Item>
+              ) : this.state.descriptionEmpty ? (
+                <Item onClick={this.editingModeOn}>
+                  <AddButton />
+                </Item>
+              ) : (
+                <Item onClick={this.editingModeOn}>
+                  <EditButton />
+                </Item>
+              )}
             </Grid>
           </Grid>
         </Box>
