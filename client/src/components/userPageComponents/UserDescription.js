@@ -133,9 +133,9 @@ class UserDescription extends React.Component {
                     id="description"
                     autoFocus
                     defaultValue={this.state.description}
-                    onChange={this.handleChange}
+                    onChange={event=> this.setState({value: event.target.value})}
                     value={this.state.value}
-                    onSubmit={this.handleChange}
+                    // onSubmit={this.handleChange}
                   />
                 </Item>
               ) : (

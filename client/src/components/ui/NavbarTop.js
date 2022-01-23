@@ -36,6 +36,12 @@ class NavbarTop extends Component {
                 <Link to="/login" style={{ textDecoration: "none" }}>
                   <Navbar.Brand>Zaloguj się</Navbar.Brand>
                 </Link>
+                <Link to="/User/info" style={{ textDecoration: "none" }}>
+                  <Navbar.Brand>Profil</Navbar.Brand>
+                </Link>
+                <Link to="/create-profile" style={{ textDecoration: "none" }}>
+                  <Navbar.Brand>Stwórz profil</Navbar.Brand>
+                </Link>
                 <Link to="/Register" style={{ textDecoration: "none" }}>
                   <JoinButton>Dołącz do nas</JoinButton>
                 </Link>

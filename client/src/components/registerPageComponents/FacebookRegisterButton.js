@@ -15,7 +15,7 @@ const theme = createTheme({
 export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
-      <Button variant="contained">Rejestracja przez Facebook</Button>
+      <Button variant="contained" style={{width:'100%'}}>Rejestracja przez Facebook</Button>
     </ThemeProvider>
   );
 }
