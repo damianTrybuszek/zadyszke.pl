@@ -34,8 +34,9 @@ public class OfferController {
     }
 
     @PostMapping("/offers")
-    public void create(@RequestBody OfferCreateDTO offer){
-        service.create(offer);
+    public OfferGetDTO create(@RequestBody OfferCreateDTO offer){
+        Offer createdOffer = service.create(offer);
+        return OfferGetDTO.of(createdOffer);
     }
 
     @PutMapping("/offers/{id}")

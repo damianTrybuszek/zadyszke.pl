@@ -76,6 +76,7 @@ class CreateGig extends Component {
       requirements: "",
       uploadedFiles: [],
       faq: [],
+      offerCreated: {},
     };
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
@@ -150,9 +151,9 @@ class CreateGig extends Component {
     this.setState({ faq: allFaq });
   }
 
-  submitOffer() {
+  async submitOffer() {
     this.createFaqList();
-    fetch("http://localhost:8080/api/offers", {
+    const data = await fetch("http://localhost:8080/api/offers", {
       method: "POST",
       body: JSON.stringify({
         title: this.state.title,
@@ -180,6 +181,11 @@ class CreateGig extends Component {
       headers: {
         "Content-Type": "application/json",
       },
+    }).then((response) => response.json());
+
+    this.setState({
+      offerCreated: data,
+      activeStep: this.state.activeStep + 1,
     });
   }
 
@@ -203,7 +209,6 @@ class CreateGig extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <NavbarTop />
@@ -230,7 +235,9 @@ class CreateGig extends Component {
             {this.state.activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-                  Gratulacje! Twoja oferta została stworzona!
+                  {console.log(this.state.offerCreated)}
+                  Gratulacje! Twoja oferta o numerze{" "}
+                  {this.state.offerCreated.id} została stworzona!
                 </Typography>
                 <Typography variant="subtitle1">
                   Teraz nie pozostaje już nic innego jak czekać, aż ktoś ją
