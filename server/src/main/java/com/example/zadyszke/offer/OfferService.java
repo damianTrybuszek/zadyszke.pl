@@ -26,10 +26,11 @@ class OfferService {
         return repository.findById(id).orElseThrow();
     }
 
-    public void create(OfferCreateDTO offer){
+    public Offer create(OfferCreateDTO offer){
         Offer createdOffer = offer.toOffer();
         createdOffer.setCreationDate(LocalDateTime.now());
         repository.save(createdOffer);
+        return createdOffer;
     }
 
     public void update(long id, OfferModifyDTO offer){
