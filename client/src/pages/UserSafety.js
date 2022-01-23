@@ -21,7 +21,7 @@ class UserInfo extends Component {
   render() {
     return (
       <div>
-        <NavbarTop />       
+        <NavbarTop />
 
         <Box sx={{ display: "grid" }}>
           <Grid container spacing={5}>
@@ -55,7 +55,9 @@ class UserInfo extends Component {
             </Grid>
 
             <Grid item xs>
-              <Item><SafetyForm /></Item>
+              <Item>
+                <SafetyForm />
+              </Item>
             </Grid>
             <Grid item xs={2} marginRight={5}>
               <Item>
@@ -63,11 +65,7 @@ class UserInfo extends Component {
               </Item>
             </Grid>
           </Grid>
-        
-
-          </Box>
-
-
+        </Box>
       </div>
     );
   }
