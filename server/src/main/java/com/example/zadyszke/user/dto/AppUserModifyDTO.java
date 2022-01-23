@@ -3,6 +3,8 @@ package com.example.zadyszke.user.dto;
 import com.example.zadyszke.user.AppUser;
 import lombok.*;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -13,6 +15,10 @@ public class AppUserModifyDTO {
     private String username;
     private String email;
     private String password;
+    private List<Integer> description;
+    private List<Integer> skills;
+    private List<Integer> education;
+    private List<Integer> certificates;
 
     public AppUser toAppUser(){
         return AppUser.builder()
@@ -21,6 +27,10 @@ public class AppUserModifyDTO {
                 .username(this.username)
                 .email(this.email)
                 .password(this.password)
+                .description(this.description)
+                .skills(this.skills)
+                .education(this.education)
+                .certificates(this.certificates)
                 .build();
     }
 
