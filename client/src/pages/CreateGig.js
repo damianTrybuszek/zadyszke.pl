@@ -209,6 +209,7 @@ class CreateGig extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <NavbarTop />
