@@ -38,4 +38,4 @@ resources/
 
 
 ### Git code % show ###
-*.js linguist-detectable=false
+*.js linguist-vendored
