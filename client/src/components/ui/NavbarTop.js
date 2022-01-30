@@ -28,9 +28,6 @@ class NavbarTop extends Component {
                   <Navbar.Brand>Stwórz Ofertę</Navbar.Brand>
                 </Link>
                 <Link to="/" style={{ textDecoration: "none" }}>
-                  <Navbar.Brand>Zacznij tutaj</Navbar.Brand>
-                </Link>
-                <Link to="/" style={{ textDecoration: "none" }}>
                   <Navbar.Brand>Przeglądaj</Navbar.Brand>
                 </Link>
                 <Link to="/login" style={{ textDecoration: "none" }}>
