@@ -41,7 +41,11 @@ export default function SubcategorySelect(props) {
   const displaySubCategories = subCategories
     .get(props.category)
     .map((subCategory) => (
-      <MenuItem key={subCategory} value={subCategory}>
+      <MenuItem
+        key={subCategory}
+        value={subCategory}
+        style={{ backgroundColor: "#2F303A", color: "white" }}
+      >
         {subCategory}
       </MenuItem>
     ));

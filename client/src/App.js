@@ -13,7 +13,7 @@ import UserSafety from "./pages/UserSafety";
 import UserOrders from "./pages/UserOrders";
 import UserOffers from "./pages/UserOffers";
 import CreateProfile from "./pages/CreateProfile";
-import Offer from "./pages/Offer"
+import Offer from "./pages/Offer";
 
 const theme = createTheme({
   palette: {
