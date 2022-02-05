@@ -146,7 +146,7 @@ export default function RegisterForms() {
       }).then((res) => {
         if (res.ok) {
           console.log(res);
-          navigate("/");
+          navigate("/logged-in");
         } else {
           return res.json().then((data) => {
             // show an error modal
@@ -202,6 +202,7 @@ export default function RegisterForms() {
     setEnteredSurname("");
     setEnteredEmail("");
     setEnteredRepeatedPassword("");
+    setTermsAccepted(false);
   };
 
   return (
