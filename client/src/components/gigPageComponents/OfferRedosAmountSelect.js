@@ -8,7 +8,11 @@ export default function OfferRedosAmountSelect(props) {
   const redosAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const displayChangesAmount = redosAmount.map((amount) => (
-    <MenuItem key={amount} value={amount}>
+    <MenuItem
+      key={amount}
+      value={amount}
+      style={{ backgroundColor: "#2F303A", color: "white" }}
+    >
       {amount}
     </MenuItem>
   ));

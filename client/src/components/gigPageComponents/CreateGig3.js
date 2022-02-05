@@ -110,6 +110,34 @@ class CreateGig3 extends Component {
       </div>
     ));
 
+    const displayNewFaqItem = () => (
+      <div>
+        <Grid container spacing={2}>
+          <Grid item xs={4}>
+            <Item>
+              <OutlinedTextbox
+                title="Pytanie"
+                handleChange={this.handleNewQuestionChange}
+              />
+            </Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>
+              <OutlinedTextbox
+                title="Odpowiedź"
+                handleChange={this.handleNewAnswerChange}
+              />
+            </Item>
+          </Grid>
+          <Grid item xs={4}>
+            <Item>
+              <BackButton onClick={this.addNewQuestion}>Dodaj</BackButton>
+            </Item>
+          </Grid>
+        </Grid>
+      </div>
+    );
+
     return (
       <div>
         <Box
@@ -188,7 +216,7 @@ class CreateGig3 extends Component {
             <Grid item xs={12}>
               <Item></Item>
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <Item>
                 <SaveButton
                   onClick={() => this.props.saveStateFromPage3(this.state)}
@@ -196,7 +224,7 @@ class CreateGig3 extends Component {
                   Zapisz
                 </SaveButton>
               </Item>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Box>
       </div>

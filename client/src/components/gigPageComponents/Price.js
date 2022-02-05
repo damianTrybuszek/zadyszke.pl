@@ -35,6 +35,7 @@ class Price extends Component {
         InputLabelProps={{
           shrink: true,
         }}
+        inputProps={{style: { textAlign: 'center' }}}
         onChange={this.props.handleChange}
       />
     );

@@ -17,8 +17,8 @@ class OfferType extends Component {
         <img
           alt="Oferta - zdjęcie"
           src={this.props.imageUrl}
-          width="100%"
-          height="100%"
+          width="250"
+          height="175"
         />
       </Box>
     );

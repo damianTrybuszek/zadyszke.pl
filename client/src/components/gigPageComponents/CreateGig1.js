@@ -142,7 +142,7 @@ class CreateGig1 extends Component {
             <Grid item xs={12}>
               <Item></Item>
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <Item>
                 <SaveButton
                   onClick={() => this.props.saveStateFromPage1(this.state)}
@@ -150,7 +150,7 @@ class CreateGig1 extends Component {
                   Zapisz
                 </SaveButton>
               </Item>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Box>
       </div>

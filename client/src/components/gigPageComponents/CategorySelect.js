@@ -19,7 +19,11 @@ export default function CategorySelect(props) {
   ].sort();
 
   const displayCategories = categories.map((category) => (
-    <MenuItem key={category} value={category}>
+    <MenuItem
+      key={category}
+      value={category}
+      style={{ backgroundColor: "#2F303A", color: "white" }}
+    >
       {category}
     </MenuItem>
   ));
