@@ -5,9 +5,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#A11616",
-      textColor: "#ffffff",
-      // primaryTextColor: "#ffffff",
+      main: '#ED8627',
     },
   },
 });
@@ -15,7 +13,9 @@ const theme = createTheme({
 export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
-      <Button variant="contained" style={{width:'100%'}}> Rejestracja przez google </Button>
+        <Button variant="text" style={{ width: "100%" }}>
+          Dodaj
+        </Button>
     </ThemeProvider>
   );
 }

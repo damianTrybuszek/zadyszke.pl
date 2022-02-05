@@ -55,12 +55,76 @@ const BackButton = styled(Button)(({ theme }) => ({
 class CreateGig extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       activeStep: 0,
+      title: "",
+      category: "",
+      subCategory: "",
+      tags: [],
+      basicRedos: 0,
+      standardRedos: 0,
+      premiumRedos: 0,
+      basicSpeedDelivery: false,
+      standardSpeedDelivery: false,
+      premiumSpeedDelivery: false,
+      basicPrice: 0,
+      standardPrice: 0,
+      premiumPrice: 0,
+      description: "",
+      questions: [],
+      answers: [],
+      requirements: "",
+      uploadedFiles: [],
+      faq: [],
+      offerCreated: {},
     };
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
+    this.submitOffer = this.submitOffer.bind(this);
+    this.saveStateFromPage1 = this.saveStateFromPage1.bind(this);
+    this.saveStateFromPage2 = this.saveStateFromPage2.bind(this);
+    this.saveStateFromPage3 = this.saveStateFromPage3.bind(this);
+    this.saveStateFromPage4 = this.saveStateFromPage4.bind(this);
+    this.saveStateFromPage5 = this.saveStateFromPage5.bind(this);
+  }
+
+  saveStateFromPage1(data) {
+    this.setState({
+      title: data.title,
+      category: data.category,
+      subCategory: data.subCategory,
+      tags: data.tags,
+    });
+  }
+
+  saveStateFromPage2(data) {
+    this.setState({
+      basicRedos: data.basicRedos,
+      standardRedos: data.standardRedos,
+      premiumRedos: data.premiumRedos,
+      basicSpeedDelivery: data.basicSpeedDelivery,
+      standardSpeedDelivery: data.standardSpeedDelivery,
+      premiumSpeedDelivery: data.premiumSpeedDelivery,
+      basicPrice: data.basicPrice,
+      standardPrice: data.standardPrice,
+      premiumPrice: data.premiumPrice,
+    });
+  }
+
+  saveStateFromPage3(data) {
+    this.setState({
+      description: data.description,
+      questions: data.questions,
+      answers: data.answers,
+    });
+  }
+
+  saveStateFromPage4(data) {
+    this.setState({ requirements: data.requirements });
+  }
+
+  saveStateFromPage5(data) {
+    this.setState({ uploadedFiles: data.uploadedFiles });
   }
 
   handleNext() {
@@ -75,18 +139,68 @@ class CreateGig extends Component {
     });
   }
 
+  createFaqList() {
+    let allFaq = [];
+    for (let i = 0; i < this.state.questions.length; i++) {
+      let tempQuestion = ["question", this.state.questions[i]];
+      let tempAnswer = ["answer", this.state.answers[i]];
+      let tempFaqEntry = [tempQuestion, tempAnswer];
+      let tempFaqObject = Object.fromEntries(tempFaqEntry);
+      allFaq.push(tempFaqObject);
+    }
+    this.setState({ faq: allFaq });
+  }
+
+  async submitOffer() {
+    this.createFaqList();
+    const data = await fetch("http://localhost:8080/api/offers", {
+      method: "POST",
+      body: JSON.stringify({
+        title: this.state.title,
+        category: this.state.category,
+        subCategory: this.state.subCategory,
+        description: this.state.description,
+        tags: this.state.tags
+          .map((tag) => ["name", tag])
+          .map((tag) => Object.fromEntries([tag])),
+        basicRedos: this.state.basicRedos,
+        standardRedos: this.state.standardRedos,
+        premiumRedos: this.state.premiumRedos,
+        basicPrice: this.state.basicPrice,
+        standardPrice: this.state.standardPrice,
+        premiumPrice: this.state.premiumPrice,
+        basicSpeedDelivery: this.state.basicSpeedDelivery,
+        standardSpeedDelivery: this.state.standardSpeedDelivery,
+        premiumSpeedDelivery: this.state.premiumSpeedDelivery,
+        faq: this.state.faq,
+        requirements: this.state.requirements,
+        offerImages: this.state.uploadedFiles.map((image) =>
+          Object.fromEntries([image])
+        ),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) => response.json());
+
+    this.setState({
+      offerCreated: data,
+      activeStep: this.state.activeStep + 1,
+    });
+  }
+
   getStepContent(step) {
     switch (step) {
       case 0:
-        return <CreateGig1 />;
+        return <CreateGig1 saveStateFromPage1={this.saveStateFromPage1} />;
       case 1:
-        return <CreateGig2 />;
+        return <CreateGig2 saveStateFromPage2={this.saveStateFromPage2} />;
       case 2:
-        return <CreateGig3 />;
+        return <CreateGig3 saveStateFromPage3={this.saveStateFromPage3} />;
       case 3:
-        return <CreateGig4 />;
+        return <CreateGig4 saveStateFromPage4={this.saveStateFromPage4} />;
       case 4:
-        return <CreateGig5 />;
+        return <CreateGig5 saveStateFromPage5={this.saveStateFromPage5} />;
       case 5:
         return <CreateGig6 />;
       default:
@@ -95,6 +209,7 @@ class CreateGig extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <NavbarTop />
@@ -121,7 +236,9 @@ class CreateGig extends Component {
             {this.state.activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-                  Gratulacje! Twoja oferta została stworzona!
+                  {console.log(this.state.offerCreated)}
+                  Gratulacje! Twoja oferta o numerze{" "}
+                  {this.state.offerCreated.id} została stworzona!
                 </Typography>
                 <Typography variant="subtitle1">
                   Teraz nie pozostaje już nic innego jak czekać, aż ktoś ją
@@ -147,15 +264,23 @@ class CreateGig extends Component {
                   </Grid>
                   <Grid item xs={6}>
                     <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                      <NextButton
-                        variant="contained"
-                        onClick={this.handleNext}
-                        sx={{ mt: 3, ml: 1 }}
-                      >
-                        {this.state.activeStep === steps.length - 1
-                          ? "Zakończ"
-                          : "Dalej"}
-                      </NextButton>
+                      {this.state.activeStep === steps.length - 1 ? (
+                        <NextButton
+                          variant="contained"
+                          onClick={this.submitOffer}
+                          sx={{ mt: 3, ml: 1 }}
+                        >
+                          Zakończ
+                        </NextButton>
+                      ) : (
+                        <NextButton
+                          variant="contained"
+                          onClick={this.handleNext}
+                          sx={{ mt: 3, ml: 1 }}
+                        >
+                          Dalej
+                        </NextButton>
+                      )}
                     </Box>
                   </Grid>
                 </Grid>

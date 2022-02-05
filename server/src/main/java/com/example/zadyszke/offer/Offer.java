@@ -24,65 +24,75 @@ public class Offer {
     private long id;
 
     private String title;
-    private String content;
-    private BigDecimal price;
+    private String description;
+    private String requirements;
+    private int basicRedos;
+    private int standardRedos;
+    private int premiumRedos;
+    private BigDecimal basicPrice;
+    private BigDecimal standardPrice;
+    private BigDecimal premiumPrice;
+    private boolean basicSpeedDelivery;
+    private boolean standardSpeedDelivery;
+    private boolean premiumSpeedDelivery;
     private LocalDateTime creationDate;
     private LocalDateTime lastModifiedDate;
-    private Category category;
+    private String category;
+    private String subCategory;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "offer_faq")
+    private List<Faq> faq;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "offer_tag")
+    private List<Tag> tags;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "offer_image")
     private List<OfferImage> offerImages;
 
-    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "author_id")
     private AppUser author;
 
-    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name="offer_comment")
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "offer_comment")
     private List<OfferComment> comments;
 
-    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name="offer_rating")
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "offer_rating")
     private List<OfferRating> ratings;
 
-    public void addComment(OfferComment offerComment){
+    public void addComment(OfferComment offerComment) {
         offerComment.setCreationDateTime(LocalDateTime.now());
         offerComment.setModifyDateTime(null);
         this.comments.add(offerComment);
         offerComment.setOfferId(this.id);
     }
-  
-    public void addRating(OfferRating offerRating){
+
+    public void addRating(OfferRating offerRating) {
         offerRating.setCreationDateTime(LocalDateTime.now());
         offerRating.setModifyDateTime(null);
         this.ratings.add(offerRating);
         offerRating.setOfferId(this.id);
     }
 
-    public void modify(OfferModifyDTO newOfferData){
+    public void modify(OfferModifyDTO newOfferData) {
         modifyTitle(newOfferData);
-        modifyContent(newOfferData);
-        modifyPrice(newOfferData);
+        modifyDescription(newOfferData);
     }
 
     private void modifyTitle(OfferModifyDTO newOfferData) {
-        if (StringUtils.isNotBlank(newOfferData.getTitle())){
+        if (StringUtils.isNotBlank(newOfferData.getTitle())) {
             this.setTitle(newOfferData.getTitle());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }
 
-    private void modifyContent(OfferModifyDTO newOfferData) {
-        if (StringUtils.isNotBlank(newOfferData.getContent())){
-            this.setContent(newOfferData.getContent());
-            this.setLastModifiedDate(LocalDateTime.now());
-        }
-    }
-
-    private void modifyPrice(OfferModifyDTO newOfferData) {
-        if (newOfferData.getPrice() != null){
-            this.setPrice(newOfferData.getPrice());
+    private void modifyDescription(OfferModifyDTO newOfferData) {
+        if (StringUtils.isNotBlank(newOfferData.getDescription())) {
+            this.setDescription(newOfferData.getDescription());
             this.setLastModifiedDate(LocalDateTime.now());
         }
     }

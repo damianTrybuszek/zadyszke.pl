@@ -28,6 +28,11 @@ public class AppUserGetDTO {
     private List<BuyerComment> buyerComments;
     private List<ArtistComment> artistComments;
 
+    private List<Integer> description;
+    private List<Integer> skills;
+    private List<Integer> education;
+    private List<Integer> certificates;
+
     public AppUser toAppUser(){
         return AppUser.builder()
                 .id(this.id)
@@ -41,6 +46,10 @@ public class AppUserGetDTO {
                 .artistComments(this.artistComments)
                 .isArtist(this.isArtist)
                 .isEmailVerified(this.isEmailVerified)
+                .description(this.description)
+                .skills(this.skills)
+                .education(this.education)
+                .certificates(this.certificates)
                 .build();
     }
 
@@ -56,7 +65,11 @@ public class AppUserGetDTO {
                 .buyerComments(user.getBuyerComments())
                 .artistComments(user.getArtistComments())
                 .isArtist(user.isArtist())
-                .isEmailVerified(user.isEmailVerified())           
+                .isEmailVerified(user.isEmailVerified())
+                .description(user.getDescription())
+                .skills(user.getSkills())
+                .education(user.getEducation())
+                .certificates(user.getCertificates())
                 .build();
     }
 }

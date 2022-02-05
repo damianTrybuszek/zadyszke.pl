@@ -94,7 +94,7 @@ class CreateProfile extends Component {
         <Container component="main" sx={{ mb: 4 }}>
           <Box mt={2}>
             <Typography component="h1" variant="h4" align="center">
-              Stwórz Ofertę
+              Stwórz Profil
             </Typography>
           </Box>
           <Box
@@ -114,11 +114,10 @@ class CreateProfile extends Component {
             {this.state.activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-                  Gratulacje! Twoja oferta została stworzona!
+                  Gratulacje! Twój profil został stworzony!
                 </Typography>
                 <Typography variant="subtitle1">
-                  Teraz nie pozostaje już nic innego jak czekać, aż ktoś ją
-                  wykupi i będziecie mogli razem działać.
+                  Teraz nie pozostaje już nic innego jak stworzyć własne oferty.
                 </Typography>
                 <Box mb={30}></Box>
               </React.Fragment>

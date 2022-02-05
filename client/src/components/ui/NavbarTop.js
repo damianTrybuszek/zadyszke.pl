@@ -28,13 +28,16 @@ class NavbarTop extends Component {
                   <Navbar.Brand>Stwórz Ofertę</Navbar.Brand>
                 </Link>
                 <Link to="/" style={{ textDecoration: "none" }}>
-                  <Navbar.Brand>Zacznij tutaj</Navbar.Brand>
-                </Link>
-                <Link to="/" style={{ textDecoration: "none" }}>
                   <Navbar.Brand>Przeglądaj</Navbar.Brand>
                 </Link>
                 <Link to="/login" style={{ textDecoration: "none" }}>
                   <Navbar.Brand>Zaloguj się</Navbar.Brand>
+                </Link>
+                <Link to="/User/info" style={{ textDecoration: "none" }}>
+                  <Navbar.Brand>Profil</Navbar.Brand>
+                </Link>
+                <Link to="/create-profile" style={{ textDecoration: "none" }}>
+                  <Navbar.Brand>Stwórz profil</Navbar.Brand>
                 </Link>
                 <Link to="/Register" style={{ textDecoration: "none" }}>
                   <JoinButton>Dołącz do nas</JoinButton>

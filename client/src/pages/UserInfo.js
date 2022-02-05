@@ -57,13 +57,8 @@ class UserInfo extends Component {
               </Grid>
             </Grid>
 
-            <Grid
-              direction="column"
-              justifyContent="center"
-              item
-              xs
-            >
-                   <Grid paddingBottom={paddingBottomValue}>
+            <Grid direction="column" justifyContent="center" item xs>
+              <Grid paddingBottom={paddingBottomValue}>
                 <Item>
                   <UserDescription />
                 </Item>
@@ -90,8 +85,7 @@ class UserInfo extends Component {
               </Item>
             </Grid>
           </Grid>
-
-          </Box>
+        </Box>
       </div>
     );
   }
