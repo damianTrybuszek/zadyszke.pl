@@ -39,7 +39,6 @@ class CreateGig5 extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <Box

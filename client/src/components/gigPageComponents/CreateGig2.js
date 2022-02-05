@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import OfferType from "./OfferType";
 import OfferRedosAmountSelect from "./OfferRedosAmountSelect";
@@ -177,6 +178,59 @@ class CreateGig2 extends Component {
                 <OfferRedosAmountSelect
                   handleChange={this.handlePremiumRedosChange}
                   changesAmount={this.state.premiumRedos}
+                />
+              </Item>
+            </Grid>
+
+            <Grid item xs={2}>
+              <Item>
+                <Typography variant="h5" align="left">
+                  Opis
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <TextField
+                  sx={{ label: { color: "white" } }}
+                  name="title"
+                  multiline={true}
+                  rows={5}
+                  required
+                  fullWidth
+                  id="title"
+                  label="Opis oferty"
+                  autoFocus
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <TextField
+                  sx={{ label: { color: "white" } }}
+                  name="title"
+                  multiline={true}
+                  rows={5}
+                  required
+                  fullWidth
+                  id="title"
+                  label="Opis oferty"
+                  autoFocus
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <TextField
+                  sx={{ label: { color: "white" } }}
+                  name="title"
+                  multiline={true}
+                  rows={5}
+                  required
+                  fullWidth
+                  id="title"
+                  label="Opis oferty"
+                  autoFocus
                 />
               </Item>
             </Grid>
