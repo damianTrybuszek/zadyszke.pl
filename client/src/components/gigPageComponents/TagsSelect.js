@@ -25,6 +25,8 @@ function getStyles(tag, tags, theme) {
       tags.indexOf(tag) === -1
         ? theme.typography.fontWeightRegular
         : theme.typography.fontWeightMedium,
+    backgroundColor: "#2F303A",
+    color: "white",
   };
 }
 

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import RecommendedOffersSlide from "./RecommendedOffersSlide";
+import RecommendedOffersSlide2 from "./RecommendedOffersSlide2";
+import RecommendedOffersSlide3 from "./RecommendedOffersSlide3";
 import Carousel from "react-bootstrap/Carousel";
 import Box from "@mui/material/Box";
 
@@ -17,10 +19,10 @@ function RecommendedOffersCarousel() {
           <RecommendedOffersSlide />
         </Carousel.Item>
         <Carousel.Item>
-          <RecommendedOffersSlide />
+          <RecommendedOffersSlide2 />
         </Carousel.Item>
         <Carousel.Item>
-          <RecommendedOffersSlide />
+          <RecommendedOffersSlide3 />
         </Carousel.Item>
       </Carousel>
     </Box>

@@ -20,6 +20,7 @@ class OutlinedText extends Component {
           label={this.props.title}
           autoFocus
           onChange={this.props.handleChange}
+          inputProps={{min: 0, style: { textAlign: 'center' }}}
         />
       </Box>
     );

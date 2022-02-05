@@ -86,19 +86,17 @@ class CreateGig4 extends Component {
               </Item>
             </Grid>
             <Grid item xs={12}>
-                    <Item></Item>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Item>
-                      <SaveButton
-                        onClick={() =>
-                          this.props.saveStateFromPage4(this.state)
-                        }
-                      >
-                        Zapisz
-                      </SaveButton>
-                    </Item>
-                  </Grid>
+              <Item></Item>
+            </Grid>
+            {/* <Grid item xs={12}>
+              <Item>
+                <SaveButton
+                  onClick={() => this.props.saveStateFromPage4(this.state)}
+                >
+                  Zapisz
+                </SaveButton>
+              </Item>
+            </Grid> */}
           </Grid>
         </Box>
       </div>

@@ -3,12 +3,15 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import OfferType from "./OfferType";
-import tempImage from "../../graphics/tempImages/sample_offer_1.jpg";
 import OfferRedosAmountSelect from "./OfferRedosAmountSelect";
 import Price from "./Price";
 import Button from "@mui/material/Button";
+import tempImage from "../../graphics/tempImages/sample_offer_4.jpg";
+import tempImage2 from "../../graphics/tempImages/sample_offer_2.jpg";
+import tempImage3 from "../../graphics/tempImages/sample_offer_3.jpg";
 
 const SaveButton = styled(Button)(({ theme }) => ({
   boxShadow: "none",
@@ -138,12 +141,12 @@ class CreateGig2 extends Component {
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <OfferType title="Standardowy" imageUrl={tempImage} />
+                <OfferType title="Standardowy" imageUrl={tempImage2} />
               </Item>
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <OfferType title="Premium" imageUrl={tempImage} />
+                <OfferType title="Premium" imageUrl={tempImage3} />
               </Item>
             </Grid>
 
@@ -175,6 +178,59 @@ class CreateGig2 extends Component {
                 <OfferRedosAmountSelect
                   handleChange={this.handlePremiumRedosChange}
                   changesAmount={this.state.premiumRedos}
+                />
+              </Item>
+            </Grid>
+
+            <Grid item xs={2}>
+              <Item>
+                <Typography variant="h5" align="left">
+                  Opis
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <TextField
+                  sx={{ label: { color: "white" } }}
+                  name="title"
+                  multiline={true}
+                  rows={5}
+                  required
+                  fullWidth
+                  id="title"
+                  label="Opis oferty"
+                  autoFocus
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <TextField
+                  sx={{ label: { color: "white" } }}
+                  name="title"
+                  multiline={true}
+                  rows={5}
+                  required
+                  fullWidth
+                  id="title"
+                  label="Opis oferty"
+                  autoFocus
+                />
+              </Item>
+            </Grid>
+            <Grid item xs={3}>
+              <Item>
+                <TextField
+                  sx={{ label: { color: "white" } }}
+                  name="title"
+                  multiline={true}
+                  rows={5}
+                  required
+                  fullWidth
+                  id="title"
+                  label="Opis oferty"
+                  autoFocus
                 />
               </Item>
             </Grid>
@@ -245,7 +301,7 @@ class CreateGig2 extends Component {
             <Grid item xs={12}>
               <Item></Item>
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <Item>
                 <SaveButton
                   onClick={() => this.props.saveStateFromPage2(this.state)}
@@ -253,7 +309,7 @@ class CreateGig2 extends Component {
                   Zapisz
                 </SaveButton>
               </Item>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Box>
       </div>

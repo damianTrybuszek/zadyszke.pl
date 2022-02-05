@@ -86,6 +86,7 @@ class CreateGig extends Component {
     this.saveStateFromPage3 = this.saveStateFromPage3.bind(this);
     this.saveStateFromPage4 = this.saveStateFromPage4.bind(this);
     this.saveStateFromPage5 = this.saveStateFromPage5.bind(this);
+    this.fakeSubmitOffer = this.fakeSubmitOffer.bind(this);
   }
 
   saveStateFromPage1(data) {
@@ -189,6 +190,12 @@ class CreateGig extends Component {
     });
   }
 
+  fakeSubmitOffer() {
+    this.setState({
+      activeStep: this.state.activeStep + 1,
+    });
+  }
+
   getStepContent(step) {
     switch (step) {
       case 0:
@@ -209,7 +216,6 @@ class CreateGig extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <NavbarTop />
@@ -238,7 +244,8 @@ class CreateGig extends Component {
                 <Typography variant="h5" gutterBottom>
                   {console.log(this.state.offerCreated)}
                   Gratulacje! Twoja oferta o numerze{" "}
-                  {this.state.offerCreated.id} została stworzona!
+                  {/* {this.state.offerCreated.id}  */}
+                  23 została stworzona!
                 </Typography>
                 <Typography variant="subtitle1">
                   Teraz nie pozostaje już nic innego jak czekać, aż ktoś ją
@@ -267,7 +274,8 @@ class CreateGig extends Component {
                       {this.state.activeStep === steps.length - 1 ? (
                         <NextButton
                           variant="contained"
-                          onClick={this.submitOffer}
+                          // onClick={this.submitOffer}
+                          onClick={this.fakeSubmitOffer}
                           sx={{ mt: 3, ml: 1 }}
                         >
                           Zakończ

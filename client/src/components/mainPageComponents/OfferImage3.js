@@ -1,7 +1,7 @@
 import { Component } from "react";
-import sample_offer_1 from "../../graphics/tempImages/sample_offer_1.jpg";
+import sample_offer_3 from "../../graphics/tempImages/sample_offer_3.jpg";
 
-class OfferImage extends Component {
+class OfferImage3 extends Component {
   constructor(props) {
     super(props);
   }
@@ -9,7 +9,7 @@ class OfferImage extends Component {
     return (
       <img
         alt="Oferta - zdjęcie"
-        src={sample_offer_1}
+        src={sample_offer_3}
         width="300"
         height="225"
       />
@@ -17,4 +17,4 @@ class OfferImage extends Component {
   }
 }
 
-export default OfferImage;
+export default OfferImage3;
