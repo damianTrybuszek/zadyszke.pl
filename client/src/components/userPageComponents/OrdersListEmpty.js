@@ -31,7 +31,7 @@ class OrdersListEmpty extends Component {
             </Typography>
           </Item>
           <Item sx={{ gridRow: "3", gridColumn: "8/15", display: "grid" }}>
-            <NewOfferButton />
+            {/* <NewOfferButton /> */}
           </Item>
         </Box>
       </Container>

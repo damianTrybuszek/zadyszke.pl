@@ -15,6 +15,7 @@ import UserOffers from "./pages/UserOffers";
 import CreateProfile from "./pages/CreateProfile";
 import Offer from "./pages/Offer";
 
+
 const theme = createTheme({
   palette: {
     background: "#2F303A",
@@ -74,7 +75,7 @@ class App extends Component {
             <Route path="/user/orders" element={<UserOrders />} />
             <Route path="/user/offers" element={<UserOffers />} />
             <Route path="/create-profile" element={<CreateProfile />} />
-            <Route path="/offer/" element={<Offer />} />
+            {/* <Route path="/offer/" element={<Offer />} /> */}
           </Routes>
           <Footer />
         </ThemeProvider>

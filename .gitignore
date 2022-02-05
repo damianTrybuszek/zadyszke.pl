@@ -35,3 +35,7 @@ build/
 resources/
 
 /resources
+
+
+### Git code % show ###
+*.js linguist-vendored
