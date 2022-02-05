@@ -120,7 +120,7 @@ function LoginForm() {
       }).then((res) => {
         if (res.ok) {
           console.log(res);
-          navigate('/');
+          navigate('/logged-in');
         } else {
           return res.json().then((data) => {
             // show an error modal

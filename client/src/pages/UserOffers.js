@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import OffersListEmpty from "../components/userPageComponents/OffersListEmpty";
-import NavbarTop from "../components/ui/NavbarTop";
+import NavbarTop from "../components/ui/NavbarTopCopy";
 import UserOffersButtonActive from "../components/userPageComponents/UserOffersButtonActive";
 import UserOrdersButton from "../components/userPageComponents/UserOrdersButton";
 import UserSafetyButton from "../components/userPageComponents/UserSafetyButton";

@@ -12,6 +12,7 @@ class MainNotLoggedInPage extends Component {
       <div>
         <NavbarTop />
         <MainBanner />
+        <RecommendedOffersCarousel />
         <MainAd />
         <MainInstruction />
         <CategoriesAd />

@@ -13,6 +13,8 @@ class MainLoggedInPage extends Component {
         <div>
         <NavbarTopCopy />
         <MainBanner />
+        <RecommendedOffersCarousel />
+        <RecommendedOffersCarousel />
         <MainAd />
         <MainInstruction />
         <CategoriesAd />

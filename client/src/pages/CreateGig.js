@@ -8,7 +8,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import NavbarTop from "../components/ui/NavbarTop";
+import NavbarTop from "../components/ui/NavbarTopCopy";
 import Grid from "@mui/material/Grid";
 
 import CreateGig1 from "../components/gigPageComponents/CreateGig1";

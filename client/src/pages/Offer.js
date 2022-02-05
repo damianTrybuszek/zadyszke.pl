@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { styled } from "@mui/material/styles";
-import NavbarTop from "../components/ui/NavbarTop";
+import NavbarTop from "../components/ui/NavbarTopCopy";
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 import OfferImage from "../graphics/tempImages/sample_offer_1.jpg";

@@ -2,7 +2,7 @@ import { Component } from "react";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import NavbarTop from "../components/ui/NavbarTop";
+import NavbarTop from "../components/ui/NavbarTopCopy";
 import UserOffersButton from "../components/userPageComponents/UserOffersButton";
 import UserOrdersButton from "../components/userPageComponents/UserOrdersButton.js";
 import UserSafetyButton from "../components/userPageComponents/UserSafetyButton";

@@ -37,7 +37,7 @@ class NavbarTop extends Component {
                   <Navbar.Brand>Profil</Navbar.Brand>
                 </Link>
                 <Link to="/create-profile" style={{ textDecoration: "none" }}>
-                  <Navbar.Brand>Stwórz profil</Navbar.Brand>
+                  <Navbar.Brand>Stwórz profil artysty</Navbar.Brand>
                 </Link>
                 <Link to="/Register" style={{ textDecoration: "none" }}>
                   <JoinButton>Dołącz do nas</JoinButton>

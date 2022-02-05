@@ -40,12 +40,12 @@ class UserTheme extends Component {
             </Grid>
             <Grid paddingBottom={1}>
               <Item>
-                <Typography variant="h4">Super użytkownik</Typography>
+                <Typography variant="h4">Marcela</Typography>
               </Item>
             </Grid>
             <Grid>
               <Item>
-                <Typography variant="body2">Aktywny od: 01.01.2022</Typography>
+                <Typography variant="body2">Aktywny od: 06.02.2022</Typography>
               </Item>
             </Grid>
           </Grid>

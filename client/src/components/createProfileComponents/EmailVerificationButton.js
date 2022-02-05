@@ -15,7 +15,7 @@ export default function BasicButtons() {
   return (
     <ThemeProvider theme={theme}>
       <Button variant="outlined" style={{ width: "100%" }} type="submit">
-       Zweryfikowany
+       Niezweryfikowany
       </Button>
     </ThemeProvider>
   );

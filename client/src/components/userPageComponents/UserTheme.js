@@ -33,7 +33,7 @@ class UserTheme extends Component {
               />
             </Item>
             <Item>
-              <Typography variant="h5">Super użytkownik</Typography>
+              <Typography variant="h5">Marcela</Typography>
             </Item>
             <Item>
               <Typography variant="h7">Miasto: Kraków</Typography>
